@@ -41,7 +41,10 @@ const alexBrush = Alex_Brush({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://shreeswamisamarthevents.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://shreeswamisamarth-events.vercel.app'),
+  verification: {
+    google: 'nqJi3icKWRUgVS-cbb757XF_EIkp_SW7lsk6xj2LiRY',
+  },
   title: 'Shree Swami Samarth Events | Luxury Event Management & Decor',
   description:
     'Thoughtfully curated celebrations in Kalyan, Dombivli, Thane, Mumbai, Virar & Vasai. From intimate milestone birthdays and dreamy baby showers to grand royal weddings and traditional haldi ceremonies.',
