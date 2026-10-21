@@ -1,31 +1,37 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Sparkles } from 'lucide-react';
 import { BrandLogo } from './FloralMotif';
+import { useModals } from '../context/ModalContext';
 
-interface NavbarProps {
-  activeSection: string;
-  onNavigate: (sectionId: string) => void;
-  onOpenDrawer: () => void;
-  onOpenPlanModal: () => void;
-}
-
-const NAV_LINKS = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'services', label: 'Services' },
-  { id: 'work', label: 'Our Work' },
-  { id: 'contact', label: 'Contact' },
+export const NAV_LINKS = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/work', label: 'Our Work' },
+  { href: '/contact', label: 'Contact' },
 ];
 
+interface NavbarProps {
+  activeSection?: string;
+  onNavigate?: (sectionId: string) => void;
+  onOpenDrawer?: () => void;
+  onOpenPlanModal?: () => void;
+}
+
 export const Navbar: React.FC<NavbarProps> = ({
-  activeSection,
-  onNavigate,
   onOpenDrawer,
   onOpenPlanModal,
 }) => {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const modals = useModals();
+
+  const handleOpenDrawer = onOpenDrawer ?? modals.openDrawer;
+  const handleOpenPlanModal = onOpenPlanModal ?? modals.openPlanModal;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 12);
@@ -50,12 +56,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           <span aria-hidden="true" />
 
           <div className="flex justify-center">
-            <BrandLogo size="sm" onClick={() => onNavigate('home')} />
+            <Link href="/" aria-label="Shree Swami Samarth Events Home">
+              <BrandLogo size="sm" />
+            </Link>
           </div>
 
           <button
             type="button"
-            onClick={onOpenDrawer}
+            onClick={handleOpenDrawer}
             aria-label="Open navigation menu"
             className="flex h-10 w-10 cursor-pointer flex-col items-center justify-center justify-self-end gap-[6px] text-ink transition-colors hover:text-burgundy"
           >
@@ -65,21 +73,25 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </div>
 
-        {/* ───────── Desktop: horizontal logo left, links centred, CTA + round menu right ───────── */}
+        {/* ───────── Desktop: horizontal logo left, links centred, CTA right ───────── */}
         <div className="hidden w-full items-center justify-between gap-6 lg:flex">
           <div className="flex items-center gap-12 xl:gap-16">
-            <BrandLogo layout="horizontal" onClick={() => onNavigate('home')} />
+            <Link href="/" aria-label="Shree Swami Samarth Events Home">
+              <BrandLogo layout="horizontal" />
+            </Link>
 
             <nav aria-label="Primary" className="flex items-center gap-7 xl:gap-8">
               {NAV_LINKS.map((link) => {
-                const isActive = activeSection === link.id;
+                const isActive =
+                  link.href === '/'
+                    ? pathname === '/'
+                    : pathname.startsWith(link.href);
                 return (
-                  <button
-                    key={link.id}
-                    type="button"
-                    onClick={() => onNavigate(link.id)}
+                  <Link
+                    key={link.href}
+                    href={link.href}
                     aria-current={isActive ? 'page' : undefined}
-                    className={`relative cursor-pointer py-1 text-[13.5px] font-medium transition-colors ${
+                    className={`relative py-1 text-[13.5px] font-medium transition-colors ${
                       isActive ? 'font-semibold text-burgundy' : 'text-ink hover:text-burgundy'
                     }`}
                   >
@@ -87,20 +99,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                     {isActive && (
                       <span className="absolute -bottom-0.5 left-0 right-0 h-[1.5px] rounded-full bg-burgundy" />
                     )}
-                  </button>
+                  </Link>
                 );
               })}
             </nav>
           </div>
 
-          {/* Desktop already shows the full link menu above, so no duplicate hamburger here —
-              one menu control visible at a time. */}
           <button
             type="button"
-            onClick={onOpenPlanModal}
-            className="group inline-flex cursor-pointer items-center gap-2 rounded-full border border-[#D4AF6A]/70 bg-burgundy px-5 py-2 text-xs font-semibold tracking-wide text-canvas shadow-[0_4px_14px_rgb(122_27_40/0.35)] transition-all duration-300 hover:bg-burgundy-light active:scale-[0.98]"
+            onClick={handleOpenPlanModal}
+            className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-burgundy px-5 py-2.5 text-[13.5px] font-semibold text-canvas shadow-[0_8px_20px_-6px_rgb(122_27_40/0.45)] transition-all duration-300 hover:bg-burgundy-light hover:shadow-[0_12px_28px_-6px_rgb(122_27_40/0.55)] active:scale-[0.98]"
           >
-            <Sparkles className="h-3.5 w-3.5 text-[#E2B856] transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+            <Sparkles className="h-3.5 w-3.5 text-gold-light transition-transform duration-300 group-hover:rotate-12" />
             <span>Plan Your Event</span>
           </button>
         </div>

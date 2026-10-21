@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Playfair_Display, Plus_Jakarta_Sans, Alex_Brush } from 'next/font/google';
 import './globals.css';
+import { AppShell } from '../components/AppShell';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -58,7 +59,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${playfair.variable} ${jakarta.variable} ${alexBrush.variable}`}
     >
       <body suppressHydrationWarning className="antialiased bg-[#FAF7F2]">
-        {children}
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

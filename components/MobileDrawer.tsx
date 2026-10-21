@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { X, ChevronRight, Phone, Sparkles } from 'lucide-react';
 import { WhatsAppIcon, InstagramIcon, FacebookIcon } from './icons';
 import { BrandLogo, FloralCornerMotif } from './FloralMotif';
@@ -10,21 +12,28 @@ import { PHONE_E164, PHONE_DISPLAY, INSTAGRAM_URL, whatsappHref } from '../data/
 interface MobileDrawerProps {
   isOpen: boolean;
   onClose: () => void;
-  activeSection: string;
-  onNavigate: (sectionId: string) => void;
+  activeSection?: string;
+  onNavigate?: (sectionId: string) => void;
   onOpenPlanModal: () => void;
   onSelectService: (serviceId: string) => void;
 }
 
+const NAV_ITEMS = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services', hasChildren: true },
+  { href: '/work', label: 'Our Work' },
+  { href: '/contact', label: 'Contact' },
+];
+
 export const MobileDrawer: React.FC<MobileDrawerProps> = ({
   isOpen,
   onClose,
-  activeSection,
-  onNavigate,
   onOpenPlanModal,
-  onSelectService
+  onSelectService,
 }) => {
   const [servicesExpanded, setServicesExpanded] = useState(false);
+  const pathname = usePathname();
 
   if (!isOpen) return null;
 
@@ -48,7 +57,9 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
         {/* Header */}
         <div>
           <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-[#1E3447]/50">
-            <BrandLogo darkTheme onClick={() => { onNavigate('home'); onClose(); }} />
+            <Link href="/" onClick={onClose} aria-label="Shree Swami Samarth Events Home">
+              <BrandLogo darkTheme />
+            </Link>
             <button
               onClick={onClose}
               className="w-10 h-10 rounded-full flex items-center justify-center text-[#E2B856] hover:text-white hover:bg-[#1E3447] transition-colors"
@@ -60,35 +71,45 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
 
           {/* Navigation Links */}
           <nav className="px-6 py-6 space-y-2">
-            {[
-              { id: 'home', label: 'Home' },
-              { id: 'about', label: 'About' },
-              { id: 'services', label: 'Services', hasChildren: true },
-              { id: 'work', label: 'Our Work' },
-              { id: 'contact', label: 'Contact' }
-            ].map((link) => {
-              const isActive = activeSection === link.id;
+            {NAV_ITEMS.map((link) => {
+              const isActive =
+                link.href === '/'
+                  ? pathname === '/'
+                  : pathname.startsWith(link.href);
 
               if (link.hasChildren) {
                 return (
-                  <div key={link.id} className="space-y-1">
+                  <div key={link.href} className="space-y-1">
                     <div
-                      onClick={() => setServicesExpanded(!servicesExpanded)}
                       className={`flex items-center justify-between py-3 px-3 rounded-lg cursor-pointer transition-all ${
                         isActive
                           ? 'text-[#E2B856] font-semibold bg-[#122536]'
                           : 'text-gray-200 hover:text-[#E2B856] hover:bg-[#122536]/50'
                       }`}
                     >
-                      <div className="flex items-center gap-3">
+                      <Link
+                        href={link.href}
+                        onClick={onClose}
+                        className="flex-1 flex items-center gap-3"
+                      >
                         {isActive && <span className="w-1 h-5 bg-[#C59B27] rounded-full" />}
                         <span className="text-lg font-display tracking-wide">{link.label}</span>
-                      </div>
-                      <ChevronRight
-                        className={`w-5 h-5 transition-transform duration-300 ${
-                          servicesExpanded ? 'rotate-90 text-[#E2B856]' : 'text-gray-400'
-                        }`}
-                      />
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setServicesExpanded(!servicesExpanded);
+                        }}
+                        aria-label="Toggle services list"
+                        className="p-1 hover:text-[#E2B856]"
+                      >
+                        <ChevronRight
+                          className={`w-5 h-5 transition-transform duration-300 ${
+                            servicesExpanded ? 'rotate-90 text-[#E2B856]' : 'text-gray-400'
+                          }`}
+                        />
+                      </button>
                     </div>
 
                     {/* Expandable Services */}
@@ -97,6 +118,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
                         {SERVICES_DATA.map((srv) => (
                           <button
                             key={srv.id}
+                            type="button"
                             onClick={() => {
                               onSelectService(srv.id);
                               onClose();
@@ -113,12 +135,10 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
               }
 
               return (
-                <div
-                  key={link.id}
-                  onClick={() => {
-                    onNavigate(link.id);
-                    onClose();
-                  }}
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={onClose}
                   className={`flex items-center justify-between py-3 px-3 rounded-lg cursor-pointer transition-all ${
                     isActive
                       ? 'text-[#E2B856] font-semibold bg-[#122536]'
@@ -129,7 +149,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
                     {isActive && <span className="w-1 h-5 bg-[#C59B27] rounded-full" />}
                     <span className="text-lg font-display tracking-wide">{link.label}</span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </nav>
