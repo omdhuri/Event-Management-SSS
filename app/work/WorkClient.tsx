@@ -22,7 +22,7 @@ export const WorkClient: React.FC = () => {
         badge="Curated Portfolio"
         title="Moments We've Made"
         italicWord="Special."
-        description="Step inside our gallery of real events across Pune, Kalyan, and Maharashtra. Discover bespoke stage backdrops, floral mandaps, fairy-tale lighting, and joyous family celebrations."
+        description="Step inside our gallery of real events across Kalyan, Dombivli, Thane, Mumbai, and Maharashtra. Discover bespoke stage backdrops, floral mandaps, fairy-tale lighting, and joyous family celebrations."
         breadcrumb="Our Work"
       />
 

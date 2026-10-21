@@ -1,7 +1,7 @@
 # Production Launch Plan: Client Image Integration, SEO & QA
 
 ## Objective
-Seamlessly transition from placeholder assets to original client event imagery, optimize image delivery for 95+ Lighthouse performance (WebP, zero CLS, sub-second LCP), personalize client data, implement local SEO for Pune, and perform full QA for launch readiness.
+Seamlessly transition from placeholder assets to original client event imagery, optimize image delivery for 95+ Lighthouse performance (WebP, zero CLS, sub-second LCP), personalize client data, implement local SEO for Kalyan, Thane & Mumbai, and perform full QA for launch readiness.
 
 ---
 
@@ -29,7 +29,7 @@ Seamlessly transition from placeholder assets to original client event imagery, 
 
 ## Phase 3: SEO, Social Cards & Personalization
 - [x] **Local SEO & Meta Tags (`app/layout.tsx`)**:
-  - Targeted Kalyan & Pune event management keywords.
+  - Targeted Kalyan, Dombivli, Thane, Mumbai, Virar & Vasai event management keywords.
   - Added `metadataBase`, OpenGraph tags, and Twitter Cards with large image preview.
 - [x] **Structured Data (JSON-LD)**:
   - Injected Schema.org `LocalBusiness` structured data (business hours, geo coordinates, contact number, Instagram profile).

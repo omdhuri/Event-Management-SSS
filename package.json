@@ -2,7 +2,7 @@
   "name": "shree-swami-samarth-events-nextjs",
   "version": "1.0.0",
   "private": true,
-  "description": "Shree Swami Samarth Events — Luxury Event Management & Decor Pune (Next.js 15 App Router)",
+  "description": "Shree Swami Samarth Events — Luxury Event Management & Decor (Kalyan, Dombivli, Thane, Mumbai)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

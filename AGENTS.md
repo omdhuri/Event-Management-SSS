@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # Project Conventions & Agent Guidelines
 
-## Shree Swami Samarth Events — Luxury Event Management & Decor (Pune)
+## Shree Swami Samarth Events — Luxury Event Management & Decor (Kalyan, Thane, Mumbai)
 
 ### Architecture & Tech Stack
 - **Framework**: Next.js 15 (App Router, React 19, TypeScript).
@@ -30,7 +30,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 3. **CLS Prevention**:
    - All image wrappers must have explicit aspect ratios (`aspect-[16/10]`, `aspect-[4/3]`, `aspect-square`) with a placeholder background color (`bg-canvas-soft`) so layout does not shift during loading.
 4. **SEO & File Naming**:
-   - Use descriptive, Pune-local keyword filenames (e.g., `wedding-mandap-decor-pune.webp`, `haldi-flower-canopy-baner.webp`).
+   - Use descriptive, MMR-local keyword filenames (e.g., `wedding-mandap-decor-kalyan.webp`, `haldi-flower-canopy-thane.webp`).
    - Every `img` element must include descriptive `alt` text.
 
 ### Component & Data Architecture

@@ -65,7 +65,7 @@ export const OurWorkSection = ({ onSelectEvent, onOpenFullGallery }: OurWorkSect
 
           <div className="mt-8">
             <ul className="grid grid-cols-2 gap-3">
-              {items.slice(0, 6).map((item) => (
+              {items.slice(0, 8).map((item) => (
                 <li key={item.id}>
                   <button
                     type="button"
@@ -114,26 +114,34 @@ export const OurWorkSection = ({ onSelectEvent, onOpenFullGallery }: OurWorkSect
 
           <div className="reveal reveal-delay-1 grid grid-cols-12 gap-3.5 md:col-span-8 lg:gap-4">
             {/* Tall left feature: Royal Wedding Stage */}
-            {GALLERY_DATA[1] && (
-              <button
-                type="button"
-                onClick={() => onSelectEvent(GALLERY_DATA[1])}
-                aria-label={GALLERY_DATA[1].title}
-                className="group relative col-span-5 h-[300px] cursor-pointer overflow-hidden rounded-2xl shadow-xl lg:h-[330px]"
-              >
-                <img
-                  src={GALLERY_DATA[1].image}
-                  alt={GALLERY_DATA[1].title}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:scale-105"
-                />
-              </button>
-            )}
+            {(() => {
+              const weddingItem = GALLERY_DATA.find((i) => i.id === 'royal-reception') ?? GALLERY_DATA[0];
+              return weddingItem ? (
+                <button
+                  type="button"
+                  onClick={() => onSelectEvent(weddingItem)}
+                  aria-label={weddingItem.title}
+                  className="group relative col-span-5 h-[300px] cursor-pointer overflow-hidden rounded-2xl shadow-xl lg:h-[330px]"
+                >
+                  <img
+                    src={weddingItem.image}
+                    alt={weddingItem.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:scale-105"
+                  />
+                </button>
+              ) : null;
+            })()}
 
             {/* Right 2x2 grid: Baby Shower + Haldi on top, Birthday + Car on bottom */}
             <div className="col-span-7 grid grid-cols-2 grid-rows-2 gap-3.5 lg:gap-4">
-              {[GALLERY_DATA[2], GALLERY_DATA[4], GALLERY_DATA[0], GALLERY_DATA[3]].map((item, idx) =>
+              {[
+                GALLERY_DATA.find((i) => i.id === 'boho-baby-shower'),
+                GALLERY_DATA.find((i) => i.id === 'haldi-marigold-canopy'),
+                GALLERY_DATA.find((i) => i.id === 'jungle-safari-birthday'),
+                GALLERY_DATA.find((i) => i.id === 'bridal-car-decor'),
+              ].filter(Boolean).map((item, idx) =>
                 item ? (
                   <div key={item.id} className="relative h-[143px] overflow-hidden rounded-2xl shadow-xl lg:h-[157px]">
                     <button

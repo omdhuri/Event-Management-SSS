@@ -151,95 +151,224 @@ export const SERVICES_DATA: ServiceItem[] = [
 ];
 
 export const GALLERY_DATA: GalleryItem[] = [
+  // ───────── BIRTHDAYS (8 distinct authentic themes) ─────────
   {
-    id: 'magical-birthday',
-    title: 'Pastel Dream Birthday Kingdom',
+    id: 'jungle-safari-birthday',
+    title: 'Wild One Jungle Safari Birthday',
+    category: 'Birthdays',
+    date: 'Sep 2024',
+    location: 'Kalyan West',
+    client: 'Aarav\'s 1st Birthday',
+    tagline: 'Lush green foliage balloon arch, 3D wild safari animals & wooden bridge styling',
+    image: '/images/birthday/birthday-decor-06.webp',
+    images: [
+      '/images/birthday/birthday-decor-06.webp',
+      '/images/birthday/birthday-decor-07.webp',
+      '/images/birthday/birthday-decor-08.webp',
+      '/images/birthday/birthday-decor-09.webp',
+      '/images/birthday/birthday-decor-10.webp'
+    ],
+    description: 'An immersive jungle adventure milestone celebration with layered olive, sage, and golden balloons, lifelike animal cutouts, rustic wooden crates, and an interactive photo corner for children.',
+    highlights: [
+      'Safari wildlife backdrop installation',
+      'Organic foliage & balloon canopy',
+      'Custom explorer milestone easel',
+      'Kids photobooth zone',
+      'Matching dessert table pedestals'
+    ]
+  },
+  {
+    id: 'pastel-princess-birthday',
+    title: 'Pastel Princess Castle Kingdom',
     category: 'Birthdays',
     date: 'Aug 2024',
-    location: 'Kalyan',
-    client: 'Ananya\'s Milestone Birthday',
-    tagline: 'Vibrant pastel balloon arches with custom neon and marquee numbers',
+    location: 'Kalyan West',
+    client: 'Ananya\'s 3rd Birthday',
+    tagline: 'Dreamy pink & lavender balloon arches with glowing neon sign & marquee numbers',
     image: '/images/birthday/birthday-decor-01.webp',
     images: [
       '/images/birthday/birthday-decor-01.webp',
       '/images/birthday/birthday-decor-02.webp',
+      '/images/birthday/birthday-decor-03.webp',
       '/images/birthday/birthday-decor-04.webp',
-      '/images/birthday/birthday-decor-05.webp',
-      '/images/birthday/birthday-decor-07.webp'
+      '/images/birthday/birthday-decor-05.webp'
     ],
-    description: 'A dreamy pastel-themed birthday setup with organic balloon installations, floral accents, illuminated marquee number lights, and customized welcome entrance.',
+    description: 'A fairytale pastel celebration featuring organic balloon garlands, a giant illuminated LED marquee number, soft floral draping, and a dedicated cake cutting pedestal corner.',
     highlights: [
-      'Custom theme balloon architecture',
-      'Organic pastel arch & backdrops',
-      'Warm LED name reveal board',
-      'Themed photobooth stage',
-      'Complete event styling & props'
+      'Fairytale castle backdrop',
+      'Organic pastel balloon cloud arch',
+      'Giant illuminated LED marquee number',
+      'Princess cake pedestal styling',
+      'Personalized entrance welcome easel'
     ]
   },
   {
-    id: 'jungle-safari-birthday',
-    title: 'Jungle Safari Adventure Birthday',
+    id: 'superhero-action-birthday',
+    title: 'Superhero & Comic Action Fiesta',
     category: 'Birthdays',
-    date: 'Sep 2024',
-    location: 'Kalyan',
-    client: 'Aarav\'s 2nd Birthday',
-    tagline: 'Lush green foliage balloon installations with animal cutouts and jungle bridge',
-    image: '/images/birthday/birthday-decor-06.webp',
+    date: 'Oct 2024',
+    location: 'Vasai West',
+    client: 'Kabir\'s 5th Birthday Bash',
+    tagline: 'High-energy comic action backdrop with bold red, blue & yellow balloon towers',
+    image: '/images/birthday/birthday-decor-14.webp',
     images: [
-      '/images/birthday/birthday-decor-06.webp',
       '/images/birthday/birthday-decor-14.webp',
-      '/images/birthday/birthday-decor-18.webp',
-      '/images/birthday/birthday-decor-21.webp',
-      '/images/birthday/birthday-decor-24.webp'
+      '/images/birthday/birthday-decor-15.webp',
+      '/images/birthday/birthday-decor-16.webp',
+      '/images/birthday/birthday-decor-17.webp',
+      '/images/birthday/birthday-decor-18.webp'
     ],
-    description: 'An exciting safari wilderness themed celebration featuring multi-tone green and gold balloon garlands, life-sized wild animal cutouts, wooden crates, and custom explorer backdrop.',
+    description: 'A power-packed superhero party with bold comic action pop-outs, towering organic balloon pillars, cityscape silhouette backdrop, and superhero photo props.',
     highlights: [
-      'Safari animal theme backdrops',
-      'Multi-shade jungle balloon canopy',
-      'Personalized safari milestone board',
-      'Interactive photo-op zone for kids',
-      'Dessert table styling with jungle vines'
+      'Comic book cityscape backdrop',
+      'Vibrant superhero balloon towers',
+      'Dynamic action prop photo zone',
+      'Themed cake table styling',
+      'Custom name cutouts & lighting effects'
     ]
   },
   {
-    id: 'royal-reception',
-    title: 'Royal Grand Reception Stage',
-    category: 'Weddings',
-    date: 'Dec 2024',
-    location: 'Kalyan',
-    client: 'Priya & Amit Wedding',
-    tagline: 'Grand royal wedding stage with crystal chandeliers and luxury sofa lounge',
-    image: '/images/hero/hero-slide-01.webp',
+    id: 'rainbow-carnival-birthday',
+    title: 'Rainbow Carnival Balloon Spectacular',
+    category: 'Birthdays',
+    date: 'Nov 2024',
+    location: 'Virar West',
+    client: 'Reyansh\'s 4th Birthday',
+    tagline: 'Vibrant spectrum balloon arch with circus pedestals and celebration marquee',
+    image: '/images/birthday/birthday-decor-21.webp',
     images: [
-      '/images/hero/hero-slide-01.webp',
-      '/images/haldi-ceremony/haldi-ring-ceremony-05.webp',
-      '/images/wedding-car.webp',
-      '/images/about-centerpiece.webp'
+      '/images/birthday/birthday-decor-21.webp',
+      '/images/birthday/birthday-decor-22.webp',
+      '/images/birthday/birthday-decor-23.webp',
+      '/images/birthday/birthday-decor-24.webp',
+      '/images/birthday/birthday-decor-25.webp'
     ],
-    description: 'A breathtaking royal stage setup featuring handpicked fresh floral arrangements, opulent crystal chandeliers, velvet seating, and grand entryway coordination.',
+    description: 'An eye-catching kaleidoscope celebration featuring multi-color organic balloon architecture, circus-inspired dessert cylinders, and festive ambient lighting.',
     highlights: [
-      'Grand floral stage backdrop',
-      'Imported crystal chandeliers & mood uplighting',
-      'Luxury velvet royal sofa lounge',
-      'Grand floral walkway & entryway',
-      'Complete stage coordination'
+      'Full rainbow balloon arch',
+      'Circus tent patterned pedestals',
+      'Warm fairy light canopy',
+      'Festive welcome signage',
+      'Fun photo-op props'
     ]
   },
+  {
+    id: 'luxury-black-gold-jubilee',
+    title: 'Luxury Black & Gold 50th Jubilee',
+    category: 'Birthdays',
+    date: 'Dec 2024',
+    location: 'Thane West',
+    client: 'Sanjay Patil\'s 50th Milestone',
+    tagline: 'Refined metallic chrome gold, midnight black balloon wall & giant LED 50',
+    image: '/images/birthday/birthday-decor-26.webp',
+    images: [
+      '/images/birthday/birthday-decor-26.webp',
+      '/images/birthday/birthday-decor-27.webp',
+      '/images/birthday/birthday-decor-28.webp',
+      '/images/birthday/birthday-decor-29.webp',
+      '/images/birthday/birthday-decor-30.webp'
+    ],
+    description: 'An elegant milestone birthday celebration crafted with premium chrome gold and matte black balloons, a customized sequin backdrop wall, and warm ambient uplighting.',
+    highlights: [
+      'Glossy sequin shimmer wall',
+      'Chrome gold organic balloon garland',
+      '4ft Giant illuminated 50 marquee',
+      'Champagne welcome easel',
+      'Executive guest photobooth'
+    ]
+  },
+  {
+    id: 'boho-butterfly-birthday',
+    title: 'Enchanted Butterfly Garden Dream',
+    category: 'Birthdays',
+    date: 'Jan 2025',
+    location: 'Dombivli East',
+    client: 'Myra\'s 1st Birthday',
+    tagline: 'Pastel peach & eucalyptus balloon garland with 3D acrylic butterflies',
+    image: '/images/birthday/birthday-decor-11.webp',
+    images: [
+      '/images/birthday/birthday-decor-11.webp',
+      '/images/birthday/birthday-decor-12.webp',
+      '/images/birthday/birthday-decor-13.webp',
+      '/images/birthday/birthday-decor-19.webp',
+      '/images/birthday/birthday-decor-20.webp'
+    ],
+    description: 'A delicate garden-themed first birthday with pastel peach and eucalyptus balloons, fluttering 3D golden butterflies, fairy lights, and acrylic cake pedestals.',
+    highlights: [
+      'Delicate butterfly floral ring',
+      'Pastel organic balloon installation',
+      'Clear acrylic dessert pedestals',
+      'Custom 1st milestone board',
+      'Soft ambient photo lighting'
+    ]
+  },
+  {
+    id: 'neon-glow-cyber-party',
+    title: 'Neon Glow Cyber Milestone Party',
+    category: 'Birthdays',
+    date: 'Feb 2025',
+    location: 'Bandra, Mumbai',
+    client: 'Rohan\'s 18th Birthday',
+    tagline: 'Vibrant UV neon glow tubes, custom neon name sign & balloon explosion',
+    image: '/images/birthday/birthday-decor-31.webp',
+    images: [
+      '/images/birthday/birthday-decor-31.webp',
+      '/images/birthday/birthday-decor-32.webp',
+      '/images/birthday/birthday-decor-33.webp',
+      '/images/birthday/birthday-decor-34.webp',
+      '/images/birthday/birthday-decor-35.webp'
+    ],
+    description: 'A dynamic teenage milestone party designed with ultraviolet lighting, customized neon script signboards, dark contrast balloon clusters, and party props.',
+    highlights: [
+      'Custom neon script name sign',
+      'UV reactive balloon clusters',
+      'LED tube stage uplighting',
+      'Selfie corner with party props',
+      'Sound & light coordination'
+    ]
+  },
+  {
+    id: 'ocean-aqua-adventure',
+    title: 'Under the Sea & Aqua Adventure',
+    category: 'Birthdays',
+    date: 'Jul 2024',
+    location: 'Ghatkopar, Mumbai',
+    client: 'Advait\'s 2nd Birthday',
+    tagline: 'Ocean blue balloon waves, sea creature cutouts & nautical photobooth',
+    image: '/images/birthday/birthday-decor-36.webp',
+    images: [
+      '/images/birthday/birthday-decor-36.webp',
+      '/images/birthday/birthday-decor-37.webp',
+      '/images/birthday/birthday-decor-38.webp',
+      '/images/birthday/birthday-decor-02.webp',
+      '/images/birthday/birthday-decor-05.webp'
+    ],
+    description: 'A refreshing aquatic-themed celebration with oceanic balloon ripples, nautical props, under-the-sea photobooth cutouts, and themed cake pedestal backdrop.',
+    highlights: [
+      'Sea blue balloon gradient wall',
+      'Marine character photo backdrops',
+      'Treasure chest cake pedestal',
+      'Personalized sailor welcome easel',
+      'Themed family photobooth'
+    ]
+  },
+
+  // ───────── BABY SHOWER & WELCOME BABY (5 distinct setups) ─────────
   {
     id: 'boho-baby-shower',
-    title: 'Dreamy Pastel Baby Shower',
+    title: 'Pastel Cloud "Baby On The Way"',
     category: 'Baby Shower',
     date: 'Oct 2024',
-    location: 'Kalyan',
-    client: 'Sneha & Rohit Baby Shower',
-    tagline: 'Soft blush pink and baby blue balloon clouds with plush teddy bears and glowing neon',
+    location: 'Thane West',
+    client: 'Sneha & Rohit\'s Baby Shower',
+    tagline: 'Soft blush pink & baby blue balloon clouds with plush teddy bears & glowing neon',
     image: '/images/baby-shower/baby-shower-decor-01.webp',
     images: [
       '/images/baby-shower/baby-shower-decor-01.webp',
+      '/images/baby-shower/baby-shower-decor-02.webp',
       '/images/baby-shower/baby-shower-decor-03.webp',
-      '/images/baby-shower/baby-shower-decor-09.webp',
-      '/images/baby-shower/baby-shower-decor-10.webp',
-      '/images/baby-shower/baby-shower-decor-12.webp'
+      '/images/baby-shower/baby-shower-decor-04.webp',
+      '/images/baby-shower/baby-shower-decor-05.webp'
     ],
     description: 'An enchanting welcoming celebration with delicate pastel balloon clouds, custom "Baby On The Way" glowing neon signage, and cuddly teddy bear accents designed for a joyful family gathering.',
     highlights: [
@@ -251,88 +380,142 @@ export const GALLERY_DATA: GalleryItem[] = [
     ]
   },
   {
-    id: 'teddy-bear-baby-shower',
-    title: 'Teddy Bear Garden Baby Shower',
+    id: 'traditional-dohale-jevan',
+    title: 'Traditional Marathi Dohale Jevan',
     category: 'Baby Shower',
     date: 'Nov 2024',
-    location: 'Kalyan',
-    client: 'Pooja & Rohan Dohale Jevan',
-    tagline: 'Whimsical teddy bear tea party with golden floral ring and pastel accents',
+    location: 'Kalyan West',
+    client: 'Tanvi & Aditya\'s Dohale Jevan',
+    tagline: 'Authentic marigold floral jhoola (cradle), brass urlis & cultural backdrop',
+    image: '/images/baby-shower/baby-shower-decor-06.webp',
+    images: [
+      '/images/baby-shower/baby-shower-decor-06.webp',
+      '/images/baby-shower/baby-shower-decor-07.webp',
+      '/images/baby-shower/baby-shower-decor-08.webp',
+      '/images/baby-shower/baby-shower-decor-09.webp',
+      '/images/baby-shower/baby-shower-decor-10.webp'
+    ],
+    description: 'A heartfelt traditional Maharashtrian Dohale Jevan celebration featuring a hand-decorated floral swing with yellow and orange marigolds, antique brass lamps, and pooja altar styling.',
+    highlights: [
+      'Fresh floral jhoola swing decoration',
+      'Auspicious marigold & jasmine canopies',
+      'Brass urlis with floating candles & petals',
+      'Traditional seating for Mom-to-Be',
+      'Customized family photo backdrop'
+    ]
+  },
+  {
+    id: 'teddy-bear-garden-shower',
+    title: 'Teddy Bear Picnic Baby Shower',
+    category: 'Baby Shower',
+    date: 'Dec 2024',
+    location: 'Dombivli East',
+    client: 'Pooja & Rohan\'s Celebration',
+    tagline: 'Whimsical giant teddy bears, golden floral hoop & pampas grass florals',
     image: '/images/baby-shower/baby-shower-decor-11.webp',
     images: [
       '/images/baby-shower/baby-shower-decor-11.webp',
+      '/images/baby-shower/baby-shower-decor-12.webp',
       '/images/baby-shower/baby-shower-decor-13.webp',
       '/images/baby-shower/baby-shower-decor-14.webp',
-      '/images/baby-shower/baby-shower-decor-15.webp',
-      '/images/baby-shower/baby-shower-decor-18.webp'
+      '/images/baby-shower/baby-shower-decor-15.webp'
     ],
-    description: 'A traditional and modern fusion Dohale Jevan celebrating the arrival of the newborn, complete with authentic marigold floral jhoola, delicate pastel accents, and warm golden mood lighting.',
+    description: 'A modern boho baby shower featuring life-sized plush teddy bears, circular golden arch draped with neutral and pastel balloons, dried pampas grass, and golden dessert pedestals.',
     highlights: [
-      'Traditional floral jhoola cradle setup',
-      'Custom printed milestone backdrop',
-      'Golden circular arch with balloon accents',
-      'Comfortable seating arrangement for mom-to-be',
-      'Return gift and sweets presentation table'
+      'Golden circular arch backdrop',
+      'Life-sized teddy bear props',
+      'Boho pampas grass floral accents',
+      'Mom-to-be velvet lounge chair',
+      'Gift table and dessert display styling'
     ]
   },
   {
-    id: 'welcome-baby-naming',
-    title: 'Welcome Baby & Naming Ceremony',
+    id: 'royal-golden-cradle-shower',
+    title: 'Royal Golden Ring Baby Shower',
+    category: 'Baby Shower',
+    date: 'Jan 2025',
+    location: 'Vasai East',
+    client: 'Dr. Neha & Shrikant',
+    tagline: 'Grand metallic ring arch, crystal fairy lights & custom Mom-to-Be throne',
+    image: '/images/baby-shower/baby-shower-decor-16.webp',
+    images: [
+      '/images/baby-shower/baby-shower-decor-16.webp',
+      '/images/baby-shower/baby-shower-decor-17.webp',
+      '/images/baby-shower/baby-shower-decor-18.webp',
+      '/images/baby-shower/baby-shower-decor-19.webp',
+      '/images/baby-shower/baby-shower-decor-20.webp',
+      '/images/baby-shower/baby-shower-decor-21.webp'
+    ],
+    description: 'A royal celebration honoring the mother-to-be with an ornate metallic arch, illuminated fairy light backdrop, blush pink floral garlands, and royal seating.',
+    highlights: [
+      'Grand metallic arch backdrop',
+      'Cascading fairy light backdrop',
+      'Floral garland draping',
+      'Mom-to-be golden royal throne',
+      'Personalized family milestone board'
+    ]
+  },
+  {
+    id: 'welcome-baby-naming-ceremony',
+    title: 'Grand Welcome Baby & Naming (Barse)',
     category: 'Baby Shower',
     date: 'Dec 2024',
-    location: 'Kalyan',
+    location: 'Dombivli East',
     client: 'Little Prince Naming Ceremony',
-    tagline: 'Adorable royal baby cradle setup with customized welcome board and balloon clouds',
+    tagline: 'Ornate decorated wooden cradle (Palana), baby welcome board & fairy lights',
     image: '/images/welcome-baby/welcome-baby-decor-01.webp',
     images: [
       '/images/welcome-baby/welcome-baby-decor-01.webp',
+      '/images/welcome-baby/welcome-baby-decor-02.webp',
       '/images/welcome-baby/welcome-baby-decor-03.webp',
       '/images/welcome-baby/welcome-baby-decor-04.webp',
       '/images/welcome-baby/welcome-baby-decor-05.webp',
+      '/images/welcome-baby/welcome-baby-decor-06.webp',
       '/images/welcome-baby/welcome-baby-decor-07.webp'
     ],
-    description: 'A heartwarming welcome home and naming ceremony celebration for newborn baby with baby blue and white organic balloon garlands, ornate cradle decor, and custom letter board.',
+    description: 'A heartwarming homecoming and naming ceremony for the newborn with traditional decorated Palana (cradle), baby blue balloon cloud rings, custom name reveal board, and gentle ambient lighting.',
     highlights: [
-      'Ornate baby cradle / Palana decoration',
-      'Custom name reveal photobooth wall',
-      'Fairy lights & soft cloud backdrop',
-      'Welcome easel with birth details',
-      'Family memories photo corner'
+      'Decorated traditional baby cradle (Palana)',
+      'Custom baby name reveal easel',
+      'Pastel balloon ring installation',
+      'Soft cloud fairy light backdrop',
+      'Family keepsake photo corner'
     ]
   },
+
+  // ───────── WEDDINGS, FESTIVE & CORPORATE (5 distinct setups) ─────────
   {
-    id: 'haldi-marigold-canopy',
-    title: 'Vibrant Haldi & Ring Ceremony',
-    category: 'Festive',
-    date: 'Jan 2025',
-    location: 'Kalyan',
-    client: 'Kulkarni Family Celebrations',
-    tagline: 'Traditional yellow marigold drapes, brass urlis, and floral canopy',
-    image: '/images/haldi-ceremony/haldi-ring-ceremony-01.webp',
+    id: 'royal-reception',
+    title: 'Royal Grand Reception Stage',
+    category: 'Weddings',
+    date: 'Dec 2024',
+    location: 'Kalyan East',
+    client: 'Priya & Amit Wedding',
+    tagline: 'Grand 30ft royal stage backdrop with crystal chandeliers and luxury sofa lounge',
+    image: '/images/hero/hero-slide-01.webp',
     images: [
-      '/images/haldi-ceremony/haldi-ring-ceremony-01.webp',
-      '/images/haldi-ceremony/haldi-ring-ceremony-02.webp',
-      '/images/haldi-ceremony/haldi-ring-ceremony-03.webp',
-      '/images/haldi-ceremony/haldi-ring-ceremony-04.webp',
-      '/images/haldi-ceremony/haldi-ring-ceremony-06.webp'
+      '/images/hero/hero-slide-01.webp',
+      '/images/haldi-ceremony/haldi-ring-ceremony-05.webp',
+      '/images/wedding-car.webp',
+      '/images/about-centerpiece.webp'
     ],
-    description: 'A vibrant celebration of tradition infused with fresh yellow and orange marigold garlands, handcrafted brass urlis with floating candles, and an ornate traditional background for Haldi and engagement.',
+    description: 'A breathtaking royal stage setup featuring handpicked fresh floral arrangements, opulent crystal chandeliers, velvet seating, and grand entryway coordination.',
     highlights: [
-      'Fresh marigold and jasmine flower canopy',
-      'Decorated traditional backdrop',
-      'Brass urli with floating candles & rose petals',
-      'Customized Haldi props & photo corner',
-      'Traditional heritage entryway arch'
+      'Grand 30ft floral stage backdrop',
+      'Imported crystal chandeliers & mood uplighting',
+      'Luxury velvet royal sofa lounge',
+      'Grand floral walkway & entryway',
+      'Complete stage coordination'
     ]
   },
   {
-    id: 'ring-ceremony-engagement',
-    title: 'Elegant Ring Ceremony Setup',
+    id: 'contemporary-ring-ceremony',
+    title: 'Modern Ring Ceremony & Engagement',
     category: 'Weddings',
     date: 'Jan 2025',
-    location: 'Kalyan',
+    location: 'Borivali, Mumbai',
     client: 'Gaurav & Neha Engagement',
-    tagline: 'Modern circular ring backdrop with glowing neon and delicate florals',
+    tagline: 'Circular floral ring backdrop with glowing neon and delicate florals',
     image: '/images/haldi-ceremony/haldi-ring-ceremony-05.webp',
     images: [
       '/images/haldi-ceremony/haldi-ring-ceremony-05.webp',
@@ -373,11 +556,36 @@ export const GALLERY_DATA: GalleryItem[] = [
     ]
   },
   {
+    id: 'haldi-marigold-canopy',
+    title: 'Vibrant Haldi Ceremony Canopy',
+    category: 'Festive',
+    date: 'Jan 2025',
+    location: 'Kalyan West',
+    client: 'Kulkarni Family Haldi',
+    tagline: 'Traditional yellow marigold drapes, brass urlis, and floral canopy',
+    image: '/images/haldi-ceremony/haldi-ring-ceremony-01.webp',
+    images: [
+      '/images/haldi-ceremony/haldi-ring-ceremony-01.webp',
+      '/images/haldi-ceremony/haldi-ring-ceremony-02.webp',
+      '/images/haldi-ceremony/haldi-ring-ceremony-03.webp',
+      '/images/haldi-ceremony/haldi-ring-ceremony-04.webp',
+      '/images/haldi-ceremony/haldi-ring-ceremony-06.webp'
+    ],
+    description: 'A vibrant celebration of tradition infused with fresh yellow and orange marigold garlands, handcrafted brass urlis with floating candles, and an ornate traditional background for Haldi ceremony.',
+    highlights: [
+      'Fresh marigold and jasmine flower canopy',
+      'Decorated traditional backdrop',
+      'Brass urli with floating candles & rose petals',
+      'Customized Haldi props & photo corner',
+      'Traditional heritage entryway arch'
+    ]
+  },
+  {
     id: 'corporate-annual-gala',
-    title: 'Corporate Leadership Gala',
+    title: 'Corporate Leadership Gala & Awards',
     category: 'Corporate',
     date: 'Nov 2024',
-    location: 'Kalyan',
+    location: 'BKC, Mumbai',
     client: 'TechGlobal Annual Awards',
     tagline: 'Sophisticated banquet hall staging, LED wall branding, and centerpiece styling',
     image: '/images/about-centerpiece.webp',

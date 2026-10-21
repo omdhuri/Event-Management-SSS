@@ -37,7 +37,7 @@ export const ServicesClient: React.FC = () => {
         badge="Our Offerings"
         title="Celebrations Tailored for"
         italicWord="Every Occasion."
-        description="Explore our full spectrum of luxury event management and decor services in Pune, Kalyan, and surrounding areas. Handcrafted with passion, attention to detail, and timeless elegance."
+        description="Explore our full spectrum of luxury event management and decor services in Kalyan, Dombivli, Thane, Mumbai, Virar, Vasai, and surrounding areas. Handcrafted with passion, attention to detail, and timeless elegance."
         breadcrumb="Services"
       />
 

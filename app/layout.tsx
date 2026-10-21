@@ -37,12 +37,15 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://shreeswamisamarthevents.com'),
   title: 'Shree Swami Samarth Events | Luxury Event Management & Decor',
   description:
-    'Thoughtfully curated celebrations in Kalyan & Pune. From intimate milestone birthdays and dreamy baby showers to grand royal weddings and traditional haldi ceremonies.',
+    'Thoughtfully curated celebrations in Kalyan, Dombivli, Thane, Mumbai, Virar & Vasai. From intimate milestone birthdays and dreamy baby showers to grand royal weddings and traditional haldi ceremonies.',
   keywords: [
     'event management Kalyan',
-    'event management Pune',
+    'event management Thane',
+    'event management Mumbai',
     'wedding decor Kalyan',
-    'birthday decoration Pune',
+    'wedding decor Thane',
+    'birthday decoration Dombivli',
+    'birthday decoration Mumbai',
     'baby shower decor',
     'dohale jevan decoration',
     'haldi ceremony decor',
@@ -55,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Shree Swami Samarth Events | Your Moments. Our Magic.',
     description:
-      'From intimate gatherings to grand celebrations — stunning décor, seamless planning, and unforgettable experiences in Kalyan & Pune.',
+      'From intimate gatherings to grand celebrations — stunning décor, seamless planning, and unforgettable experiences in Kalyan, Dombivli, Thane & Mumbai.',
     type: 'website',
     images: [
       {
@@ -69,7 +72,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Shree Swami Samarth Events | Luxury Event Management & Decor',
-    description: 'Transforming celebrations into extraordinary memories in Kalyan & Pune.',
+    description: 'Transforming celebrations into extraordinary memories in Kalyan, Thane & Mumbai.',
     images: ['/images/hero/hero-slide-01.webp'],
   },
 };

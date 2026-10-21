@@ -2,12 +2,14 @@ import type { Metadata } from 'next';
 import { AboutClient } from './AboutClient';
 
 export const metadata: Metadata = {
-  title: 'About Us | Shree Swami Samarth Events | Luxury Event Planners Pune',
+  title: 'About Us | Shree Swami Samarth Events | Luxury Event Planners Kalyan & Mumbai',
   description:
-    'Learn about Shree Swami Samarth Events, established in 2023 in Kalyan & Pune. Discover our story, core values, passion for luxury decor, and client experiences.',
+    'Learn about Shree Swami Samarth Events, established in 2023 in Kalyan, Dombivli & Mumbai. Discover our story, core values, passion for luxury decor, and client experiences.',
   keywords: [
     'about shree swami samarth events',
-    'event planners pune',
+    'event planners kalyan',
+    'event planners thane',
+    'event planners mumbai',
     'luxury wedding decor kalyan',
     'event decorators maharashtra',
   ],

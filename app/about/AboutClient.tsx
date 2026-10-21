@@ -18,7 +18,7 @@ export const AboutClient: React.FC = () => {
         badge="About Shree Swami Samarth Events"
         title="More Than Just Events, We Create"
         italicWord="Experiences."
-        description="Crafting unforgettable moments in Kalyan, Pune, and beyond since 2023. Every flower, candle, and fabric is curated to turn your celebration into a living masterpiece."
+        description="Crafting unforgettable moments in Kalyan, Dombivli, Thane, Mumbai, and beyond since 2023. Every flower, candle, and fabric is curated to turn your celebration into a living masterpiece."
         breadcrumb="About Us"
       />
 
