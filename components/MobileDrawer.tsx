@@ -5,7 +5,7 @@ import { X, ChevronRight, Phone, Sparkles } from 'lucide-react';
 import { WhatsAppIcon, InstagramIcon, FacebookIcon } from './icons';
 import { BrandLogo, FloralCornerMotif } from './FloralMotif';
 import { SERVICES_DATA } from '../data/eventsData';
-import { PHONE_E164, PHONE_DISPLAY, whatsappHref } from '../data/contact';
+import { PHONE_E164, PHONE_DISPLAY, INSTAGRAM_URL, whatsappHref } from '../data/contact';
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -166,7 +166,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
             </a>
 
             <a
-              href="https://instagram.com"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-[#122536]/80 hover:bg-[#122536] text-sm text-gray-200 hover:text-[#E2B856] transition-colors border border-[#1E3447]"
@@ -185,7 +185,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
 
           <div className="flex items-center justify-center gap-5 mb-4 text-gray-300">
             <a
-              href="https://instagram.com"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-[#122536] hover:text-[#E2B856] transition-colors"

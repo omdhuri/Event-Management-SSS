@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Phone, MapPin, Clock, Mail, Send, Check, Sparkles } from 'lucide-react';
 import { WhatsAppIcon, InstagramIcon } from './icons';
 import { SectionOverline, FloralCornerMotif } from './FloralMotif';
-import { WHATSAPP_URL, PHONE_E164, PHONE_DISPLAY, ADDRESS_FULL, ADDRESS_LINE, ADDRESS_PIN, MAP_EMBED, MAP_LINK, whatsappHref } from '../data/contact';
+import { WHATSAPP_URL, PHONE_E164, PHONE_DISPLAY, ADDRESS_FULL, ADDRESS_LINE, ADDRESS_PIN, MAP_EMBED, MAP_LINK, INSTAGRAM_HANDLE, INSTAGRAM_URL, whatsappHref } from '../data/contact';
 
 export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => {
   const [formData, setFormData] = useState({
@@ -143,22 +143,22 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
                 </div>
 
                 {/* Social Card */}
-                <div className="py-5 sm:p-5 rounded-none sm:rounded-2xl bg-transparent sm:bg-white border-b border-line sm:border sm:border-[#EAE3D6] shadow-none sm:shadow-sm flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-full bg-[#FAF2E8] text-[#7A1B28] flex items-center justify-center shrink-0">
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-5 sm:p-5 rounded-none sm:rounded-2xl bg-transparent sm:bg-white border-b border-line sm:border sm:border-[#EAE3D6] shadow-none sm:shadow-sm flex items-start gap-3.5 group hover:border-[#7A1B28]/40 transition-colors"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#FAF2E8] text-[#7A1B28] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                     <InstagramIcon className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-xs text-[#7A6E65] font-bold uppercase tracking-wider block">Follow Us</span>
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-display text-sm sm:text-base font-bold text-[#7A1B28] hover:underline block mt-0.5"
-                    >
-                      @shreeswamisamarthevents
-                    </a>
+                    <span className="font-display text-sm sm:text-base font-bold text-[#7A1B28] group-hover:underline block mt-0.5 truncate">
+                      {INSTAGRAM_HANDLE}
+                    </span>
                   </div>
-                </div>
+                </a>
 
               </div>
 

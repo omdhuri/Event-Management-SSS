@@ -11,5 +11,8 @@ export const MAP_QUERY = 'Shree Swami event kalyan';
 export const MAP_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 export const MAP_LINK = 'https://share.google/YTrEblUFTK0XtRmy5';
 
+export const INSTAGRAM_HANDLE = '@shreeswamisamarthevent_07';
+export const INSTAGRAM_URL = 'https://www.instagram.com/shreeswamisamarthevent_07/';
+
 export const whatsappHref = (message: string) =>
   `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`;

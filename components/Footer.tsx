@@ -5,7 +5,7 @@ import { Phone, MapPin } from 'lucide-react';
 import { WhatsAppIcon, InstagramIcon, FacebookIcon } from './icons';
 import { BrandLogo, FloralCornerMotif } from './FloralMotif';
 import { SERVICES_DATA } from '../data/eventsData';
-import { PHONE_E164, PHONE_DISPLAY, WHATSAPP_URL, ADDRESS_FULL } from '../data/contact';
+import { PHONE_E164, PHONE_DISPLAY, WHATSAPP_URL, ADDRESS_FULL, INSTAGRAM_URL } from '../data/contact';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -31,7 +31,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectService }) =
 
             <div className="flex items-center gap-4 text-gray-300 pt-2">
               <a
-                href="https://instagram.com"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-[#122536] hover:bg-[#7A1B28] hover:text-[#E2B856] flex items-center justify-center transition-colors"
