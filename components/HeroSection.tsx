@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowDown, ArrowRight, Award, Calendar, Heart, Phone } from 'lucide-react';
+import { ArrowDown, ArrowRight, Award, Calendar, ChevronDown, Heart, Phone } from 'lucide-react';
 import { FloralCornerMotif, SectionOverline } from './FloralMotif';
 import { HERO_SLIDES } from '../data/eventsData';
 import { PHONE_E164 } from '../data/contact';
@@ -154,7 +154,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               aria-label="Scroll to services"
               className="grid h-9 w-9 cursor-pointer place-items-center rounded-full text-ink/60 transition-colors hover:text-burgundy"
             >
-              <ArrowDown className="h-5 w-5" />
+              <ChevronDown className="h-5 w-5" />
             </button>
           </div>
 
