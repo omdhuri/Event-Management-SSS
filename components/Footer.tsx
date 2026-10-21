@@ -14,7 +14,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectService }) => {
   return (
-    <footer className="relative bg-[#081622] text-[#FAF7F2] overflow-hidden pt-16 pb-24 sm:pb-12 border-t border-[#1E3447]">
+    <footer className="relative bg-[#081622] text-[#FAF7F2] overflow-hidden pt-16 pb-28 sm:pb-16 border-t border-[#1E3447]">
       {/* Background Floral Watermark */}
       <FloralCornerMotif position="bottom-right" opacity={0.15} className="bottom-0 right-0 text-[#C59B27]" />
 
@@ -144,9 +144,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectService }) =
         </div>
 
         {/* Bottom Copyright Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-gray-400">
-          <p>© {new Date().getFullYear()} Shree Swami Samarth Events. All rights reserved.</p>
-          <p className="flex items-center gap-1.5">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-gray-400 sm:pr-24 lg:pr-28">
+          <p className="text-center sm:text-left">
+            © {new Date().getFullYear()} Shree Swami Samarth Events. All rights reserved.
+          </p>
+          <p className="flex items-center gap-1.5 text-center sm:text-right">
             <span>Designed by</span>
             <a
               href="https://omdhuri.vercel.app"
