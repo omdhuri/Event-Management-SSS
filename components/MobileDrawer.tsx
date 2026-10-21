@@ -221,7 +221,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
           </div>
 
           <p className="text-[11px] text-gray-500 text-center font-sans">
-            © 2024 Shree Swami Samarth Events.<br />All rights reserved.
+            © {new Date().getFullYear()} Shree Swami Samarth Events.<br />All rights reserved.
           </p>
         </div>
       </div>

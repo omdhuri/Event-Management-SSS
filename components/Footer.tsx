@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Phone, MapPin, Heart } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 import { WhatsAppIcon, InstagramIcon, FacebookIcon } from './icons';
 import { BrandLogo, FloralCornerMotif } from './FloralMotif';
 import { SERVICES_DATA } from '../data/eventsData';
@@ -145,9 +145,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectService }) =
 
         {/* Bottom Copyright Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-gray-400">
-          <p>© 2024 Shree Swami Samarth Events. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Shree Swami Samarth Events. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
-            Designed with <Heart className="w-3.5 h-3.5 text-[#A22637] fill-current" /> for beautiful moments.
+            <span>Designed by</span>
+            <a
+              href="https://omdhuri.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[#E2B856] hover:text-white transition-colors underline-offset-4 hover:underline"
+            >
+              OM DHURI
+            </a>
           </p>
         </div>
       </div>
