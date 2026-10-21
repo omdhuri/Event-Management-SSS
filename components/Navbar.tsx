@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { BrandLogo } from './FloralMotif';
 
 interface NavbarProps {
@@ -100,8 +100,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={onOpenPlanModal}
             className="group inline-flex cursor-pointer items-center gap-2 rounded-full border border-[#D4AF6A]/70 bg-burgundy px-5 py-2 text-xs font-semibold tracking-wide text-canvas shadow-[0_4px_14px_rgb(122_27_40/0.35)] transition-all duration-300 hover:bg-burgundy-light active:scale-[0.98]"
           >
-            Plan Your Event
-            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            <Sparkles className="h-3.5 w-3.5 text-[#E2B856] transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+            <span>Plan Your Event</span>
           </button>
         </div>
       </div>

@@ -145,7 +145,6 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
             >
               <Sparkles className="w-4 h-4 text-[#E2B856]" />
               <span>Plan Your Event</span>
-              <ChevronRight className="w-4 h-4" />
             </button>
 
             <a

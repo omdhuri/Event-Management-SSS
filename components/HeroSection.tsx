@@ -125,11 +125,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             <a
               href={`tel:${PHONE_E164}`}
-              className="flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-burgundy/50 bg-transparent text-[15px] font-semibold text-ink transition-colors active:bg-canvas-soft"
+              className="flex h-12 w-full cursor-pointer items-center justify-center gap-2.5 rounded-full border border-burgundy/50 bg-transparent text-[15px] font-semibold text-ink transition-colors active:bg-canvas-soft"
             >
               <Phone className="h-[18px] w-[18px] text-burgundy" />
               <span>Call Now</span>
-              <ArrowRight className="h-4 w-4 text-burgundy" />
             </a>
           </div>
 
@@ -255,11 +254,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               <a
                 href={`tel:${PHONE_E164}`}
-                className="group inline-flex cursor-pointer items-center gap-2 rounded-full border border-burgundy/45 bg-transparent px-6 py-3 text-[13.5px] font-semibold text-ink transition-all duration-300 hover:border-burgundy hover:bg-white/70"
+                className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full border border-burgundy/45 bg-transparent px-6 py-3 text-[13.5px] font-semibold text-ink transition-all duration-300 hover:border-burgundy hover:bg-white/70"
               >
-                <Phone className="h-3.5 w-3.5 text-burgundy" />
+                <Phone className="h-3.5 w-3.5 text-burgundy transition-transform duration-300 group-hover:scale-110" />
                 <span>Call Now</span>
-                <ArrowRight className="h-3.5 w-3.5 text-burgundy transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
 
