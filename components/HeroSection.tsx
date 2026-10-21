@@ -5,9 +5,10 @@ import { ArrowDown, ArrowRight, Award, Calendar, Heart } from 'lucide-react';
 import { FloralCornerMotif, SectionOverline } from './FloralMotif';
 import { WhatsAppIcon } from './icons';
 import { HERO_SLIDES } from '../data/eventsData';
+import { whatsappHref } from '../data/contact';
 
 interface HeroSectionProps {
-  onOpenPlanModal: () => void;
+  onOpenPlanModal?: () => void;
   onExploreWork: () => void;
   onScrollToServices: () => void;
 }
@@ -116,22 +117,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="reveal reveal-delay-3 mt-7 flex flex-col gap-3">
             <button
               type="button"
-              onClick={onOpenPlanModal}
+              onClick={onExploreWork}
               className="flex h-12 w-full cursor-pointer items-center justify-center gap-2.5 rounded-full bg-burgundy text-[15px] font-semibold text-canvas shadow-[var(--shadow-cta)] transition-colors active:bg-burgundy-dark"
             >
-              <WhatsAppIcon className="h-[18px] w-[18px] text-gold-light" />
-              Plan Your Event
+              <span>Explore Our Work</span>
               <ArrowRight className="h-4 w-4" />
             </button>
 
-            <button
-              type="button"
-              onClick={onExploreWork}
+            <a
+              href={whatsappHref('Hello Shree Swami Samarth Events, I would like to enquire about event planning and decor.')}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-burgundy/50 bg-transparent text-[15px] font-semibold text-ink transition-colors active:bg-canvas-soft"
             >
-              Explore Our Work
+              <WhatsAppIcon className="h-[18px] w-[18px] text-[#25D366]" />
+              <span>Chat on WhatsApp</span>
               <ArrowRight className="h-4 w-4 text-burgundy" />
-            </button>
+            </a>
           </div>
 
           <dl className="reveal reveal-delay-4 mt-9 grid grid-cols-3 gap-2">
@@ -247,22 +249,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="reveal reveal-delay-3 mt-7 flex items-center gap-3.5">
               <button
                 type="button"
-                onClick={onOpenPlanModal}
+                onClick={onExploreWork}
                 className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-burgundy px-6 py-3 text-[13.5px] font-semibold text-canvas shadow-[var(--shadow-cta)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-burgundy-light"
               >
-                <WhatsAppIcon className="h-4 w-4 text-gold-light" />
-                Plan Your Event
+                <span>Explore Our Work</span>
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
 
-              <button
-                type="button"
-                onClick={onExploreWork}
+              <a
+                href={whatsappHref('Hello Shree Swami Samarth Events, I would like to enquire about event planning and decor.')}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex cursor-pointer items-center gap-2 rounded-full border border-burgundy/45 bg-transparent px-6 py-3 text-[13.5px] font-semibold text-ink transition-all duration-300 hover:border-burgundy hover:bg-white/70"
               >
-                Explore Our Work
+                <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
+                <span>Chat on WhatsApp</span>
                 <ArrowRight className="h-3.5 w-3.5 text-burgundy transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
+              </a>
             </div>
 
             {/* Inline horizontal stats row matching the PC design */}
