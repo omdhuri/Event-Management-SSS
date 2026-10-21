@@ -22,57 +22,57 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectService }) =
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-[#1E3447]/80">
           
           {/* Col 1: Brand & Tagline & Socials (4 Cols) */}
-          <div className="lg:col-span-4 space-y-4">
-            <BrandLogo darkTheme onClick={() => onNavigate('home')} />
+          <div className="lg:col-span-4 space-y-4 flex flex-col items-center text-center md:items-start md:text-left">
+            <BrandLogo darkTheme onClick={() => onNavigate('home')} size="md" />
 
-            <p className="font-sans text-xs sm:text-sm text-gray-400 max-w-sm leading-relaxed">
+            <p className="font-sans text-[13.5px] sm:text-xs lg:text-sm text-gray-300 max-w-sm leading-relaxed mx-auto md:mx-0">
               Creating beautiful celebrations with creativity, passion and a personal touch.
             </p>
 
-            <div className="flex items-center gap-4 text-gray-300 pt-2">
+            <div className="flex items-center justify-center md:justify-start gap-4 text-gray-300 pt-2">
               <a
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#122536] hover:bg-[#7A1B28] hover:text-[#E2B856] flex items-center justify-center transition-colors"
+                className="w-10 h-10 md:w-9 md:h-9 rounded-full bg-[#122536] hover:bg-[#7A1B28] hover:text-[#E2B856] flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
-                <InstagramIcon className="w-4 h-4" />
+                <InstagramIcon className="w-4.5 h-4.5 md:w-4 md:h-4" />
               </a>
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#122536] hover:bg-[#7A1B28] hover:text-[#E2B856] flex items-center justify-center transition-colors"
+                className="w-10 h-10 md:w-9 md:h-9 rounded-full bg-[#122536] hover:bg-[#7A1B28] hover:text-[#E2B856] flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
-                <FacebookIcon className="w-4 h-4" />
+                <FacebookIcon className="w-4.5 h-4.5 md:w-4 md:h-4" />
               </a>
               <a
                 href={`tel:${PHONE_E164}`}
-                className="w-9 h-9 rounded-full bg-[#122536] hover:bg-[#7A1B28] hover:text-[#E2B856] flex items-center justify-center transition-colors"
+                className="w-10 h-10 md:w-9 md:h-9 rounded-full bg-[#122536] hover:bg-[#7A1B28] hover:text-[#E2B856] flex items-center justify-center transition-colors"
                 aria-label="Call us"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4.5 h-4.5 md:w-4 md:h-4" />
               </a>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#122536] hover:bg-[#7A1B28] hover:text-[#E2B856] flex items-center justify-center transition-colors"
+                className="w-10 h-10 md:w-9 md:h-9 rounded-full bg-[#122536] hover:bg-[#7A1B28] hover:text-[#E2B856] flex items-center justify-center transition-colors"
                 aria-label="Chat on WhatsApp"
               >
-                <WhatsAppIcon className="w-4 h-4" />
+                <WhatsAppIcon className="w-4.5 h-4.5 md:w-4 md:h-4" />
               </a>
             </div>
           </div>
 
           {/* Col 2: Quick Links (2 Cols) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-display text-base font-bold text-[#E2B856] uppercase tracking-wider">
+          <div className="lg:col-span-2 space-y-3 flex flex-col items-center text-center md:items-start md:text-left">
+            <h4 className="font-display text-[17px] md:text-base font-bold text-[#E2B856] uppercase tracking-wider">
               Quick Links
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm font-sans text-gray-300">
+            <ul className="space-y-3 md:space-y-2 text-[14.5px] sm:text-xs lg:text-sm font-sans text-gray-300 flex flex-col items-center md:items-start">
               {[
                 { id: 'home', label: 'Home' },
                 { id: 'about', label: 'About' },
@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectService }) =
                 <li key={link.id}>
                   <button
                     onClick={() => onNavigate(link.id)}
-                    className="hover:text-[#E2B856] transition-colors cursor-pointer"
+                    className="hover:text-[#E2B856] transition-colors cursor-pointer py-0.5"
                   >
                     {link.label}
                   </button>
@@ -93,16 +93,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectService }) =
           </div>
 
           {/* Col 3: Our Services (3 Cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-display text-base font-bold text-[#E2B856] uppercase tracking-wider">
+          <div className="lg:col-span-3 space-y-3 flex flex-col items-center text-center md:items-start md:text-left">
+            <h4 className="font-display text-[17px] md:text-base font-bold text-[#E2B856] uppercase tracking-wider">
               Our Services
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm font-sans text-gray-300">
+            <ul className="space-y-3 md:space-y-2 text-[14.5px] sm:text-xs lg:text-sm font-sans text-gray-300 flex flex-col items-center md:items-start">
               {SERVICES_DATA.map((srv) => (
                 <li key={srv.id}>
                   <button
                     onClick={() => onSelectService(srv.id)}
-                    className="hover:text-[#E2B856] transition-colors cursor-pointer text-left"
+                    className="hover:text-[#E2B856] transition-colors cursor-pointer text-center md:text-left py-0.5"
                   >
                     {srv.title}
                   </button>
@@ -112,14 +112,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectService }) =
           </div>
 
           {/* Col 4: Contact Us (3 Cols) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-display text-base font-bold text-[#E2B856] uppercase tracking-wider">
+          <div className="lg:col-span-3 space-y-3 flex flex-col items-center text-center md:items-start md:text-left">
+            <h4 className="font-display text-[17px] md:text-base font-bold text-[#E2B856] uppercase tracking-wider">
               Contact Us
             </h4>
-            <ul className="space-y-3 text-xs sm:text-sm font-sans text-gray-300">
+            <ul className="space-y-3.5 md:space-y-3 text-[14.5px] sm:text-xs lg:text-sm font-sans text-gray-300 flex flex-col items-center md:items-start">
               <li>
-                <a href={`tel:${PHONE_E164}`} className="flex items-center gap-2.5 hover:text-[#E2B856] transition-colors">
-                  <Phone className="w-4 h-4 text-[#E2B856] shrink-0" />
+                <a href={`tel:${PHONE_E164}`} className="flex items-center justify-center md:justify-start gap-2.5 hover:text-[#E2B856] transition-colors py-0.5">
+                  <Phone className="w-4.5 h-4.5 md:w-4 md:h-4 text-[#E2B856] shrink-0" />
                   <span>{PHONE_DISPLAY}</span>
                 </a>
               </li>
@@ -128,14 +128,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onSelectService }) =
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 hover:text-[#E2B856] transition-colors"
+                  className="flex items-center justify-center md:justify-start gap-2.5 hover:text-[#E2B856] transition-colors py-0.5"
                 >
-                  <WhatsAppIcon className="w-4 h-4 text-[#E2B856] shrink-0" />
+                  <WhatsAppIcon className="w-4.5 h-4.5 md:w-4 md:h-4 text-[#E2B856] shrink-0" />
                   <span>Chat on WhatsApp</span>
                 </a>
               </li>
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#E2B856] shrink-0 mt-0.5" />
+              <li className="flex items-center justify-center md:justify-start gap-2.5 text-center md:text-left max-w-xs md:max-w-none">
+                <MapPin className="w-4.5 h-4.5 md:w-4 md:h-4 text-[#E2B856] shrink-0" />
                 <span>{ADDRESS_FULL}</span>
               </li>
             </ul>
