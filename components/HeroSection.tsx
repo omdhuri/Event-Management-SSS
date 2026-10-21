@@ -14,7 +14,7 @@ interface HeroSectionProps {
 
 const STATS = [
   { icon: Calendar, value: '100+', label: 'Events Organized' },
-  { icon: Award, value: '5+', label: 'Years of Experience' },
+  { icon: Award, value: '3+', label: 'Years of Experience' },
   { icon: Heart, value: '100%', label: 'Client Satisfaction' },
 ];
 
