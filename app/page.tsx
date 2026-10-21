@@ -136,7 +136,7 @@ export default function HomePage() {
 
       <Footer onNavigate={handleNavigate} onSelectService={handleSelectServiceById} />
 
-      <FloatingActions onOpenPlanModal={() => setIsPlanModalOpen(true)} />
+      <FloatingActions />
 
       <MobileDrawer
         isOpen={isDrawerOpen}
