@@ -7,9 +7,9 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const ADDRESS_LINE = 'Kalyan, Maharashtra';
 export const ADDRESS_PIN = '421306';
 export const ADDRESS_FULL = 'Kalyan, Maharashtra — 421306';
-export const MAP_QUERY = 'Kalyan, Maharashtra 421306';
-export const MAP_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=13&output=embed`;
-export const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`;
+export const MAP_QUERY = 'Shree Swami event kalyan';
+export const MAP_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+export const MAP_LINK = 'https://share.google/YTrEblUFTK0XtRmy5';
 
 export const whatsappHref = (message: string) =>
   `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`;
