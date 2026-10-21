@@ -44,7 +44,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
           
           {/* Banner Image */}
           <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-md">
-            <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+            <img src={service.image} alt={service.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 text-white">
               <span className="text-[10px] uppercase font-bold tracking-widest text-[#E2B856]">

@@ -49,6 +49,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         alt={i === index ? item.title : ''}
         aria-hidden={i !== index}
         loading={i === 0 ? 'eager' : 'lazy'}
+        fetchPriority={i === 0 ? 'high' : 'low'}
         decoding="async"
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[900ms] ease-[var(--ease-luxe)] ${
           i === index ? 'opacity-100' : 'opacity-0'
@@ -218,7 +219,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   i === index ? 'border-gold-light scale-105' : 'border-white/70 opacity-85 hover:opacity-100'
                 }`}
               >
-                <img src={item.image} alt="" className="h-full w-full object-cover" />
+                <img src={item.image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
               </button>
             ))}
           </div>

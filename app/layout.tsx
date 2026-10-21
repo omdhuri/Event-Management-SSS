@@ -34,18 +34,73 @@ const alexBrush = Alex_Brush({
 });
 
 export const metadata: Metadata = {
-  title: 'Shree Swami Samarth Events | Luxury Event Management & Decor Pune',
+  metadataBase: new URL('https://shreeswamisamarthevents.com'),
+  title: 'Shree Swami Samarth Events | Luxury Event Management & Decor',
   description:
-    'Thoughtfully curated celebrations in Pune. From intimate gatherings to grand weddings, birthdays, baby showers, and corporate events.',
-  keywords: ['event management Pune', 'wedding decor', 'birthday decoration', 'baby shower', 'corporate events', 'Shree Swami Samarth Events'],
+    'Thoughtfully curated celebrations in Kalyan & Pune. From intimate milestone birthdays and dreamy baby showers to grand royal weddings and traditional haldi ceremonies.',
+  keywords: [
+    'event management Kalyan',
+    'event management Pune',
+    'wedding decor Kalyan',
+    'birthday decoration Pune',
+    'baby shower decor',
+    'dohale jevan decoration',
+    'haldi ceremony decor',
+    'welcome baby decoration',
+    'Shree Swami Samarth Events'
+  ],
   icons: {
     icon: { url: '/favicon.svg', type: 'image/svg+xml' },
   },
   openGraph: {
     title: 'Shree Swami Samarth Events | Your Moments. Our Magic.',
-    description: 'From intimate gatherings to grand celebrations — stunning décor, seamless planning, unforgettable experiences.',
+    description:
+      'From intimate gatherings to grand celebrations — stunning décor, seamless planning, and unforgettable experiences in Kalyan & Pune.',
     type: 'website',
+    images: [
+      {
+        url: '/images/hero/hero-slide-01.webp',
+        width: 1600,
+        height: 720,
+        alt: 'Shree Swami Samarth Events Stage & Floral Decor',
+      },
+    ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shree Swami Samarth Events | Luxury Event Management & Decor',
+    description: 'Transforming celebrations into extraordinary memories in Kalyan & Pune.',
+    images: ['/images/hero/hero-slide-01.webp'],
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Shree Swami Samarth Events',
+  image: 'https://shreeswamisamarthevents.com/images/hero/hero-slide-01.webp',
+  telephone: '+918108912433',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Kalyan',
+    addressRegion: 'Maharashtra',
+    postalCode: '421306',
+    addressCountry: 'IN',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 19.2437,
+    longitude: 73.1355,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '09:00',
+    closes: '22:00',
+  },
+  priceRange: '₹₹',
+  servesCuisine: 'Event Decor & Planning Services',
+  sameAs: ['https://www.instagram.com/shreeswamisamarthevent_07/'],
 };
 
 export default function RootLayout({
@@ -58,6 +113,12 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${playfair.variable} ${jakarta.variable} ${alexBrush.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body suppressHydrationWarning className="antialiased bg-[#FAF7F2]">
         <AppShell>{children}</AppShell>
       </body>

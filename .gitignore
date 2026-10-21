@@ -38,3 +38,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scripts and raw assets
+/scripts/
+/raw images/
+/raw-images/
+

@@ -37,7 +37,7 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
         {/* Background Overlay of Candles & Florals (visible on desktop like the PC reference) */}
         <div className="pointer-events-none absolute inset-0 hidden lg:block">
           <img
-            src="/images/about-centerpiece.jpg"
+            src="/images/about-centerpiece.webp"
             alt=""
             aria-hidden="true"
             className="h-full w-full object-cover object-center"

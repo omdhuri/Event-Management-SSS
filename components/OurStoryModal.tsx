@@ -50,7 +50,7 @@ export const OurStoryModal: React.FC<OurStoryModalProps> = ({
           {/* Arched Hero Image with Seal */}
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
             <img
-              src="/images/about-centerpiece.jpg"
+              src="/images/about-centerpiece.webp"
               alt="Shree Swami Samarth Events Table Setting"
               className="w-full h-full object-cover"
             />
@@ -118,7 +118,7 @@ export const OurStoryModal: React.FC<OurStoryModalProps> = ({
               Our Dedicated Event Team
             </h3>
             <div className="rounded-2xl overflow-hidden aspect-[16/9] border border-[#EAE3D6]">
-              <img src="/images/team-members.jpg" alt="Our Event Planners Team" className="w-full h-full object-cover" />
+              <img src="/images/team-members.webp" alt="Our Event Planners Team" className="w-full h-full object-cover" />
             </div>
             <p className="text-xs text-[#7A6E65] italic text-center">
               "We treat every client's celebration as if it were our own family's."

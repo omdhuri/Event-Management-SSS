@@ -26,7 +26,7 @@ export const AboutSection = ({ onOpenOurStory }: AboutSectionProps) => (
             {/* Arched Photo Frame with luxury white border, golden ring and deep burgundy shadow */}
             <div className="absolute inset-0 overflow-hidden rounded-t-[140px] sm:rounded-t-[160px] lg:rounded-t-[180px] rounded-b-2xl border-[3px] sm:border-4 border-white/95 shadow-[0_20px_48px_-15px_rgba(122,27,40,0.28)] ring-1 ring-[#E8DEC8]">
               <img
-                src="/images/about-centerpiece.jpg"
+                src="/images/about-centerpiece.webp"
                 alt="Candlelit floral centerpiece styled for a reception table"
                 loading="lazy"
                 decoding="async"

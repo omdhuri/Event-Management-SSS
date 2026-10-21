@@ -1,0 +1,620 @@
+{
+  "hero": [
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.13.27 PM (1).jpeg",
+      "outputFileName": "hero-slide-01.webp",
+      "url": "/images/hero/hero-slide-01.webp",
+      "width": 1600,
+      "height": 720,
+      "sizeKb": 141
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.13.27 PM (2).jpeg",
+      "outputFileName": "hero-slide-02.webp",
+      "url": "/images/hero/hero-slide-02.webp",
+      "width": 1280,
+      "height": 576,
+      "sizeKb": 114.2
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.13.27 PM.jpeg",
+      "outputFileName": "hero-slide-03.webp",
+      "url": "/images/hero/hero-slide-03.webp",
+      "width": 1080,
+      "height": 1200,
+      "sizeKb": 111.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.13.28 PM.jpeg",
+      "outputFileName": "hero-slide-04.webp",
+      "url": "/images/hero/hero-slide-04.webp",
+      "width": 1280,
+      "height": 718,
+      "sizeKb": 149.4
+    }
+  ],
+  "birthday": [
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.24 PM (1).jpeg",
+      "outputFileName": "birthday-decor-01.webp",
+      "url": "/images/birthday/birthday-decor-01.webp",
+      "width": 1080,
+      "height": 1428,
+      "sizeKb": 81.9
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.24 PM.jpeg",
+      "outputFileName": "birthday-decor-02.webp",
+      "url": "/images/birthday/birthday-decor-02.webp",
+      "width": 1080,
+      "height": 1082,
+      "sizeKb": 66.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.26 PM (1).jpeg",
+      "outputFileName": "birthday-decor-03.webp",
+      "url": "/images/birthday/birthday-decor-03.webp",
+      "width": 736,
+      "height": 736,
+      "sizeKb": 74.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.26 PM (2).jpeg",
+      "outputFileName": "birthday-decor-04.webp",
+      "url": "/images/birthday/birthday-decor-04.webp",
+      "width": 1200,
+      "height": 1600,
+      "sizeKb": 183.2
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.26 PM.jpeg",
+      "outputFileName": "birthday-decor-05.webp",
+      "url": "/images/birthday/birthday-decor-05.webp",
+      "width": 1080,
+      "height": 1407,
+      "sizeKb": 135.4
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.27 PM (1).jpeg",
+      "outputFileName": "birthday-decor-06.webp",
+      "url": "/images/birthday/birthday-decor-06.webp",
+      "width": 704,
+      "height": 1060,
+      "sizeKb": 87.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.27 PM.jpeg",
+      "outputFileName": "birthday-decor-07.webp",
+      "url": "/images/birthday/birthday-decor-07.webp",
+      "width": 1080,
+      "height": 1362,
+      "sizeKb": 101.5
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.28 PM (1).jpeg",
+      "outputFileName": "birthday-decor-08.webp",
+      "url": "/images/birthday/birthday-decor-08.webp",
+      "width": 720,
+      "height": 1280,
+      "sizeKb": 74
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.28 PM (2).jpeg",
+      "outputFileName": "birthday-decor-09.webp",
+      "url": "/images/birthday/birthday-decor-09.webp",
+      "width": 1080,
+      "height": 1170,
+      "sizeKb": 200.4
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.28 PM.jpeg",
+      "outputFileName": "birthday-decor-10.webp",
+      "url": "/images/birthday/birthday-decor-10.webp",
+      "width": 847,
+      "height": 1600,
+      "sizeKb": 46.1
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.35 PM (1).jpeg",
+      "outputFileName": "birthday-decor-11.webp",
+      "url": "/images/birthday/birthday-decor-11.webp",
+      "width": 999,
+      "height": 1599,
+      "sizeKb": 61.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.35 PM (2).jpeg",
+      "outputFileName": "birthday-decor-12.webp",
+      "url": "/images/birthday/birthday-decor-12.webp",
+      "width": 879,
+      "height": 1600,
+      "sizeKb": 73.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.35 PM.jpeg",
+      "outputFileName": "birthday-decor-13.webp",
+      "url": "/images/birthday/birthday-decor-13.webp",
+      "width": 1080,
+      "height": 1474,
+      "sizeKb": 44.6
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.36 PM (1).jpeg",
+      "outputFileName": "birthday-decor-14.webp",
+      "url": "/images/birthday/birthday-decor-14.webp",
+      "width": 1003,
+      "height": 1600,
+      "sizeKb": 78.9
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.36 PM (2).jpeg",
+      "outputFileName": "birthday-decor-15.webp",
+      "url": "/images/birthday/birthday-decor-15.webp",
+      "width": 1080,
+      "height": 1360,
+      "sizeKb": 159.8
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.36 PM (3).jpeg",
+      "outputFileName": "birthday-decor-16.webp",
+      "url": "/images/birthday/birthday-decor-16.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 78.2
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.36 PM.jpeg",
+      "outputFileName": "birthday-decor-17.webp",
+      "url": "/images/birthday/birthday-decor-17.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 94.1
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.37 PM (1).jpeg",
+      "outputFileName": "birthday-decor-18.webp",
+      "url": "/images/birthday/birthday-decor-18.webp",
+      "width": 1200,
+      "height": 1600,
+      "sizeKb": 219.5
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.37 PM (2).jpeg",
+      "outputFileName": "birthday-decor-19.webp",
+      "url": "/images/birthday/birthday-decor-19.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 154.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.37 PM.jpeg",
+      "outputFileName": "birthday-decor-20.webp",
+      "url": "/images/birthday/birthday-decor-20.webp",
+      "width": 1200,
+      "height": 1600,
+      "sizeKb": 148.4
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.38 PM (1).jpeg",
+      "outputFileName": "birthday-decor-21.webp",
+      "url": "/images/birthday/birthday-decor-21.webp",
+      "width": 1600,
+      "height": 900,
+      "sizeKb": 127.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.38 PM (2).jpeg",
+      "outputFileName": "birthday-decor-22.webp",
+      "url": "/images/birthday/birthday-decor-22.webp",
+      "width": 1080,
+      "height": 846,
+      "sizeKb": 105.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.38 PM (3).jpeg",
+      "outputFileName": "birthday-decor-23.webp",
+      "url": "/images/birthday/birthday-decor-23.webp",
+      "width": 720,
+      "height": 1600,
+      "sizeKb": 71.2
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.38 PM.jpeg",
+      "outputFileName": "birthday-decor-24.webp",
+      "url": "/images/birthday/birthday-decor-24.webp",
+      "width": 1600,
+      "height": 720,
+      "sizeKb": 103.2
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.39 PM (1).jpeg",
+      "outputFileName": "birthday-decor-25.webp",
+      "url": "/images/birthday/birthday-decor-25.webp",
+      "width": 1023,
+      "height": 898,
+      "sizeKb": 123.8
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.39 PM (2).jpeg",
+      "outputFileName": "birthday-decor-26.webp",
+      "url": "/images/birthday/birthday-decor-26.webp",
+      "width": 1080,
+      "height": 962,
+      "sizeKb": 124.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.39 PM.jpeg",
+      "outputFileName": "birthday-decor-27.webp",
+      "url": "/images/birthday/birthday-decor-27.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 170
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.40 PM (1).jpeg",
+      "outputFileName": "birthday-decor-28.webp",
+      "url": "/images/birthday/birthday-decor-28.webp",
+      "width": 720,
+      "height": 1600,
+      "sizeKb": 83.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.40 PM (2).jpeg",
+      "outputFileName": "birthday-decor-29.webp",
+      "url": "/images/birthday/birthday-decor-29.webp",
+      "width": 984,
+      "height": 1046,
+      "sizeKb": 185.2
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.40 PM (3).jpeg",
+      "outputFileName": "birthday-decor-30.webp",
+      "url": "/images/birthday/birthday-decor-30.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 112.8
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.40 PM.jpeg",
+      "outputFileName": "birthday-decor-31.webp",
+      "url": "/images/birthday/birthday-decor-31.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 104.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.41 PM.jpeg",
+      "outputFileName": "birthday-decor-32.webp",
+      "url": "/images/birthday/birthday-decor-32.webp",
+      "width": 720,
+      "height": 1600,
+      "sizeKb": 59.9
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.42 PM (1).jpeg",
+      "outputFileName": "birthday-decor-33.webp",
+      "url": "/images/birthday/birthday-decor-33.webp",
+      "width": 720,
+      "height": 1600,
+      "sizeKb": 82.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.42 PM (2).jpeg",
+      "outputFileName": "birthday-decor-34.webp",
+      "url": "/images/birthday/birthday-decor-34.webp",
+      "width": 720,
+      "height": 1600,
+      "sizeKb": 56.2
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.42 PM.jpeg",
+      "outputFileName": "birthday-decor-35.webp",
+      "url": "/images/birthday/birthday-decor-35.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 120.2
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.43 PM (1).jpeg",
+      "outputFileName": "birthday-decor-36.webp",
+      "url": "/images/birthday/birthday-decor-36.webp",
+      "width": 720,
+      "height": 1600,
+      "sizeKb": 85.6
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.43 PM.jpeg",
+      "outputFileName": "birthday-decor-37.webp",
+      "url": "/images/birthday/birthday-decor-37.webp",
+      "width": 1200,
+      "height": 1600,
+      "sizeKb": 203.1
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.17.44 PM.jpeg",
+      "outputFileName": "birthday-decor-38.webp",
+      "url": "/images/birthday/birthday-decor-38.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 107.4
+    }
+  ],
+  "baby-shower": [
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.12 PM.jpeg",
+      "outputFileName": "baby-shower-decor-01.webp",
+      "url": "/images/baby-shower/baby-shower-decor-01.webp",
+      "width": 1600,
+      "height": 1200,
+      "sizeKb": 96.5
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.13 PM.jpeg",
+      "outputFileName": "baby-shower-decor-02.webp",
+      "url": "/images/baby-shower/baby-shower-decor-02.webp",
+      "width": 1080,
+      "height": 686,
+      "sizeKb": 136.6
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.14 PM (1).jpeg",
+      "outputFileName": "baby-shower-decor-03.webp",
+      "url": "/images/baby-shower/baby-shower-decor-03.webp",
+      "width": 1336,
+      "height": 1600,
+      "sizeKb": 221.8
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.14 PM (2).jpeg",
+      "outputFileName": "baby-shower-decor-04.webp",
+      "url": "/images/baby-shower/baby-shower-decor-04.webp",
+      "width": 823,
+      "height": 1600,
+      "sizeKb": 145.9
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.14 PM.jpeg",
+      "outputFileName": "baby-shower-decor-05.webp",
+      "url": "/images/baby-shower/baby-shower-decor-05.webp",
+      "width": 859,
+      "height": 1600,
+      "sizeKb": 81.6
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.16 PM (1).jpeg",
+      "outputFileName": "baby-shower-decor-06.webp",
+      "url": "/images/baby-shower/baby-shower-decor-06.webp",
+      "width": 870,
+      "height": 1600,
+      "sizeKb": 117.1
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.16 PM (2).jpeg",
+      "outputFileName": "baby-shower-decor-07.webp",
+      "url": "/images/baby-shower/baby-shower-decor-07.webp",
+      "width": 850,
+      "height": 1600,
+      "sizeKb": 87.5
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.16 PM.jpeg",
+      "outputFileName": "baby-shower-decor-08.webp",
+      "url": "/images/baby-shower/baby-shower-decor-08.webp",
+      "width": 1080,
+      "height": 1506,
+      "sizeKb": 123
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.17 PM (1).jpeg",
+      "outputFileName": "baby-shower-decor-09.webp",
+      "url": "/images/baby-shower/baby-shower-decor-09.webp",
+      "width": 1600,
+      "height": 900,
+      "sizeKb": 142.6
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.17 PM (2).jpeg",
+      "outputFileName": "baby-shower-decor-10.webp",
+      "url": "/images/baby-shower/baby-shower-decor-10.webp",
+      "width": 1440,
+      "height": 1440,
+      "sizeKb": 143.2
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.17 PM.jpeg",
+      "outputFileName": "baby-shower-decor-11.webp",
+      "url": "/images/baby-shower/baby-shower-decor-11.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 199.6
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.18 PM (1).jpeg",
+      "outputFileName": "baby-shower-decor-12.webp",
+      "url": "/images/baby-shower/baby-shower-decor-12.webp",
+      "width": 1280,
+      "height": 576,
+      "sizeKb": 99.6
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.18 PM (2).jpeg",
+      "outputFileName": "baby-shower-decor-13.webp",
+      "url": "/images/baby-shower/baby-shower-decor-13.webp",
+      "width": 1280,
+      "height": 1279,
+      "sizeKb": 178.4
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.18 PM.jpeg",
+      "outputFileName": "baby-shower-decor-14.webp",
+      "url": "/images/baby-shower/baby-shower-decor-14.webp",
+      "width": 1600,
+      "height": 900,
+      "sizeKb": 155.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.20 PM (1).jpeg",
+      "outputFileName": "baby-shower-decor-15.webp",
+      "url": "/images/baby-shower/baby-shower-decor-15.webp",
+      "width": 1599,
+      "height": 899,
+      "sizeKb": 109.8
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.20 PM.jpeg",
+      "outputFileName": "baby-shower-decor-16.webp",
+      "url": "/images/baby-shower/baby-shower-decor-16.webp",
+      "width": 1600,
+      "height": 720,
+      "sizeKb": 116.5
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.21 PM (1).jpeg",
+      "outputFileName": "baby-shower-decor-17.webp",
+      "url": "/images/baby-shower/baby-shower-decor-17.webp",
+      "width": 1011,
+      "height": 1600,
+      "sizeKb": 58.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.21 PM (2).jpeg",
+      "outputFileName": "baby-shower-decor-18.webp",
+      "url": "/images/baby-shower/baby-shower-decor-18.webp",
+      "width": 1280,
+      "height": 1280,
+      "sizeKb": 163.1
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.21 PM (3).jpeg",
+      "outputFileName": "baby-shower-decor-19.webp",
+      "url": "/images/baby-shower/baby-shower-decor-19.webp",
+      "width": 1200,
+      "height": 1600,
+      "sizeKb": 113.6
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.21 PM.jpeg",
+      "outputFileName": "baby-shower-decor-20.webp",
+      "url": "/images/baby-shower/baby-shower-decor-20.webp",
+      "width": 1073,
+      "height": 1600,
+      "sizeKb": 78
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.53.22 PM.jpeg",
+      "outputFileName": "baby-shower-decor-21.webp",
+      "url": "/images/baby-shower/baby-shower-decor-21.webp",
+      "width": 1080,
+      "height": 1282,
+      "sizeKb": 149.7
+    }
+  ],
+  "haldi-ceremony": [
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.59.46 PM.jpeg",
+      "outputFileName": "haldi-ring-ceremony-01.webp",
+      "url": "/images/haldi-ceremony/haldi-ring-ceremony-01.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 122.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.59.47 PM (1).jpeg",
+      "outputFileName": "haldi-ring-ceremony-02.webp",
+      "url": "/images/haldi-ceremony/haldi-ring-ceremony-02.webp",
+      "width": 1080,
+      "height": 1017,
+      "sizeKb": 147
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.59.47 PM.jpeg",
+      "outputFileName": "haldi-ring-ceremony-03.webp",
+      "url": "/images/haldi-ceremony/haldi-ring-ceremony-03.webp",
+      "width": 952,
+      "height": 812,
+      "sizeKb": 69.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.59.48 PM.jpeg",
+      "outputFileName": "haldi-ring-ceremony-04.webp",
+      "url": "/images/haldi-ceremony/haldi-ring-ceremony-04.webp",
+      "width": 1028,
+      "height": 1600,
+      "sizeKb": 183.8
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.59.49 PM (1).jpeg",
+      "outputFileName": "haldi-ring-ceremony-05.webp",
+      "url": "/images/haldi-ceremony/haldi-ring-ceremony-05.webp",
+      "width": 936,
+      "height": 1556,
+      "sizeKb": 121.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 2.59.49 PM.jpeg",
+      "outputFileName": "haldi-ring-ceremony-06.webp",
+      "url": "/images/haldi-ceremony/haldi-ring-ceremony-06.webp",
+      "width": 1080,
+      "height": 1328,
+      "sizeKb": 88.2
+    }
+  ],
+  "welcome-baby": [
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.20.25 PM (1).jpeg",
+      "outputFileName": "welcome-baby-decor-01.webp",
+      "url": "/images/welcome-baby/welcome-baby-decor-01.webp",
+      "width": 575,
+      "height": 534,
+      "sizeKb": 44.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.20.25 PM.jpeg",
+      "outputFileName": "welcome-baby-decor-02.webp",
+      "url": "/images/welcome-baby/welcome-baby-decor-02.webp",
+      "width": 480,
+      "height": 640,
+      "sizeKb": 60
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.20.26 PM.jpeg",
+      "outputFileName": "welcome-baby-decor-03.webp",
+      "url": "/images/welcome-baby/welcome-baby-decor-03.webp",
+      "width": 960,
+      "height": 1280,
+      "sizeKb": 195.9
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.20.27 PM.jpeg",
+      "outputFileName": "welcome-baby-decor-04.webp",
+      "url": "/images/welcome-baby/welcome-baby-decor-04.webp",
+      "width": 1080,
+      "height": 1362,
+      "sizeKb": 61.2
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.20.28 PM.jpeg",
+      "outputFileName": "welcome-baby-decor-05.webp",
+      "url": "/images/welcome-baby/welcome-baby-decor-05.webp",
+      "width": 1080,
+      "height": 1450,
+      "sizeKb": 80.9
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.20.29 PM.jpeg",
+      "outputFileName": "welcome-baby-decor-06.webp",
+      "url": "/images/welcome-baby/welcome-baby-decor-06.webp",
+      "width": 720,
+      "height": 1600,
+      "sizeKb": 133.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-21 at 10.20.30 PM.jpeg",
+      "outputFileName": "welcome-baby-decor-07.webp",
+      "url": "/images/welcome-baby/welcome-baby-decor-07.webp",
+      "width": 720,
+      "height": 1600,
+      "sizeKb": 154.3
+    }
+  ]
+}

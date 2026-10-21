@@ -103,7 +103,7 @@ export const EventDetailModal: React.FC<EventDetailModalProps> = ({
                       activePhotoIdx === idx ? 'border-[#7A1B28] ring-1 ring-[#7A1B28]' : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
-                    <img src={thumb} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                    <img src={thumb} alt={`Thumbnail ${idx + 1}`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
