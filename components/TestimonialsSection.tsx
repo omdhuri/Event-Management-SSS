@@ -20,7 +20,7 @@ export const TestimonialsSection: React.FC = () => {
       name: newReview.name,
       event: newReview.event || 'Celebration Event',
       quote: newReview.quote,
-      avatar: 'https://images.pexels.com/photos/15116520/pexels-photo-15116520.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=200',
+      avatar: '',
       rating: newReview.rating
     };
 
@@ -81,15 +81,30 @@ export const TestimonialsSection: React.FC = () => {
                 </div>
 
                 <figcaption className="flex items-center gap-3 border-t border-[#F2ECE4] pt-3.5">
-                  <img
-                    src={item.avatar}
-                    alt={item.name}
-                    width={44}
-                    height={44}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-11 w-11 shrink-0 rounded-full border-2 border-[#E8DEC8] object-cover shadow-sm"
-                  />
+                  {item.avatar ? (
+                    <img
+                      src={item.avatar}
+                      alt={item.name}
+                      width={44}
+                      height={44}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-11 w-11 shrink-0 rounded-full border-2 border-[#E8DEC8] object-cover shadow-sm"
+                    />
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#E8DEC8] bg-gradient-to-br from-[#FAF2E8] to-[#F3EDE3] font-display text-xs font-bold tracking-wider text-burgundy shadow-sm select-none"
+                    >
+                      {item.name
+                        .replace('&', '')
+                        .split(' ')
+                        .filter(Boolean)
+                        .slice(0, 2)
+                        .map((n) => n[0])
+                        .join('')}
+                    </div>
+                  )}
 
                   <div className="min-w-0 flex-1">
                     <h3 className="truncate font-display text-[15px] font-bold text-[#221F1D]">

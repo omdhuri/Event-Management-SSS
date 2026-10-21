@@ -18,7 +18,7 @@ const STATS = [
   { icon: Heart, value: '100%', label: 'Client Satisfaction' },
 ];
 
-const SLIDE_INTERVAL = 6000;
+const SLIDE_INTERVAL = 14000;
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenPlanModal,
@@ -82,7 +82,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {renderPhotos()}
           <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/25 to-transparent" />
 
-          <div role="tablist" aria-label="Hero slides" className="absolute inset-x-0 bottom-6 flex justify-center gap-1.5">
+          <div role="tablist" aria-label="Hero slides" className="absolute inset-x-0 bottom-4 flex justify-center items-center gap-1">
             {HERO_SLIDES.map((item, i) => (
               <button
                 key={item.id}
@@ -91,30 +91,34 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 aria-selected={i === index}
                 aria-label={item.title}
                 onClick={() => goTo(i)}
-                className={`h-1.5 cursor-pointer rounded-full transition-all duration-300 ${
-                  i === index ? 'w-5 bg-white' : 'w-1.5 bg-white/55'
-                }`}
-              />
+                className="flex h-7 w-7 min-h-[28px] min-w-[28px] cursor-pointer items-center justify-center p-1"
+              >
+                <span
+                  className={`block h-1.5 rounded-full transition-all duration-300 pointer-events-none ${
+                    i === index ? 'w-5 bg-white' : 'w-1.5 bg-white/60'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>
 
         <div className="relative px-6 pb-8 pt-7">
-          <p className="reveal text-[11px] font-semibold uppercase tracking-[0.18em] text-copper">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-copper">
             Thoughtfully Curated Celebrations
           </p>
 
-          <h1 className="reveal reveal-delay-1 mt-3 font-display text-[clamp(2.4rem,12.5vw,3.1rem)] font-medium leading-[1.06] tracking-[-0.02em] text-ink">
+          <h1 className="mt-3 font-display text-[clamp(2.4rem,12.5vw,3.1rem)] font-medium leading-[1.06] tracking-[-0.02em] text-ink">
             Your Moments.
             <br />
             <span className="font-normal italic text-burgundy">Our Magic.</span>
           </h1>
 
-          <p className="reveal reveal-delay-2 mt-4 max-w-[24rem] text-[15px] leading-[1.6] text-ink-soft">
+          <p className="mt-4 max-w-[24rem] text-[15px] leading-[1.6] text-ink-soft">
             From intimate gatherings to grand celebrations, we bring your vision to life with stunning décor, seamless planning, and unforgettable experiences.
           </p>
 
-          <div className="reveal reveal-delay-3 mt-7 flex flex-col gap-3">
+          <div className="mt-7 flex flex-col gap-3">
             <button
               type="button"
               onClick={onExploreWork}
@@ -133,7 +137,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </a>
           </div>
 
-          <dl className="reveal reveal-delay-4 mt-9 grid grid-cols-3 gap-2">
+          <dl className="mt-9 grid grid-cols-3 gap-2">
             {STATS.map(({ icon: Icon, value, label }) => (
               <div key={label} className="flex flex-col items-center text-center">
                 <Icon className="h-6 w-6 text-burgundy" strokeWidth={1.5} aria-hidden="true" />
@@ -219,7 +223,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   i === index ? 'border-gold-light scale-105' : 'border-white/70 opacity-85 hover:opacity-100'
                 }`}
               >
-                <img src={item.image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                <img
+                  src={item.thumb ?? item.image}
+                  alt=""
+                  width={56}
+                  height={48}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
               </button>
             ))}
           </div>
@@ -231,19 +243,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Left copy column */}
         <div className="container-luxe relative z-10 flex min-h-[600px] items-center pt-20 pb-14 xl:min-h-[640px]">
           <div className="w-full max-w-[600px]">
-            <SectionOverline text="Thoughtfully Curated Celebrations" className="reveal" />
+            <SectionOverline text="Thoughtfully Curated Celebrations" />
 
-            <h1 className="reveal reveal-delay-1 mt-4 font-display text-[3.75rem] font-normal leading-[1.04] tracking-[-0.02em] text-ink xl:text-[4.25rem]">
+            <h1 className="mt-4 font-display text-[3.75rem] font-normal leading-[1.04] tracking-[-0.02em] text-ink xl:text-[4.25rem]">
               Your Moments.
               <br />
               <span className="italic font-normal text-burgundy">Our Magic.</span>
             </h1>
 
-            <p className="reveal reveal-delay-2 mt-5 max-w-[480px] text-[15.5px] leading-[1.65] text-ink-soft">
+            <p className="mt-5 max-w-[480px] text-[15.5px] leading-[1.65] text-ink-soft">
               From intimate gatherings to grand celebrations, we bring your vision to life with stunning décor, seamless planning, and unforgettable experiences.
             </p>
 
-            <div className="reveal reveal-delay-3 mt-7 flex items-center gap-3.5">
+            <div className="mt-7 flex items-center gap-3.5">
               <button
                 type="button"
                 onClick={onExploreWork}
@@ -263,7 +275,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Inline horizontal stats row matching the PC design */}
-            <dl className="reveal reveal-delay-4 mt-9 flex items-center gap-8 pt-2">
+            <dl className="mt-9 flex items-center gap-8 pt-2">
               {STATS.map(({ icon: Icon, value, label }) => (
                 <div key={label} className="flex items-center gap-2.5">
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-burgundy/20 bg-burgundy/5 text-burgundy">

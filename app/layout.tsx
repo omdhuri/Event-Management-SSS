@@ -1,11 +1,18 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Cormorant_Garamond, Playfair_Display, Plus_Jakarta_Sans, Alex_Brush } from 'next/font/google';
 import './globals.css';
 import { AppShell } from '../components/AppShell';
 
+export const viewport: Viewport = {
+  themeColor: '#7A1B28',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-cormorant',
   display: 'swap',
@@ -13,15 +20,14 @@ const cormorant = Cormorant_Garamond({
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+  weight: ['400', '600', '700'],
   variable: '--font-playfair',
   display: 'swap',
 });
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-jakarta',
   display: 'swap',
 });
@@ -31,6 +37,7 @@ const alexBrush = Alex_Brush({
   weight: ['400'],
   variable: '--font-alex',
   display: 'swap',
+  preload: false,
 });
 
 export const metadata: Metadata = {

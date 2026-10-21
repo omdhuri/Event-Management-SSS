@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <span aria-hidden="true" />
 
           <div className="flex justify-center">
-            <Link href="/" aria-label="Shree Swami Samarth Events Home">
+            <Link href="/" aria-label="Shree Swami Samarth Events">
               <BrandLogo size="sm" />
             </Link>
           </div>
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* ───────── Desktop: horizontal logo left, links centred, CTA right ───────── */}
         <div className="hidden w-full items-center justify-between gap-6 lg:flex">
           <div className="flex items-center gap-12 xl:gap-16">
-            <Link href="/" aria-label="Shree Swami Samarth Events Home">
+            <Link href="/" aria-label="Shree Swami Samarth Events">
               <BrandLogo layout="horizontal" />
             </Link>
 

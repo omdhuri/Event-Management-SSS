@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService }) => {
           
           {/* Col 1: Brand & Tagline & Socials (4 Cols) */}
           <div className="lg:col-span-4 space-y-4 flex flex-col items-center text-center md:items-start md:text-left">
-            <Link href="/" aria-label="Shree Swami Samarth Events Home">
+            <Link href="/" aria-label="Shree Swami Samarth Events">
               <BrandLogo darkTheme size="md" />
             </Link>
 
@@ -75,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectService }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 md:w-9 md:h-9 rounded-full bg-[#122536] hover:bg-[#7A1B28] hover:text-[#E2B856] flex items-center justify-center transition-colors"
-                aria-label="Chat on WhatsApp"
+                aria-label="Connect with us on WhatsApp"
               >
                 <WhatsAppIcon className="w-4.5 h-4.5 md:w-4 md:h-4" />
               </a>

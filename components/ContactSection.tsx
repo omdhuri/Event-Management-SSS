@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Phone, MapPin, Clock, Mail, Send, Check, Sparkles } from 'lucide-react';
 import { WhatsAppIcon, InstagramIcon } from './icons';
 import { SectionOverline, FloralCornerMotif } from './FloralMotif';
@@ -15,6 +15,27 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [showMap, setShowMap] = useState(false);
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = mapRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setShowMap(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setShowMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '300px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,6 +61,8 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
             src="/images/about-centerpiece.webp"
             alt=""
             aria-hidden="true"
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1A0F0A]/92 via-[#24140E]/65 to-[#1A0F0A]/55" />
@@ -163,15 +186,40 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
               </div>
 
               {/* Live Map — Kalyan, Maharashtra */}
-              <div className="relative rounded-2xl overflow-hidden border border-[#E8DEC8] bg-[#F3EDE2] h-56 sm:h-64 lg:h-72 shadow-sm">
-                <iframe
-                  title={`Shree Swami Samarth Events — ${ADDRESS_FULL}`}
-                  src={MAP_EMBED}
-                  className="absolute inset-0 w-full h-full border-0 grayscale-[0.25] contrast-[1.05]"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                />
+              <div
+                ref={mapRef}
+                className="relative rounded-2xl overflow-hidden border border-[#E8DEC8] bg-[#F3EDE2] h-56 sm:h-64 lg:h-72 shadow-sm"
+              >
+                {showMap ? (
+                  <iframe
+                    title={`Shree Swami Samarth Events — ${ADDRESS_FULL}`}
+                    src={MAP_EMBED}
+                    className="absolute inset-0 w-full h-full border-0 grayscale-[0.25] contrast-[1.05]"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#F3EDE2] p-6 text-center">
+                    <div className="w-12 h-12 rounded-full bg-[#FAF2E8] border border-[#E8DEC8] text-[#7A1B28] flex items-center justify-center mb-2 shadow-sm">
+                      <MapPin className="w-6 h-6 animate-pulse" />
+                    </div>
+                    <span className="font-display font-bold text-ink text-sm sm:text-base">
+                      Shree Swami Samarth Events
+                    </span>
+                    <span className="text-xs text-ink-soft mt-0.5">
+                      {ADDRESS_LINE}, Kalyan (PIN {ADDRESS_PIN})
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setShowMap(true)}
+                      className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-burgundy px-4 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-burgundy-light transition-all cursor-pointer"
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-gold-light" />
+                      <span>View Live Interactive Map</span>
+                    </button>
+                  </div>
+                )}
                 <a
                   href={MAP_LINK}
                   target="_blank"
@@ -208,10 +256,12 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3.5">
                   <div>
-                    <label className="block text-[11px] font-bold text-[#423932] uppercase tracking-wider mb-1">
+                    <label htmlFor="inquiry-name" className="block text-[11px] font-bold text-[#423932] uppercase tracking-wider mb-1">
                       Your Full Name *
                     </label>
                     <input
+                      id="inquiry-name"
+                      name="name"
                       type="text"
                       required
                       placeholder="e.g. Rahul Patil"
@@ -223,10 +273,12 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-[11px] font-bold text-[#423932] uppercase tracking-wider mb-1">
+                      <label htmlFor="inquiry-phone" className="block text-[11px] font-bold text-[#423932] uppercase tracking-wider mb-1">
                         Contact Number *
                       </label>
                       <input
+                        id="inquiry-phone"
+                        name="phone"
                         type="tel"
                         required
                         placeholder={PHONE_DISPLAY}
@@ -237,10 +289,13 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-bold text-[#423932] uppercase tracking-wider mb-1">
+                      <label htmlFor="inquiry-event-type" className="block text-[11px] font-bold text-[#423932] uppercase tracking-wider mb-1">
                         Event Type
                       </label>
                       <select
+                        id="inquiry-event-type"
+                        name="eventType"
+                        aria-label="Event Type"
                         value={formData.eventType}
                         onChange={(e) => setFormData({ ...formData, eventType: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF7F2] border border-[#E2D8CC] text-sm text-[#221F1D] focus:outline-none focus:ring-2 focus:ring-[#7A1B28]"
@@ -256,11 +311,14 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-bold text-[#423932] uppercase tracking-wider mb-1">
+                    <label htmlFor="inquiry-date" className="block text-[11px] font-bold text-[#423932] uppercase tracking-wider mb-1">
                       Event Date (Expected)
                     </label>
                     <input
+                      id="inquiry-date"
+                      name="date"
                       type="date"
+                      aria-label="Event Date (Expected)"
                       value={formData.date}
                       onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF7F2] border border-[#E2D8CC] text-sm text-[#221F1D] focus:outline-none focus:ring-2 focus:ring-[#7A1B28]"
@@ -268,11 +326,14 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-bold text-[#423932] uppercase tracking-wider mb-1">
+                    <label htmlFor="inquiry-message" className="block text-[11px] font-bold text-[#423932] uppercase tracking-wider mb-1">
                       Message / Special Themes
                     </label>
                     <textarea
+                      id="inquiry-message"
+                      name="message"
                       rows={2}
+                      aria-label="Message and Special Themes"
                       placeholder="Share estimated guest count, theme preferences, venue details..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}

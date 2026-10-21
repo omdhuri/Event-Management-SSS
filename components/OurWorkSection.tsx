@@ -71,7 +71,7 @@ export const OurWorkSection = ({ onSelectEvent, onOpenFullGallery }: OurWorkSect
                     type="button"
                     onClick={() => onSelectEvent(item)}
                     aria-label={`${item.title} — view case study`}
-                    className="relative block aspect-square w-full cursor-pointer overflow-hidden rounded-xl text-left"
+                    className="relative block aspect-square w-full cursor-pointer overflow-hidden rounded-xl bg-midnight-soft text-left"
                   >
                     <img src={item.image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
                   </button>
@@ -137,7 +137,7 @@ export const OurWorkSection = ({ onSelectEvent, onOpenFullGallery }: OurWorkSect
             {/* Right 2x2 grid: Baby Shower + Haldi on top, Birthday + Car on bottom */}
             <div className="col-span-7 grid grid-cols-2 grid-rows-2 gap-3.5 lg:gap-4">
               {[
-                GALLERY_DATA.find((i) => i.id === 'boho-baby-shower'),
+                GALLERY_DATA.find((i) => i.id === 'teddy-bear-garden-shower'),
                 GALLERY_DATA.find((i) => i.id === 'haldi-marigold-canopy'),
                 GALLERY_DATA.find((i) => i.id === 'jungle-safari-birthday'),
                 GALLERY_DATA.find((i) => i.id === 'bridal-car-decor'),

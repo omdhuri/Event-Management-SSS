@@ -611,7 +611,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     name: 'Priya & Amit',
     event: 'Wedding & Ring Ceremony',
     quote: 'Absolutely loved the décor and planning! The stage and floral arrangements were breathtaking. Everything was perfect and beyond our expectations.',
-    avatar: 'https://images.pexels.com/photos/6023737/pexels-photo-6023737.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=200',
+    avatar: '',
     rating: 5
   },
   {
@@ -619,7 +619,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     name: 'Sneha & Rohit Patil',
     event: 'Baby Shower & Naming Ceremony',
     quote: 'The team made our baby shower and naming ceremony so magical! Beautiful pastel balloons, cute teddy setup, and amazing coordination.',
-    avatar: 'https://images.pexels.com/photos/4993172/pexels-photo-4993172.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=200',
+    avatar: '',
     rating: 5
   },
   {
@@ -627,7 +627,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     name: 'Rahul Deshmukh',
     event: 'Birthday & Family Celebration',
     quote: 'Professional, creative, and very easy to work with. The safari theme setup was an absolute hit with all our guests and kids!',
-    avatar: 'https://images.pexels.com/photos/5308640/pexels-photo-5308640.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=200',
+    avatar: '',
     rating: 5
   }
 ];
@@ -638,6 +638,7 @@ export const HERO_SLIDES = [
     title: 'Royal Wedding & Stage Decor',
     category: 'Weddings',
     image: '/images/hero/hero-slide-01.webp',
+    thumb: '/images/hero/hero-thumb-01.webp',
     tagline: 'Opulent mandap and reception stages with chandeliers and floral artistry'
   },
   {
@@ -645,6 +646,7 @@ export const HERO_SLIDES = [
     title: 'Magical Milestone Birthday Celebrations',
     category: 'Birthdays',
     image: '/images/hero/hero-slide-02.webp',
+    thumb: '/images/hero/hero-thumb-02.webp',
     tagline: 'Pastel balloon arches, custom neon signs & marquee numbers'
   },
   {
@@ -652,6 +654,7 @@ export const HERO_SLIDES = [
     title: 'Dreamy Pastel Baby Showers & Dohale Jevan',
     category: 'Baby Showers',
     image: '/images/hero/hero-slide-03.webp',
+    thumb: '/images/hero/hero-thumb-03.webp',
     tagline: 'Delicate balloon clouds, teddy bear lounges & golden accents'
   },
   {
@@ -659,6 +662,7 @@ export const HERO_SLIDES = [
     title: 'Grand Haldi & Traditional Celebrations',
     category: 'Festive & Traditional',
     image: '/images/hero/hero-slide-04.webp',
+    thumb: '/images/hero/hero-thumb-04.webp',
     tagline: 'Marigold floral canopies, brass urlis & traditional swings'
   }
 ];

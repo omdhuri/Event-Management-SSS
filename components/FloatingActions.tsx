@@ -13,7 +13,7 @@ export const FloatingActions: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="relative w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1FBE5A] text-white flex items-center justify-center shadow-[0_8px_24px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
-        aria-label="Chat on WhatsApp"
+        aria-label="Instant WhatsApp chat with our event planner"
       >
         <WhatsAppIcon className="relative w-7 h-7" />
       </a>

@@ -52,6 +52,8 @@ export const OurStoryModal: React.FC<OurStoryModalProps> = ({
             <img
               src="/images/about-centerpiece.webp"
               alt="Shree Swami Samarth Events Table Setting"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
