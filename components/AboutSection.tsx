@@ -21,19 +21,22 @@ export const AboutSection = ({ onOpenOurStory }: AboutSectionProps) => (
 
     <div className="container-luxe relative">
       <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-10 xl:gap-12">
-        <figure className="reveal -mx-5 sm:mx-auto sm:max-w-sm lg:col-span-4 lg:mx-0 lg:max-w-none">
-          <div className="relative aspect-[4/4.6] overflow-hidden rounded-none border-y border-white sm:rounded-[9rem_9rem_1rem_1rem] sm:border-4 sm:border-white sm:shadow-[0_22px_48px_-20px_rgb(122_27_40/0.35)] sm:ring-1 sm:ring-line lg:overflow-visible lg:border-0 lg:shadow-none lg:ring-0">
-            <div className="h-full w-full overflow-hidden lg:rounded-[180px_180px_16px_16px] lg:shadow-[0_22px_48px_-20px_rgb(122_27_40/0.3)]">
+        <figure className="reveal relative mx-auto w-full max-w-[290px] sm:max-w-[340px] md:max-w-[360px] lg:col-span-4 lg:mx-0 lg:max-w-none">
+          <div className="relative aspect-[4/4.8] w-full">
+            {/* Arched Photo Frame with luxury white border, golden ring and deep burgundy shadow */}
+            <div className="absolute inset-0 overflow-hidden rounded-t-[140px] sm:rounded-t-[160px] lg:rounded-t-[180px] rounded-b-2xl border-[3px] sm:border-4 border-white/95 shadow-[0_20px_48px_-15px_rgba(122,27,40,0.28)] ring-1 ring-[#E8DEC8]">
               <img
                 src="/images/about-centerpiece.jpg"
                 alt="Candlelit floral centerpiece styled for a reception table"
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover transition-transform duration-[900ms] ease-[var(--ease-luxe)] hover:scale-105"
+                className="h-full w-full object-cover object-center transition-transform duration-[900ms] ease-[var(--ease-luxe)] hover:scale-105"
               />
-              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 to-transparent lg:rounded-[180px_180px_16px_16px]" />
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent" />
             </div>
-            <SinceSealBadge className="absolute bottom-5 left-5 lg:-left-3 lg:bottom-4" />
+
+            {/* "SINCE 2023" Seal Badge - floating gracefully at bottom-left corner with zero clipping */}
+            <SinceSealBadge className="absolute -bottom-3 -left-2 sm:-bottom-4 sm:-left-3 lg:-bottom-3 lg:-left-3 z-10 shadow-xl" />
           </div>
         </figure>
 

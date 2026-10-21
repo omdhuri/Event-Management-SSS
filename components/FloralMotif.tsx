@@ -197,10 +197,12 @@ export const FloralCornerMotif: React.FC<{
 };
 
 // Circular "SINCE 2023" Seal Badge for About section
-export const SinceSealBadge: React.FC<{ className?: string }> = ({ className = '' }) => (
-  <div
-    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#7A1B28] text-[#FAF7F2] flex flex-col items-center justify-center shadow-lg border-2 border-[#D4AF37]/50 select-none group transition-transform duration-300 hover:scale-105 ${className}`}
-  >
+export const SinceSealBadge: React.FC<{ className?: string }> = ({ className = '' }) => {
+  const hasPosition = /\b(absolute|fixed)\b/.test(className);
+  return (
+    <div
+      className={`${hasPosition ? '' : 'relative '}w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#7A1B28] text-[#FAF7F2] flex flex-col items-center justify-center shadow-lg border-2 border-[#D4AF37]/50 select-none group transition-transform duration-300 hover:scale-105 ${className}`}
+    >
     <div className="absolute inset-1 rounded-full border border-dashed border-[#D4AF37]/40 pointer-events-none" />
     
     {/* Top decorative small crown / flourish */}
@@ -217,7 +219,8 @@ export const SinceSealBadge: React.FC<{ className?: string }> = ({ className = '
       2023
     </span>
   </div>
-);
+  );
+};
 
 // Section eyebrow: copper rule + tracked caps + trailing gold rule on desktop
 export const SectionOverline: React.FC<{
