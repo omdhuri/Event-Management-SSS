@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/* ───────────────────────────── Theme tokens ───────────────────────────── */
+@theme {
+  --color-cream: #FAF7F2;
+  --color-cream-card: #F5EFEB;
+  --color-canvas: #FAF7F2;
+  --color-canvas-soft: #F3EDE3;
+  --color-burgundy: #7A1B28;
+  --color-burgundy-hover: #8F2030;
+  --color-burgundy-light: #8F2030;
+  --color-burgundy-dark: #5E1420;
+  --color-midnight: #0B1B28;
+  --color-midnight-card: #122536;
+  --color-midnight-soft: #122536;
+  --color-midnight-line: #1E3447;
+  --color-midnight-hover: #1A334A;
+  --color-midnight-deep: #081622;
+  --color-gold: #C59B27;
+  --color-gold-light: #E2B856;
+  --color-copper: #B8772C;
+  --color-ink: #221F1D;
+  --color-ink-soft: #6E6259;
+  --color-ink-muted: #8C8077;
+  --color-line: #E8DEC8;
+  --shadow-card: 0 10px 30px -12px rgb(122 27 40 / 0.1), 0 2px 8px -2px rgb(31 27 24 / 0.04);
+  --shadow-card-hover: 0 24px 48px -16px rgb(122 27 40 / 0.18), 0 6px 16px -6px rgb(31 27 24 / 0.07);
+  --shadow-cta: 0 8px 24px -8px rgb(122 27 40 / 0.45);
+  --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ───────────────────────────── Base ───────────────────────────── */
+@layer base {
+  :root {
+    --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+    --font-display: var(--font-playfair), 'Playfair Display', Georgia, serif;
+    --font-sans: var(--font-jakarta), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-script: var(--font-alex), 'Alex Brush', cursive;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #221F1D;
+    background-color: #FAF7F2;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  button, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid #7A1B28;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+
+/* ───────────────────────────── Typography utilities ───────────────────────────── */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+  letter-spacing: -0.005em;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+
+.font-sans-body {
+  font-family: var(--font-sans);
+}
+
+/* ───────────────────────────── Shared page container ─────────────────────────────
+   Consistent gutters on every breakpoint. Mobile gutter (20px) intentionally
+   matches the Navbar's own side padding and the `-mx-5` full-bleed trick used
+   in AboutSection, so edge-to-edge imagery cancels out cleanly. */
+.container-luxe {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 640px) {
+  .container-luxe { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .container-luxe { padding-left: 2rem; padding-right: 2rem; }
+}
+
+/* ───────────────────────────── Scrollbar ───────────────────────────── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #F3ECE2; }
+::-webkit-scrollbar-thumb { background: #C4B5A5; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #7A1B28; }
+
+/* ───────────────────────────── Motion ───────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in       { animation: fadeIn 600ms ease-out both; }
+.modal-backdrop { animation: fadeIn 220ms ease-out both; }
+.modal-panel   { animation: panelIn 320ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* Scroll-reveal: elements start hidden, .is-visible is toggled by IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-delay-1 { transition-delay: 90ms; }
+.reveal-delay-2 { transition-delay: 180ms; }
+.reveal-delay-3 { transition-delay: 270ms; }
+.reveal-delay-4 { transition-delay: 360ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
