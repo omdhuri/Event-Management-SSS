@@ -55,11 +55,11 @@ export const TestimonialsSection: React.FC = () => {
             </span>
 
             <h2 className="font-display text-[2.4rem] sm:text-[3.2rem] font-normal leading-[1.08] tracking-[-0.01em] text-ink">
-              What Our<br />Clients Say
+              What Our Clients Say
             </h2>
 
-            <p className="mt-3 font-sans text-sm sm:text-base leading-relaxed text-[#5A524C] max-w-xl">
-              Real stories. Happy moments.<br className="hidden sm:inline" /> Lasting memories.
+            <p className="mt-2 font-sans text-sm sm:text-base leading-relaxed text-[#5A524C] max-w-2xl">
+              Real stories. Happy moments. Lasting memories.
             </p>
           </div>
 
@@ -164,11 +164,7 @@ export const TestimonialsSection: React.FC = () => {
 
           {/* Slider Controls for Desktop (Top 3 primary, slider for additional reviews) */}
           {desktopPageCount > 1 && (
-            <div className="mt-8 flex items-center justify-between border-t border-[#EAE3D6] pt-4">
-              <span className="text-xs font-sans text-[#7A6E65]">
-                Showing {activePage === 0 ? 'top 3 featured reviews' : `reviews 4 to ${testimonials.length}`} of {testimonials.length} total
-              </span>
-
+            <div className="mt-8 flex items-center justify-center border-t border-[#EAE3D6] pt-4">
               <div className="flex items-center gap-2">
                 <button
                   type="button"
