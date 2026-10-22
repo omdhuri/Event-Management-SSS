@@ -37,20 +37,22 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'birthday-parties',
     title: 'Birthday Parties',
-    shortDesc: 'Fun, vibrant and memorable celebrations for all ages.',
-    fullDesc: 'Transform birthdays into magical wonderlands. From dreamy 1st birthday milestone themes and giant LED marquee numbers to teen glow parties and elegant milestone jubilees, we craft unforgettable memories.',
+    shortDesc: 'Themed decor, magic shows, mascots, and fog & pyro entries for memorable celebrations.',
+    fullDesc: 'Transform birthdays into magical wonderlands. From dreamy 1st birthday milestone themes, giant LED marquee numbers, and themed photobooths to captivating live Magic Shows, delightful Panda & Mickey Mouse mascots, and thrilling grand Fog & Pyro entries, we craft unforgettable celebrations for kids and families.',
     image: '/images/birthday/birthday-decor-01.webp',
     iconName: 'Cake',
     category: 'Birthdays',
     deliverables: [
-      'Custom organic balloon arches & garlands',
-      'Illuminated LED name boards & marquee numbers',
-      'Themed photobooth corners & backdrops',
+      'Custom organic balloon arches & themed backdrop styling',
+      'Live Magic Show & interactive entertainment',
+      'Panda & Mickey Mouse mascot characters for meet-and-greets',
+      'Grand Fog & Pyro entry effects for the birthday star',
+      'Illuminated LED name boards & giant marquee numbers',
+      'Themed photobooth corners & customized welcome easel',
       'Cake table styling & dessert pedestals',
-      'Customized welcome signage & entry easel',
-      'Sound, ambient lighting & party effect coordination'
+      'Sound, party lighting & special effects coordination'
     ],
-    popularThemes: ['Pastel Dreamland', 'Safari Adventure', 'Princess Castle', 'Retro Glow', 'Minimal Luxury Gold']
+    popularThemes: ['Pastel Dreamland', 'Safari Adventure', 'Princess Castle', 'Magic & Mascot Fun', 'Retro Glow', 'Minimal Luxury Gold']
   },
   {
     id: 'baby-showers',

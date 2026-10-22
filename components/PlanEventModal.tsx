@@ -198,7 +198,9 @@ export const PlanEventModal: React.FC<PlanEventModalProps> = ({
                     'LED Name Board',
                     'Balloon Arches',
                     'Photo Corner Setup',
-                    'Car Decoration',
+                    'Magic Show',
+                    'Panda & Mickey Mascot',
+                    'Fog & Pyro Entry',
                     'Catering Coordination'
                   ].map((addon) => {
                     const isChecked = addons.includes(addon);
