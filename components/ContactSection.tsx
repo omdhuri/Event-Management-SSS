@@ -133,7 +133,7 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
                   <div>
                     <span className="text-xs text-[#7A6E65] font-bold uppercase tracking-wider block">Our Location</span>
                     <span className="font-display text-base font-bold text-[#221F1D] block mt-0.5 group-hover:text-[#7A1B28] transition-colors">{ADDRESS_LINE}</span>
-                    <span className="text-xs text-[#6E6259]">PIN {ADDRESS_PIN} · Serving Kalyan & nearby</span>
+                    <span className="text-xs text-[#6E6259]">PIN {ADDRESS_PIN}</span>
                   </div>
                 </a>
 
@@ -144,8 +144,8 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
                   </div>
                   <div>
                     <span className="text-xs text-[#7A6E65] font-bold uppercase tracking-wider block">Working Hours</span>
-                    <span className="font-display text-base font-bold text-[#221F1D] block mt-0.5">Mon - Sun</span>
-                    <span className="text-xs text-[#6E6259]">9:00 AM - 8:00 PM</span>
+                    <span className="font-display text-base font-bold text-[#221F1D] block mt-0.5">24 Hours Open</span>
+                    <span className="text-xs text-[#6E6259]">Mon - Sun (24/7)</span>
                   </div>
                 </div>
 
