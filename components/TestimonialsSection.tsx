@@ -1,36 +1,37 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Star, MessageSquarePlus, Check } from 'lucide-react';
+import { Star, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { FloralCornerMotif } from './FloralMotif';
+import { GoogleIcon } from './icons';
 import { TESTIMONIALS_DATA, TestimonialItem } from '../data/eventsData';
+import { GOOGLE_REVIEWS_URL, GOOGLE_SEARCH_URL } from '../data/contact';
 
 export const TestimonialsSection: React.FC = () => {
-  const [testimonials, setTestimonials] = useState<TestimonialItem[]>(TESTIMONIALS_DATA);
-  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
-  const [newReview, setNewReview] = useState({ name: '', event: '', quote: '', rating: 5 });
-  const [submitted, setSubmitted] = useState(false);
+  const testimonials: TestimonialItem[] = TESTIMONIALS_DATA;
+  
+  // Slider state: index of the first visible card in desktop mode (steps by 3)
+  // or current index in mobile mode (steps by 1)
+  const [activePage, setActivePage] = useState(0); // 0 = first 3 reviews (top 3)
+  const [mobileIdx, setMobileIdx] = useState(0);
 
-  const handleSubmitReview = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newReview.name || !newReview.quote) return;
+  const desktopPageCount = Math.ceil(testimonials.length / 3);
+  const currentDesktopReviews = testimonials.slice(activePage * 3, activePage * 3 + 3);
 
-    const addedItem: TestimonialItem = {
-      id: `test-${Date.now()}`,
-      name: newReview.name,
-      event: newReview.event || 'Celebration Event',
-      quote: newReview.quote,
-      avatar: '',
-      rating: newReview.rating
-    };
+  const handlePrevDesktop = () => {
+    setActivePage((prev) => (prev === 0 ? desktopPageCount - 1 : prev - 1));
+  };
 
-    setTestimonials([addedItem, ...testimonials]);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setIsReviewModalOpen(false);
-      setNewReview({ name: '', event: '', quote: '', rating: 5 });
-    }, 2000);
+  const handleNextDesktop = () => {
+    setActivePage((prev) => (prev === desktopPageCount - 1 ? 0 : prev + 1));
+  };
+
+  const handlePrevMobile = () => {
+    setMobileIdx((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const handleNextMobile = () => {
+    setMobileIdx((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -39,183 +40,236 @@ export const TestimonialsSection: React.FC = () => {
       <FloralCornerMotif position="top-right" opacity={0.2} className="-top-12 -right-12" />
 
       <div className="container-luxe relative z-10">
-        <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-8">
-          {/* Header — full row on mobile/tablet, left 3 cols on desktop (matches PC reference) */}
-          <div className="reveal mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end lg:col-span-3 lg:mb-0 lg:flex-col lg:items-start">
-            <div>
-              <span className="block text-[10.5px] font-bold uppercase tracking-[0.2em] text-copper">
-                Testimonials
-              </span>
-              <h2 className="mt-2 font-display text-[2.1rem] font-medium leading-[1.1] tracking-[-0.02em] text-ink sm:text-[2.5rem] lg:text-[2.15rem] lg:font-normal xl:text-[2.35rem]">
-                What Our Clients Say
-              </h2>
-              <p className="mt-2 font-sans text-sm text-[#6E6259] lg:text-[12.5px]">
-                Real stories. Happy moments. Lasting memories.
-              </p>
-            </div>
+        
+        {/* Top Header Row with Editorial Testimonials Header & Action CTA */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12">
+          <div>
+            <span className="block font-sans text-xs sm:text-[13px] font-semibold uppercase tracking-[0.22em] text-[#9E6928] mb-3">
+              TESTIMONIALS
+            </span>
 
-            <button
-              onClick={() => setIsReviewModalOpen(true)}
-              className="inline-flex cursor-pointer items-center gap-2 self-start rounded-full border border-[#7A1B28]/20 bg-white px-4 py-2 font-sans text-xs font-bold text-[#7A1B28] transition-all hover:bg-[#FAF2E8] hover:text-[#9A2234] sm:self-auto lg:hidden"
-            >
-              <MessageSquarePlus className="h-4 w-4" />
-              <span>Share Your Experience</span>
-            </button>
+            <h2 className="font-display text-[2.4rem] sm:text-[3.2rem] font-normal leading-[1.08] tracking-[-0.01em] text-ink">
+              What Our<br />Clients Say
+            </h2>
+
+            <p className="mt-3 font-sans text-sm sm:text-base leading-relaxed text-[#5A524C] max-w-xl">
+              Real stories. Happy moments.<br className="hidden sm:inline" /> Lasting memories.
+            </p>
           </div>
 
-          {/* 3 Testimonials Cards Grid — right 9 cols on desktop */}
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:col-span-9">
-            {testimonials.slice(0, 3).map((item, idx) => (
+          {/* Action Buttons: Opens Google Review directly or Google Search */}
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[#D4AF6A]/50 bg-burgundy px-5 py-2.5 font-sans text-xs font-bold text-white shadow-md transition-all hover:bg-burgundy-light hover:scale-105 active:scale-95 cursor-pointer"
+            >
+              <GoogleIcon className="h-4 w-4 shrink-0 bg-white rounded-full p-0.5" />
+              <span>Review Us on Google</span>
+              <ExternalLink className="h-3.5 w-3.5 opacity-80" />
+            </a>
+
+            <a
+              href={GOOGLE_SEARCH_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-[#D8CCBD] bg-white px-4 py-2.5 font-sans text-xs font-semibold text-[#423932] shadow-xs transition-all hover:bg-[#FAF2E8] hover:border-burgundy/30 cursor-pointer"
+            >
+              <span>View Us on Google</span>
+              <ExternalLink className="h-3 w-3 text-[#7A6E65]" />
+            </a>
+          </div>
+        </div>
+
+        {/* ──────── DESKTOP VIEW: Top 3 Reviews Grid with Slider Controls ──────── */}
+        <div className="hidden md:block">
+          <div className="grid grid-cols-3 gap-5">
+            {currentDesktopReviews.map((item, idx) => (
               <figure
                 key={item.id}
-                className={`reveal reveal-delay-${idx + 1} group relative flex flex-col justify-between rounded-2xl border border-[#EAE3D6] bg-white p-6 shadow-[0_8px_30px_rgba(122,27,40,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(122,27,40,0.08)] lg:p-5`}
+                className="group relative flex flex-col justify-between rounded-2xl border border-[#EAE3D6] bg-white p-6 shadow-[0_8px_30px_rgba(122,27,40,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(122,27,40,0.08)]"
               >
                 <div>
-                  <span aria-hidden="true" className="mb-3 block select-none font-display text-4xl leading-[0.6] text-[#C59B27]">
-                    &ldquo;
-                  </span>
+                  {/* Top card pill with Google verified badge */}
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F0F4F9] text-[#1A73E8] text-[11px] font-semibold border border-[#D3E3FD]">
+                      <GoogleIcon className="h-3 w-3 shrink-0" />
+                      <span>Verified Google Review</span>
+                    </span>
 
-                  <blockquote className="mb-5 font-sans text-sm leading-relaxed text-[#423932] lg:text-[12.5px]">
+                    <div className="flex items-center gap-0.5 text-[#FBBC05]">
+                      {[...Array(item.rating)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Review Text */}
+                  <blockquote className="mb-5 font-sans text-sm leading-relaxed text-[#423932]">
                     &ldquo;{item.quote}&rdquo;
                   </blockquote>
                 </div>
 
+                {/* Figcaption with Reviewer Info */}
                 <figcaption className="flex items-center gap-3 border-t border-[#F2ECE4] pt-3.5">
-                  {item.avatar ? (
-                    <img
-                      src={item.avatar}
-                      alt={item.name}
-                      width={44}
-                      height={44}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-11 w-11 shrink-0 rounded-full border-2 border-[#E8DEC8] object-cover shadow-sm"
-                    />
-                  ) : (
-                    <div
-                      aria-hidden="true"
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#E8DEC8] bg-gradient-to-br from-[#FAF2E8] to-[#F3EDE3] font-display text-xs font-bold tracking-wider text-burgundy shadow-sm select-none"
-                    >
-                      {item.name
-                        .replace('&', '')
-                        .split(' ')
-                        .filter(Boolean)
-                        .slice(0, 2)
-                        .map((n) => n[0])
-                        .join('')}
-                    </div>
-                  )}
+                  <div
+                    aria-hidden="true"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E8DEC8] bg-gradient-to-br from-[#FAF2E8] to-[#F3EDE3] font-display text-xs font-bold tracking-wider text-burgundy shadow-xs select-none"
+                  >
+                    {item.name
+                      .replace('&', '')
+                      .split(' ')
+                      .filter(Boolean)
+                      .slice(0, 2)
+                      .map((n) => n[0])
+                      .join('')}
+                  </div>
 
                   <div className="min-w-0 flex-1">
                     <h3 className="truncate font-display text-[15px] font-bold text-[#221F1D]">
                       {item.name}
                     </h3>
-                    <p className="mb-1 truncate font-sans text-[11px] text-[#7A6E65]">
-                      {item.event}
+                    <p className="truncate font-sans text-[11px] text-[#7A6E65]">
+                      {item.date ? item.date : 'Verified Customer'} • {item.event}
                     </p>
-
-                    <div className="flex items-center gap-0.5 text-[#C59B27]">
-                      {[...Array(item.rating)].map((_, i) => (
-                        <Star key={i} className="h-3 w-3 fill-current" />
-                      ))}
-                    </div>
                   </div>
                 </figcaption>
               </figure>
             ))}
           </div>
-        </div>
-      </div>
 
-      {/* Mobile pagination dots (decorative, mirrors the stacked review cards) */}
-      <div className="container-luxe mt-8 flex justify-center gap-2 md:hidden" aria-hidden="true">
-        <span className="h-1.5 w-5 rounded-full bg-burgundy" />
-        <span className="h-1.5 w-1.5 rounded-full bg-line" />
-        <span className="h-1.5 w-1.5 rounded-full bg-line" />
-      </div>
+          {/* Slider Controls for Desktop (Top 3 primary, slider for additional reviews) */}
+          {desktopPageCount > 1 && (
+            <div className="mt-8 flex items-center justify-between border-t border-[#EAE3D6] pt-4">
+              <span className="text-xs font-sans text-[#7A6E65]">
+                Showing {activePage === 0 ? 'top 3 featured reviews' : `reviews 4 to ${testimonials.length}`} of {testimonials.length} total
+              </span>
 
-      {/* Write a Review Modal */}
-      {isReviewModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm modal-backdrop">
-          <div className="bg-[#FAF7F2] rounded-2xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-[#E8DEC8] relative">
-            <h3 className="font-display text-2xl font-bold text-[#221F1D] mb-1">
-              Share Your Celebration Review
-            </h3>
-            <p className="text-xs text-[#7A6E65] mb-5">
-              We'd love to hear how we helped make your special day memorable!
-            </p>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handlePrevDesktop}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8CCBD] bg-white text-[#423932] transition-colors hover:bg-burgundy hover:text-white cursor-pointer"
+                  aria-label="Previous reviews"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
 
-            {submitted ? (
-              <div className="py-8 text-center space-y-2">
-                <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Check className="w-6 h-6" />
+                <div className="flex items-center gap-1.5 px-2">
+                  {[...Array(desktopPageCount)].map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setActivePage(i)}
+                      className={`h-2 rounded-full transition-all cursor-pointer ${
+                        activePage === i ? 'w-6 bg-burgundy' : 'w-2 bg-[#D8CCBD] hover:bg-[#A89885]'
+                      }`}
+                      aria-label={`Go to slide ${i + 1}`}
+                    />
+                  ))}
                 </div>
-                <h4 className="font-display text-xl font-bold text-[#221F1D]">Thank You!</h4>
-                <p className="text-sm text-[#7A6E65]">Your review has been added to our celebrations wall.</p>
+
+                <button
+                  type="button"
+                  onClick={handleNextDesktop}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8CCBD] bg-white text-[#423932] transition-colors hover:bg-burgundy hover:text-white cursor-pointer"
+                  aria-label="Next reviews"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
               </div>
-            ) : (
-              <form onSubmit={handleSubmitReview} className="space-y-4">
-                <div>
-                  <label className="block text-xs font-bold text-[#423932] uppercase tracking-wider mb-1">
-                    Your Name(s) *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Pooja & Nikhil"
-                    value={newReview.name}
-                    onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D8CCBD] text-sm text-[#221F1D] focus:outline-none focus:ring-2 focus:ring-[#7A1B28]"
-                  />
+            </div>
+          )}
+        </div>
+
+        {/* ──────── MOBILE VIEW: 1 Card at a time with touch arrows ──────── */}
+        <div className="block md:hidden">
+          {testimonials[mobileIdx] && (
+            <figure className="group relative flex flex-col justify-between rounded-2xl border border-[#EAE3D6] bg-white p-6 shadow-sm">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F0F4F9] text-[#1A73E8] text-[11px] font-semibold border border-[#D3E3FD]">
+                    <GoogleIcon className="h-3 w-3 shrink-0" />
+                    <span>Verified Review</span>
+                  </span>
+
+                  <div className="flex items-center gap-0.5 text-[#FBBC05]">
+                    {[...Array(testimonials[mobileIdx].rating)].map((_, i) => (
+                      <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                    ))}
+                  </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-[#423932] uppercase tracking-wider mb-1">
-                    Event Type / Occasion
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="e.g. 1st Birthday Party / Wedding"
-                    value={newReview.event}
-                    onChange={(e) => setNewReview({ ...newReview, event: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D8CCBD] text-sm text-[#221F1D] focus:outline-none focus:ring-2 focus:ring-[#7A1B28]"
-                  />
+                <blockquote className="mb-5 font-sans text-sm leading-relaxed text-[#423932]">
+                  &ldquo;{testimonials[mobileIdx].quote}&rdquo;
+                </blockquote>
+              </div>
+
+              <figcaption className="flex items-center gap-3 border-t border-[#F2ECE4] pt-3.5">
+                <div
+                  aria-hidden="true"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E8DEC8] bg-gradient-to-br from-[#FAF2E8] to-[#F3EDE3] font-display text-xs font-bold tracking-wider text-burgundy shadow-xs select-none"
+                >
+                  {testimonials[mobileIdx].name
+                    .replace('&', '')
+                    .split(' ')
+                    .filter(Boolean)
+                    .slice(0, 2)
+                    .map((n) => n[0])
+                    .join('')}
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-[#423932] uppercase tracking-wider mb-1">
-                    Your Feedback / Words *
-                  </label>
-                  <textarea
-                    required
-                    rows={3}
-                    placeholder="Describe your experience with our decor and event management..."
-                    value={newReview.quote}
-                    onChange={(e) => setNewReview({ ...newReview, quote: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D8CCBD] text-sm text-[#221F1D] focus:outline-none focus:ring-2 focus:ring-[#7A1B28]"
-                  />
+                <div className="min-w-0 flex-1">
+                  <h3 className="truncate font-display text-[15px] font-bold text-[#221F1D]">
+                    {testimonials[mobileIdx].name}
+                  </h3>
+                  <p className="truncate font-sans text-[11px] text-[#7A6E65]">
+                    {testimonials[mobileIdx].date || 'Verified Customer'}
+                  </p>
                 </div>
+              </figcaption>
+            </figure>
+          )}
 
-                <div className="flex items-center justify-end gap-3 pt-2">
-                  <button
-                    type="button"
-                    onClick={() => setIsReviewModalOpen(false)}
-                    className="px-4 py-2 rounded-full text-xs font-semibold text-[#7A6E65] hover:bg-[#EAE1D5]"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="px-5 py-2 rounded-full bg-[#7A1B28] hover:bg-[#922131] text-white text-xs font-bold shadow-md"
-                  >
-                    Submit Review
-                  </button>
-                </div>
-              </form>
-            )}
+          {/* Mobile Navigation Controls */}
+          <div className="mt-5 flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handlePrevMobile}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8CCBD] bg-white text-[#423932] shadow-xs active:scale-95"
+              aria-label="Previous review"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+
+            {/* Dots */}
+            <div className="flex items-center gap-1.5">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setMobileIdx(i)}
+                  className={`h-2 rounded-full transition-all ${
+                    mobileIdx === i ? 'w-5 bg-burgundy' : 'w-2 bg-[#D8CCBD]'
+                  }`}
+                  aria-label={`Review ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={handleNextMobile}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8CCBD] bg-white text-[#423932] shadow-xs active:scale-95"
+              aria-label="Next review"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
           </div>
         </div>
-      )}
+
+      </div>
     </section>
   );
 };

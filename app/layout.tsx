@@ -111,8 +111,18 @@ const jsonLd = {
     opens: '09:00',
     closes: '22:00',
   },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '18',
+    bestRating: '5',
+    worstRating: '1',
+  },
   servesCuisine: 'Event Decor & Planning Services',
-  sameAs: ['https://www.instagram.com/shreeswamisamarthevent_07/'],
+  sameAs: [
+    'https://www.instagram.com/shreeswamisamarthevent_07/',
+    'https://share.google/C0fiCvCV8HNlt9M3W',
+  ],
 };
 
 export default function RootLayout({

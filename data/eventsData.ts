@@ -31,6 +31,8 @@ export interface TestimonialItem {
   quote: string;
   avatar: string;
   rating: number;
+  date?: string;
+  source?: 'Google' | 'Direct';
 }
 
 export const SERVICES_DATA: ServiceItem[] = [
@@ -602,28 +604,64 @@ export const GALLERY_DATA: GalleryItem[] = [
 
 export const TESTIMONIALS_DATA: TestimonialItem[] = [
   {
-    id: 'test-1',
-    name: 'Priya & Amit',
-    event: 'Wedding & Ring Ceremony',
-    quote: 'Absolutely loved the décor and planning! The stage and floral arrangements were breathtaking. Everything was perfect and beyond our expectations.',
+    id: 'google-rev-shashwat',
+    name: 'Shashwat Tiwari',
+    event: 'Verified Google Review',
+    quote: 'Beautiful decoration, professional service, and excellent execution. They made our event truly special. Highly recommended! ⭐⭐⭐⭐⭐🤍😍',
     avatar: '',
-    rating: 5
+    rating: 5,
+    date: '1 month ago',
+    source: 'Google'
   },
   {
-    id: 'test-2',
-    name: 'Sneha & Rohit Patil',
-    event: 'Baby Shower & Naming Ceremony',
-    quote: 'The team made our baby shower and naming ceremony so magical! Beautiful pastel balloons, cute teddy setup, and amazing coordination.',
+    id: 'google-rev-vishal',
+    name: '314 Vishal Kolekar',
+    event: 'Anniversary & Birthday Planning',
+    quote: 'Excellent event management service! The decoration was beautiful, creative, and perfectly arranged. The team was professional, punctual, and very supportive throughout the event. Everything was managed smoothly and the final setup looked amazing. Highly recommended for any function or celebration. Great work, Shree Samarth Event Kalyan! 👏🎉',
     avatar: '',
-    rating: 5
+    rating: 5,
+    date: '1 month ago',
+    source: 'Google'
   },
   {
-    id: 'test-3',
-    name: 'Rahul Deshmukh',
-    event: 'Birthday & Family Celebration',
-    quote: 'Professional, creative, and very easy to work with. The safari theme setup was an absolute hit with all our guests and kids!',
+    id: 'google-rev-jagathesvaran',
+    name: 'Jagathesvaran Thanabal',
+    event: 'Verified Google Review',
+    quote: 'I love their creative works and in this all members are well experienced on events. I am highly satisfied with the quality of their work!',
     avatar: '',
-    rating: 5
+    rating: 5,
+    date: '1 month ago',
+    source: 'Google'
+  },
+  {
+    id: 'google-rev-alisha',
+    name: 'Alisha Nikalji',
+    event: 'Local Guide • Event Decor',
+    quote: 'Thank you Shree Swami Event and Shubham for making such a beautiful decoration! As per reference you’ve made it perfectly. Thank you for making our special day memorable. Everyone loved the theme setup. Wonderful work Shree Swami Events, thank you so much! 🙌🏻',
+    avatar: '',
+    rating: 5,
+    date: 'Recent Review',
+    source: 'Google'
+  },
+  {
+    id: 'google-rev-yash',
+    name: 'Yash Shukla',
+    event: 'Verified Google Review',
+    quote: "It's really a shame that not many people know about this decorations !! Such a beautiful decorations they do and the behaviour and ethics of the workers is glamorous.... Insane always go for them !!! With lots of love ❤️",
+    avatar: '',
+    rating: 5,
+    date: '1 month ago',
+    source: 'Google'
+  },
+  {
+    id: 'google-rev-shivam',
+    name: 'Koli Shivam',
+    event: 'Verified Google Review',
+    quote: 'They decorate very nicely, it makes my heart happy! Exceptional decor, great coordination, and wonderful team to work with. ❣️🔥',
+    avatar: '',
+    rating: 5,
+    date: '1 month ago',
+    source: 'Google'
   }
 ];
 
