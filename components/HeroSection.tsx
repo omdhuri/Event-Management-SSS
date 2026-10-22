@@ -238,7 +238,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Left floral watermark */}
-        <FloralCornerMotif position="bottom-left" opacity={0.28} className="-left-6 top-20" />
+        {/* <FloralCornerMotif position="bottom-left" opacity={0.28} className="-left-6 top-20" /> */}
 
         {/* Left copy column */}
         <div className="container-luxe relative z-10 flex min-h-[600px] items-center pt-20 pb-14 xl:min-h-[640px]">
