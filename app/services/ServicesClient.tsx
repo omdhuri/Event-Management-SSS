@@ -90,7 +90,7 @@ export const ServicesClient: React.FC = () => {
                 Looking for a Custom Package or Multi-Day Setup?
               </h3>
               <p className="mt-3 text-sm sm:text-base text-white/70">
-                Whether you need decor for Haldi, Sangeet, Wedding, or an intimate birthday dinner, we customize packages to match your specific taste and budget.
+                Whether you need decor for Haldi, Sangeet, Wedding, or an intimate birthday dinner, we customize packages to match your specific taste and vision.
               </p>
               <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
                 <button
@@ -98,7 +98,7 @@ export const ServicesClient: React.FC = () => {
                   onClick={openPlanModal}
                   className="rounded-full bg-burgundy px-7 py-3 text-sm font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105 active:scale-95"
                 >
-                  Request a Free Quote
+                  Request a Free Consultation
                 </button>
                 <a
                   href={WHATSAPP_URL}

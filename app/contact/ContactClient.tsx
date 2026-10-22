@@ -14,7 +14,7 @@ export const ContactClient: React.FC = () => {
         badge="Connect With Us"
         title="Let's Plan Your"
         italicWord="Celebration."
-        description="Have an upcoming wedding, birthday, baby shower, or corporate event? Reach out to us today for personalized themes, pricing, and availability."
+        description="Have an upcoming wedding, birthday, baby shower, or corporate event? Reach out to us today for personalized themes, bespoke styling, and availability."
         breadcrumb="Contact"
       />
 

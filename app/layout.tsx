@@ -111,7 +111,6 @@ const jsonLd = {
     opens: '09:00',
     closes: '22:00',
   },
-  priceRange: '₹₹',
   servesCuisine: 'Event Decor & Planning Services',
   sameAs: ['https://www.instagram.com/shreeswamisamarthevent_07/'],
 };

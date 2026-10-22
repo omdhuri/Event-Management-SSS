@@ -38,7 +38,7 @@ export const PlanEventModal: React.FC<PlanEventModalProps> = ({
     e.preventDefault();
     setSubmitted(true);
 
-    const message = `Hello Shree Swami Samarth Events!%0A%0A🎉 *Event Planning Inquiry*%0A• *Client Name:* ${encodeURIComponent(clientName || 'Valued Client')}%0A• *Contact Phone:* ${encodeURIComponent(clientPhone || 'Provided')}%0A• *Event Type:* ${encodeURIComponent(eventType)}%0A• *Expected Guests:* ${guestCount} Guests%0A• *Preferred Decor Style:* ${encodeURIComponent(decorStyle)}%0A• *Event Date:* ${encodeURIComponent(eventDate || 'Flexible')}%0A• *Location / Venue Area:* ${encodeURIComponent(area)}%0A• *Selected Add-ons:* ${encodeURIComponent(addons.join(', ') || 'Custom')}%0A%0APlease share your availability and a customized quotation proposal!`;
+    const message = `Hello Shree Swami Samarth Events!%0A%0A🎉 *Event Planning Inquiry*%0A• *Client Name:* ${encodeURIComponent(clientName || 'Valued Client')}%0A• *Contact Phone:* ${encodeURIComponent(clientPhone || 'Provided')}%0A• *Event Type:* ${encodeURIComponent(eventType)}%0A• *Expected Guests:* ${guestCount} Guests%0A• *Preferred Decor Style:* ${encodeURIComponent(decorStyle)}%0A• *Event Date:* ${encodeURIComponent(eventDate || 'Flexible')}%0A• *Location / Venue Area:* ${encodeURIComponent(area)}%0A• *Selected Add-ons:* ${encodeURIComponent(addons.join(', ') || 'Custom')}%0A%0APlease share your availability and custom decor styling options!`;
 
     setTimeout(() => {
       window.open(`${WHATSAPP_URL}?text=${message}`, '_blank');
@@ -266,7 +266,7 @@ export const PlanEventModal: React.FC<PlanEventModalProps> = ({
                   className="w-full py-3.5 px-6 rounded-full bg-[#7A1B28] hover:bg-[#8F2030] text-white text-sm font-sans font-bold flex items-center justify-center gap-2 shadow-lg transition-all active:scale-[0.98] cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4 text-[#E2B856]" />
-                  <span>Get Instant Custom Quote on WhatsApp</span>
+                  <span>Connect with Us on WhatsApp</span>
                 </button>
               </div>
 

@@ -6,7 +6,6 @@ export interface ServiceItem {
   image: string;
   iconName: string;
   category: string;
-  startingPrice: string;
   deliverables: string[];
   popularThemes: string[];
 }
@@ -43,7 +42,6 @@ export const SERVICES_DATA: ServiceItem[] = [
     image: '/images/birthday/birthday-decor-01.webp',
     iconName: 'Cake',
     category: 'Birthdays',
-    startingPrice: '₹15,000',
     deliverables: [
       'Custom organic balloon arches & garlands',
       'Illuminated LED name boards & marquee numbers',
@@ -62,7 +60,6 @@ export const SERVICES_DATA: ServiceItem[] = [
     image: '/images/baby-shower/baby-shower-decor-01.webp',
     iconName: 'Baby',
     category: 'Baby Shower',
-    startingPrice: '₹18,000',
     deliverables: [
       'Pastel balloon cloud arches & backdrops',
       'Warm neon signage ("Oh Baby", "Baby On The Way")',
@@ -81,7 +78,6 @@ export const SERVICES_DATA: ServiceItem[] = [
     image: '/images/hero/hero-slide-01.webp',
     iconName: 'HeartHandshake',
     category: 'Weddings',
-    startingPrice: '₹75,000',
     deliverables: [
       'Grand wedding reception stage & floral arches',
       'Vedic mandap decor with traditional floral canopies',
@@ -100,7 +96,6 @@ export const SERVICES_DATA: ServiceItem[] = [
     image: '/images/haldi-ceremony/haldi-ring-ceremony-01.webp',
     iconName: 'Flower2',
     category: 'Festive',
-    startingPrice: '₹20,000',
     deliverables: [
       'Fresh marigold & jasmine floral draping',
       'Traditional wooden swing (Jhoola) decoration',
@@ -119,7 +114,6 @@ export const SERVICES_DATA: ServiceItem[] = [
     image: '/images/welcome-baby/welcome-baby-decor-01.webp',
     iconName: 'Heart',
     category: 'Baby Shower',
-    startingPrice: '₹12,000',
     deliverables: [
       'Custom decorated floral cradle (Barse setup)',
       'Pastel organic balloon ring installations',
@@ -137,7 +131,6 @@ export const SERVICES_DATA: ServiceItem[] = [
     image: '/images/about-centerpiece.webp',
     iconName: 'Briefcase',
     category: 'Corporate',
-    startingPrice: '₹35,000',
     deliverables: [
       'Stage backdrop & LED video wall branding',
       'Banquet round table centerpieces & linens',

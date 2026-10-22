@@ -4,7 +4,7 @@ import { ContactClient } from './ContactClient';
 export const metadata: Metadata = {
   title: 'Contact Us & Location | Shree Swami Samarth Events | Kalyan, Thane & Mumbai',
   description:
-    'Contact Shree Swami Samarth Events. Visit our office in Kalyan, call +91 81089 12433, or message on WhatsApp for customized event planning and decor quotes across Kalyan, Dombivli, Thane, Mumbai, Virar & Vasai.',
+    'Contact Shree Swami Samarth Events. Visit our office in Kalyan, call +91 81089 12433, or message on WhatsApp for customized event planning and bespoke decor consultations across Kalyan, Dombivli, Thane, Mumbai, Virar & Vasai.',
   keywords: [
     'contact shree swami samarth events',
     'event planner kalyan phone',
