@@ -18,12 +18,21 @@ export default function HomePage() {
     openServiceDetail,
   } = useModals();
 
+  const handleScrollDown = () => {
+    const servicesEl = document.getElementById('services');
+    if (servicesEl) {
+      servicesEl.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <HeroSection
         onOpenPlanModal={openPlanModal}
         onExploreWork={() => router.push('/work')}
-        onScrollToServices={() => router.push('/services')}
+        onScrollToServices={handleScrollDown}
       />
       <ServicesSection
         onSelectService={(service) => openServiceDetail(service)}

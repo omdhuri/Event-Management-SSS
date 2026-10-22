@@ -9,7 +9,7 @@ import { PHONE_E164 } from '../data/contact';
 interface HeroSectionProps {
   onOpenPlanModal?: () => void;
   onExploreWork: () => void;
-  onScrollToServices: () => void;
+  onScrollToServices?: () => void;
 }
 
 const STATS = [
@@ -29,6 +29,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [paused, setPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const total = HERO_SLIDES.length;
+
+  const handleScrollDown = () => {
+    if (onScrollToServices) {
+      onScrollToServices();
+    } else {
+      const target = document.getElementById('services');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' });
+      }
+    }
+  };
 
   const goTo = useCallback(
     (next: number) => setIndex(((next % total) + total) % total),
@@ -155,8 +168,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="mt-6 flex justify-center">
             <button
               type="button"
-              onClick={onScrollToServices}
-              aria-label="Scroll to services"
+              onClick={handleScrollDown}
+              aria-label="Scroll down"
               className="grid h-9 w-9 cursor-pointer place-items-center rounded-full text-ink/60 transition-colors hover:text-burgundy"
             >
               <ChevronDown className="h-5 w-5" />
@@ -295,8 +308,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Bottom-centre circular scroll seal sitting on the curve transition */}
         <button
           type="button"
-          onClick={onScrollToServices}
-          aria-label="Scroll to services"
+          onClick={handleScrollDown}
+          aria-label="Scroll down"
           className="group absolute bottom-4 left-1/2 z-20 grid h-12 w-12 -translate-x-1/2 cursor-pointer place-items-center rounded-full border border-dashed border-copper/50 bg-canvas/90 text-ink-soft shadow-md backdrop-blur-sm transition-all duration-300 hover:border-burgundy hover:text-burgundy"
         >
           <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
