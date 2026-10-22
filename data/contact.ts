@@ -10,7 +10,8 @@ export const ADDRESS_FULL = 'Kalyan, Maharashtra — 421306';
 export const MAP_QUERY = 'Shree Swami event kalyan';
 export const MAP_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 export const MAP_LINK = 'https://share.google/YTrEblUFTK0XtRmy5';
-export const GOOGLE_REVIEWS_URL = 'https://maps.app.goo.gl/XWKdfLaQsexEqUDM8?g_st=ai';
+export const GOOGLE_REVIEWS_URL =
+  'https://www.google.com/maps/place/Shree+Swami+event+kalyan/@19.2145838,73.1397656,17z/data=!4m8!3m7!1s0x3be7950042b6b265:0x3d0c6ad87db6f131!8m2!3d19.2145838!4d73.1397656!9m1!1b1!16s%2Fg%2F11zxcg6g22?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D';
 export const GOOGLE_SEARCH_URL = 'https://www.google.com/search?q=Shree+Swami+event+kalyan+Kalyan';
 export const GOOGLE_RATING = '5.0';
 export const GOOGLE_REVIEW_COUNT = 18;

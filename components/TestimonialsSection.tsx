@@ -9,11 +9,17 @@ import { GOOGLE_REVIEWS_URL, GOOGLE_SEARCH_URL } from '../data/contact';
 
 export const TestimonialsSection: React.FC = () => {
   const testimonials: TestimonialItem[] = TESTIMONIALS_DATA;
+  const MAX_QUOTE_LENGTH = 150;
   
   // Slider state: index of the first visible card in desktop mode (steps by 3)
   // or current index in mobile mode (steps by 1)
   const [activePage, setActivePage] = useState(0); // 0 = first 3 reviews (top 3)
   const [mobileIdx, setMobileIdx] = useState(0);
+  const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({});
+
+  const toggleExpand = (id: string) => {
+    setExpandedIds((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
 
   const desktopPageCount = Math.ceil(testimonials.length / 3);
   const currentDesktopReviews = testimonials.slice(activePage * 3, activePage * 3 + 3);
@@ -84,59 +90,76 @@ export const TestimonialsSection: React.FC = () => {
 
         {/* ──────── DESKTOP VIEW: Top 3 Reviews Grid with Slider Controls ──────── */}
         <div className="hidden md:block">
-          <div className="grid grid-cols-3 gap-5">
-            {currentDesktopReviews.map((item, idx) => (
-              <figure
-                key={item.id}
-                className="group relative flex flex-col justify-between rounded-2xl border border-[#EAE3D6] bg-white p-6 shadow-[0_8px_30px_rgba(122,27,40,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(122,27,40,0.08)]"
-              >
-                <div>
-                  {/* Top card pill with Google verified badge */}
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F0F4F9] text-[#1A73E8] text-[11px] font-semibold border border-[#D3E3FD]">
-                      <GoogleIcon className="h-3 w-3 shrink-0" />
-                      <span>Verified Google Review</span>
-                    </span>
+          <div className="grid grid-cols-3 gap-5 items-start">
+            {currentDesktopReviews.map((item) => {
+              const isExpanded = !!expandedIds[item.id];
+              const isLong = item.quote.length > MAX_QUOTE_LENGTH;
+              const displayText = isLong && !isExpanded
+                ? `${item.quote.slice(0, MAX_QUOTE_LENGTH).trim()}...`
+                : item.quote;
 
-                    <div className="flex items-center gap-0.5 text-[#FBBC05]">
-                      {[...Array(item.rating)].map((_, i) => (
-                        <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                      ))}
+              return (
+                <figure
+                  key={item.id}
+                  className="group relative flex flex-col justify-between rounded-xl border border-[#EAE3D6] bg-white p-4.5 sm:p-5 shadow-[0_4px_20px_rgba(122,27,40,0.03)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(122,27,40,0.06)]"
+                >
+                  <div>
+                    {/* Top card pill with Google verified badge */}
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#F0F4F9] text-[#1A73E8] text-[10.5px] font-semibold border border-[#D3E3FD]">
+                        <GoogleIcon className="h-3 w-3 shrink-0" />
+                        <span>Verified Google Review</span>
+                      </span>
+
+                      <div className="flex items-center gap-0.5 text-[#FBBC05]">
+                        {[...Array(item.rating)].map((_, i) => (
+                          <Star key={i} className="h-3 w-3 fill-current" />
+                        ))}
+                      </div>
                     </div>
+
+                    {/* Review Text with Read More toggle */}
+                    <blockquote className="mb-3 font-sans text-[13px] leading-relaxed text-[#423932] min-h-[52px]">
+                      &ldquo;{displayText}&rdquo;
+                      {isLong && (
+                        <button
+                          type="button"
+                          onClick={() => toggleExpand(item.id)}
+                          className="ml-1.5 inline font-semibold text-burgundy hover:underline cursor-pointer focus:outline-none"
+                        >
+                          {isExpanded ? 'Show less' : 'Read more'}
+                        </button>
+                      )}
+                    </blockquote>
                   </div>
 
-                  {/* Review Text */}
-                  <blockquote className="mb-5 font-sans text-sm leading-relaxed text-[#423932]">
-                    &ldquo;{item.quote}&rdquo;
-                  </blockquote>
-                </div>
+                  {/* Figcaption with Reviewer Info */}
+                  <figcaption className="flex items-center gap-2.5 border-t border-[#F2ECE4] pt-2.5">
+                    <div
+                      aria-hidden="true"
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E8DEC8] bg-gradient-to-br from-[#FAF2E8] to-[#F3EDE3] font-display text-[11px] font-bold tracking-wider text-burgundy shadow-xs select-none"
+                    >
+                      {item.name
+                        .replace('&', '')
+                        .split(' ')
+                        .filter(Boolean)
+                        .slice(0, 2)
+                        .map((n) => n[0])
+                        .join('')}
+                    </div>
 
-                {/* Figcaption with Reviewer Info */}
-                <figcaption className="flex items-center gap-3 border-t border-[#F2ECE4] pt-3.5">
-                  <div
-                    aria-hidden="true"
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E8DEC8] bg-gradient-to-br from-[#FAF2E8] to-[#F3EDE3] font-display text-xs font-bold tracking-wider text-burgundy shadow-xs select-none"
-                  >
-                    {item.name
-                      .replace('&', '')
-                      .split(' ')
-                      .filter(Boolean)
-                      .slice(0, 2)
-                      .map((n) => n[0])
-                      .join('')}
-                  </div>
-
-                  <div className="min-w-0 flex-1">
-                    <h3 className="truncate font-display text-[15px] font-bold text-[#221F1D]">
-                      {item.name}
-                    </h3>
-                    <p className="truncate font-sans text-[11px] text-[#7A6E65]">
-                      {item.date ? item.date : 'Verified Customer'} • {item.event}
-                    </p>
-                  </div>
-                </figcaption>
-              </figure>
-            ))}
+                    <div className="min-w-0 flex-1">
+                      <h3 className="truncate font-display text-[14px] font-bold text-[#221F1D]">
+                        {item.name}
+                      </h3>
+                      <p className="truncate font-sans text-[10.5px] text-[#7A6E65]">
+                        {item.date ? item.date : 'Verified Customer'} • {item.event}
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              );
+            })}
           </div>
 
           {/* Slider Controls for Desktop (Top 3 primary, slider for additional reviews) */}
@@ -185,52 +208,70 @@ export const TestimonialsSection: React.FC = () => {
 
         {/* ──────── MOBILE VIEW: 1 Card at a time with touch arrows ──────── */}
         <div className="block md:hidden">
-          {testimonials[mobileIdx] && (
-            <figure className="group relative flex flex-col justify-between rounded-2xl border border-[#EAE3D6] bg-white p-6 shadow-sm">
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F0F4F9] text-[#1A73E8] text-[11px] font-semibold border border-[#D3E3FD]">
-                    <GoogleIcon className="h-3 w-3 shrink-0" />
-                    <span>Verified Review</span>
-                  </span>
+          {testimonials[mobileIdx] && (() => {
+            const currentItem = testimonials[mobileIdx];
+            const isExpanded = !!expandedIds[currentItem.id];
+            const isLong = currentItem.quote.length > MAX_QUOTE_LENGTH;
+            const displayText = isLong && !isExpanded
+              ? `${currentItem.quote.slice(0, MAX_QUOTE_LENGTH).trim()}...`
+              : currentItem.quote;
 
-                  <div className="flex items-center gap-0.5 text-[#FBBC05]">
-                    {[...Array(testimonials[mobileIdx].rating)].map((_, i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                    ))}
+            return (
+              <figure className="group relative flex flex-col justify-between rounded-xl border border-[#EAE3D6] bg-white p-4.5 shadow-sm">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#F0F4F9] text-[#1A73E8] text-[10.5px] font-semibold border border-[#D3E3FD]">
+                      <GoogleIcon className="h-3 w-3 shrink-0" />
+                      <span>Verified Review</span>
+                    </span>
+
+                    <div className="flex items-center gap-0.5 text-[#FBBC05]">
+                      {[...Array(currentItem.rating)].map((_, i) => (
+                        <Star key={i} className="h-3 w-3 fill-current" />
+                      ))}
+                    </div>
                   </div>
+
+                  <blockquote className="mb-3 font-sans text-[13px] leading-relaxed text-[#423932]">
+                    &ldquo;{displayText}&rdquo;
+                    {isLong && (
+                      <button
+                        type="button"
+                        onClick={() => toggleExpand(currentItem.id)}
+                        className="ml-1.5 inline font-semibold text-burgundy hover:underline cursor-pointer focus:outline-none"
+                      >
+                        {isExpanded ? 'Show less' : 'Read more'}
+                      </button>
+                    )}
+                  </blockquote>
                 </div>
 
-                <blockquote className="mb-5 font-sans text-sm leading-relaxed text-[#423932]">
-                  &ldquo;{testimonials[mobileIdx].quote}&rdquo;
-                </blockquote>
-              </div>
+                <figcaption className="flex items-center gap-2.5 border-t border-[#F2ECE4] pt-2.5">
+                  <div
+                    aria-hidden="true"
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E8DEC8] bg-gradient-to-br from-[#FAF2E8] to-[#F3EDE3] font-display text-[11px] font-bold tracking-wider text-burgundy shadow-xs select-none"
+                  >
+                    {currentItem.name
+                      .replace('&', '')
+                      .split(' ')
+                      .filter(Boolean)
+                      .slice(0, 2)
+                      .map((n) => n[0])
+                      .join('')}
+                  </div>
 
-              <figcaption className="flex items-center gap-3 border-t border-[#F2ECE4] pt-3.5">
-                <div
-                  aria-hidden="true"
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E8DEC8] bg-gradient-to-br from-[#FAF2E8] to-[#F3EDE3] font-display text-xs font-bold tracking-wider text-burgundy shadow-xs select-none"
-                >
-                  {testimonials[mobileIdx].name
-                    .replace('&', '')
-                    .split(' ')
-                    .filter(Boolean)
-                    .slice(0, 2)
-                    .map((n) => n[0])
-                    .join('')}
-                </div>
-
-                <div className="min-w-0 flex-1">
-                  <h3 className="truncate font-display text-[15px] font-bold text-[#221F1D]">
-                    {testimonials[mobileIdx].name}
-                  </h3>
-                  <p className="truncate font-sans text-[11px] text-[#7A6E65]">
-                    {testimonials[mobileIdx].date || 'Verified Customer'}
-                  </p>
-                </div>
-              </figcaption>
-            </figure>
-          )}
+                  <div className="min-w-0 flex-1">
+                    <h3 className="truncate font-display text-[14px] font-bold text-[#221F1D]">
+                      {currentItem.name}
+                    </h3>
+                    <p className="truncate font-sans text-[10.5px] text-[#7A6E65]">
+                      {currentItem.date || 'Verified Customer'}
+                    </p>
+                  </div>
+                </figcaption>
+              </figure>
+            );
+          })()}
 
           {/* Mobile Navigation Controls */}
           <div className="mt-5 flex items-center justify-between">
