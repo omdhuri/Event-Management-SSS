@@ -736,22 +736,6 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
 export const HERO_SLIDES = [
   {
     id: 1,
-    title: 'Royal Wedding & Stage Decor',
-    category: 'Weddings',
-    image: '/images/hero/hero-slide-01.webp',
-    thumb: '/images/hero/hero-thumb-01.webp',
-    tagline: 'Opulent mandap and reception stages with chandeliers and floral artistry'
-  },
-  {
-    id: 2,
-    title: 'Divine Heritage & Royal Ceremony Decor',
-    category: 'Traditional & Naming Ceremonies',
-    image: '/images/hero/hero-slide-02.webp',
-    thumb: '/images/hero/hero-thumb-02.webp',
-    tagline: 'Bespoke spiritual backdrops, royal velvet seating & brass temple samai styling'
-  },
-  {
-    id: 3,
     title: 'Magical 1st Birthday Milestone Celebrations',
     category: 'Birthdays',
     image: '/images/hero/hero-slide-03.webp',
@@ -759,7 +743,7 @@ export const HERO_SLIDES = [
     tagline: 'Giant marquee ONE letters, shimmer sequin wall & custom theme styling'
   },
   {
-    id: 4,
+    id: 2,
     title: 'Traditional Marathi Dohale Jevan & Baby Shower',
     category: 'Baby Showers',
     image: '/images/hero/hero-slide-04.webp',
@@ -767,12 +751,28 @@ export const HERO_SLIDES = [
     tagline: 'Floral jhoola swing, glowing "कुणीतरी येणार गं" neon & peacock plumage styling'
   },
   {
-    id: 5,
+    id: 3,
+    title: 'Royal Wedding & Stage Decor',
+    category: 'Weddings',
+    image: '/images/hero/hero-slide-01.webp',
+    thumb: '/images/hero/hero-thumb-01.webp',
+    tagline: 'Opulent mandap and reception stages with chandeliers and floral artistry'
+  },
+  {
+    id: 4,
     title: 'Floral Jhoola & Traditional Dohale Jevan',
     category: 'Baby Showers',
     image: '/images/hero/hero-slide-05.webp',
     thumb: '/images/hero/hero-thumb-05.webp',
     tagline: 'Floral entryway arch, traditional carved swing & glowing "कुणी तरी येणार गं!" neon'
+  },
+  {
+    id: 5,
+    title: 'Divine Heritage & Royal Ceremony Decor',
+    category: 'Traditional & Naming Ceremonies',
+    image: '/images/hero/hero-slide-02.webp',
+    thumb: '/images/hero/hero-thumb-02.webp',
+    tagline: 'Bespoke spiritual backdrops, royal velvet seating & brass temple samai styling'
   }
 ];
 
