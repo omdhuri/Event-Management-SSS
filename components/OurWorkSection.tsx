@@ -134,13 +134,13 @@ export const OurWorkSection = ({ onSelectEvent, onOpenFullGallery }: OurWorkSect
               ) : null;
             })()}
 
-            {/* Right 2x2 grid: Baby Shower + Haldi on top, Birthday + Car on bottom */}
+            {/* Right 2x2 grid: Baby Shower + Haldi on top, Birthday + Mehendi on bottom */}
             <div className="col-span-7 grid grid-cols-2 grid-rows-2 gap-3.5 lg:gap-4">
               {[
                 GALLERY_DATA.find((i) => i.id === 'teddy-bear-garden-shower'),
                 GALLERY_DATA.find((i) => i.id === 'haldi-marigold-canopy'),
                 GALLERY_DATA.find((i) => i.id === 'jungle-safari-birthday'),
-                GALLERY_DATA.find((i) => i.id === 'bridal-car-decor'),
+                GALLERY_DATA.find((i) => i.id === 'traditional-mehendi-ceremony') ?? GALLERY_DATA.find((i) => i.id === 'contemporary-ring-ceremony'),
               ].filter(Boolean).map((item, idx) =>
                 item ? (
                   <div key={item.id} className="relative h-[143px] overflow-hidden rounded-2xl shadow-xl lg:h-[157px]">

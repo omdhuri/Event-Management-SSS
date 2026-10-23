@@ -492,8 +492,8 @@ export const GALLERY_DATA: GalleryItem[] = [
     image: '/images/hero/hero-slide-01.webp',
     images: [
       '/images/hero/hero-slide-01.webp',
+      '/images/haldi-ceremony/haldi-ring-ceremony-06.webp',
       '/images/haldi-ceremony/haldi-ring-ceremony-05.webp',
-      '/images/wedding-car.webp',
       '/images/about-centerpiece.webp'
     ],
     description: 'A breathtaking royal stage setup featuring handpicked fresh floral arrangements, opulent crystal chandeliers, velvet seating, and grand entryway coordination.',
@@ -507,49 +507,48 @@ export const GALLERY_DATA: GalleryItem[] = [
   },
   {
     id: 'contemporary-ring-ceremony',
-    title: 'Modern Ring Ceremony & Engagement',
+    title: 'Grand Ring Ceremony & Engagement Stage',
     category: 'Weddings',
     date: 'Jan 2025',
     location: 'Borivali, Mumbai',
     client: 'Gaurav & Neha Engagement',
-    tagline: 'Circular floral ring backdrop with glowing neon and delicate florals',
-    image: '/images/haldi-ceremony/haldi-ring-ceremony-05.webp',
+    tagline: 'Luxury royal velvet sofa lounge with glowing "Ring Ceremony" script & floral runner',
+    image: '/images/haldi-ceremony/haldi-ring-ceremony-06.webp',
     images: [
-      '/images/haldi-ceremony/haldi-ring-ceremony-05.webp',
       '/images/haldi-ceremony/haldi-ring-ceremony-06.webp',
-      '/images/hero/hero-slide-01.webp',
-      '/images/wedding-car.webp'
+      '/images/haldi-ceremony/haldi-ring-ceremony-05.webp',
+      '/images/hero/hero-slide-01.webp'
     ],
-    description: 'An intimate, contemporary engagement stage featuring a circular floral ring, warm Edison bulb accents, illuminated initials, and bespoke couple lounge seating.',
+    description: 'A sophisticated engagement stage setup featuring an ornate white and gold velvet royal sofa lounge, illuminated "Ring Ceremony" golden lettering, fairy light drapes, and fresh red and white rose runners.',
     highlights: [
-      'Circular floral ring backdrop',
-      'Custom couple initial LED sign',
-      'Velvet couple seating lounge',
-      'Ring exchange pedestal styling',
-      'Ambient warm fairy light walkway'
+      'Curved royal white & gold velvet sofa lounge',
+      'Custom illuminated "Ring Ceremony" golden script',
+      'Fresh red & white rose floral top runner',
+      'Fairy light backdrop with golden satin drapery',
+      'Matching side floral bouquet pedestals'
     ]
   },
   {
-    id: 'bridal-car-decor',
-    title: 'Luxury Bridal Car Styling',
+    id: 'traditional-mehendi-ceremony',
+    title: 'Vibrant Mehendi Celebration & Backdrop',
     category: 'Weddings',
     date: 'Nov 2024',
-    location: 'Kalyan',
-    client: 'Deshmukh Wedding Procession',
-    tagline: 'Heart-shaped red rose arrangement with satin ribbons and baby\'s breath',
-    image: '/images/wedding-car.webp',
+    location: 'Kalyan West',
+    client: 'Deshmukh Wedding Celebrations',
+    tagline: 'Lush foliage wall, glowing "मेंहदी" neon, Rajasthani umbrellas & marigold drapes',
+    image: '/images/haldi-ceremony/haldi-ring-ceremony-04.webp',
     images: [
-      '/images/wedding-car.webp',
-      '/images/hero/hero-slide-01.webp',
-      '/images/about-centerpiece.webp'
+      '/images/haldi-ceremony/haldi-ring-ceremony-04.webp',
+      '/images/haldi-ceremony/haldi-ring-ceremony-02.webp',
+      '/images/haldi-ceremony/haldi-ring-ceremony-01.webp'
     ],
-    description: 'Exquisite bridal car decoration with a romantic heart-shaped fresh red rose centerpiece, delicate baby\'s breath floral garlands, and premium satin ribbons for the grand wedding arrival.',
+    description: 'An authentic and colorful Mehendi celebration featuring a lush vertical foliage wall, custom glowing Hindi "मेंहदी" neon signage, handcrafted Rajasthani embroidered umbrellas, hanging marigold garlands, and decorated bridal seating.',
     highlights: [
-      'Fresh Dutch red rose heart installation',
-      'Scratch-free magnetic & suction mounting',
-      'Door handle ribbon & floral accents',
-      'Rear floral garland styling',
-      'On-time on-location car styling execution'
+      'Lush vertical foliage backdrop',
+      'Custom glowing Hindi "मेंहदी" neon sign',
+      'Handcrafted Rajasthani embroidered umbrellas',
+      'Fresh yellow and orange marigold garlands',
+      'Traditional bride seating & decorative floral urns'
     ]
   },
   {
