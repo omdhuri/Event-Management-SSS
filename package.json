@@ -5,7 +5,7 @@
   "description": "Shree Swami Samarth Events — Luxury Event Management & Decor (Kalyan, Dombivli, Thane, Mumbai)",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "next lint"
   },

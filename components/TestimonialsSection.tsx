@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Star, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { FloralCornerMotif } from './FloralMotif';
 import { GoogleIcon } from './icons';
@@ -16,6 +16,9 @@ export const TestimonialsSection: React.FC = () => {
   const [activePage, setActivePage] = useState(0); // 0 = first 3 reviews (top 3)
   const [mobileIdx, setMobileIdx] = useState(0);
   const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({});
+  const [isAutoPlayPaused, setIsAutoPlayPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   const toggleExpand = (id: string) => {
     setExpandedIds((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -38,6 +41,44 @@ export const TestimonialsSection: React.FC = () => {
 
   const handleNextMobile = () => {
     setMobileIdx((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
+  // Automatic slider animation for mobile displays (auto-advances every 4.5s)
+  useEffect(() => {
+    const isAnyExpanded = Object.values(expandedIds).some(Boolean);
+    if (isAutoPlayPaused || isAnyExpanded) return;
+
+    const timer = setInterval(() => {
+      setMobileIdx((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    }, 4500);
+
+    return () => clearInterval(timer);
+  }, [isAutoPlayPaused, expandedIds, testimonials.length]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = null;
+    setIsAutoPlayPaused(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current !== null && touchEndX.current !== null) {
+      const diff = touchStartX.current - touchEndX.current;
+      if (diff > 40) {
+        handleNextMobile();
+      } else if (diff < -40) {
+        handlePrevMobile();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+    setTimeout(() => {
+      setIsAutoPlayPaused(false);
+    }, 1500);
   };
 
   return (
@@ -202,79 +243,94 @@ export const TestimonialsSection: React.FC = () => {
           )}
         </div>
 
-        {/* ──────── MOBILE VIEW: 1 Card at a time with touch arrows ──────── */}
+        {/* ──────── MOBILE VIEW: Automatic Animated Sliding Track with touch & swipe ──────── */}
         <div className="block md:hidden">
-          {testimonials[mobileIdx] && (() => {
-            const currentItem = testimonials[mobileIdx];
-            const isExpanded = !!expandedIds[currentItem.id];
-            const isLong = currentItem.quote.length > MAX_QUOTE_LENGTH;
-            const displayText = isLong && !isExpanded
-              ? `${currentItem.quote.slice(0, MAX_QUOTE_LENGTH).trim()}...`
-              : currentItem.quote;
+          <div
+            className="relative overflow-hidden py-1"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onMouseEnter={() => setIsAutoPlayPaused(true)}
+            onMouseLeave={() => setIsAutoPlayPaused(false)}
+          >
+            <div
+              className="flex transition-transform duration-500 ease-out will-change-transform"
+              style={{ transform: `translateX(-${mobileIdx * 100}%)` }}
+            >
+              {testimonials.map((item) => {
+                const isExpanded = !!expandedIds[item.id];
+                const isLong = item.quote.length > MAX_QUOTE_LENGTH;
+                const displayText = isLong && !isExpanded
+                  ? `${item.quote.slice(0, MAX_QUOTE_LENGTH).trim()}...`
+                  : item.quote;
 
-            return (
-              <figure className="group relative flex flex-col justify-between rounded-xl border border-[#EAE3D6] bg-white p-4.5 shadow-sm">
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-2.5">
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#F0F4F9] text-[#1A73E8] text-[10.5px] font-semibold border border-[#D3E3FD]">
-                      <GoogleIcon className="h-3 w-3 shrink-0" />
-                      <span>Verified Review</span>
-                    </span>
+                return (
+                  <div key={item.id} className="w-full shrink-0 px-1">
+                    <figure className="group relative flex flex-col justify-between rounded-xl border border-[#EAE3D6] bg-white p-4.5 shadow-sm min-h-[190px]">
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-2.5">
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#F0F4F9] text-[#1A73E8] text-[10.5px] font-semibold border border-[#D3E3FD]">
+                            <GoogleIcon className="h-3 w-3 shrink-0" />
+                            <span>Verified Review</span>
+                          </span>
 
-                    <div className="flex items-center gap-0.5 text-[#FBBC05]">
-                      {[...Array(currentItem.rating)].map((_, i) => (
-                        <Star key={i} className="h-3 w-3 fill-current" />
-                      ))}
-                    </div>
+                          <div className="flex items-center gap-0.5 text-[#FBBC05]">
+                            {[...Array(item.rating)].map((_, i) => (
+                              <Star key={i} className="h-3 w-3 fill-current" />
+                            ))}
+                          </div>
+                        </div>
+
+                        <blockquote className="mb-3 font-sans text-[13px] leading-relaxed text-[#423932]">
+                          &ldquo;{displayText}&rdquo;
+                          {isLong && (
+                            <button
+                              type="button"
+                              onClick={() => toggleExpand(item.id)}
+                              className="ml-1.5 inline font-semibold text-burgundy hover:underline cursor-pointer focus:outline-none"
+                            >
+                              {isExpanded ? 'Show less' : 'Read more'}
+                            </button>
+                          )}
+                        </blockquote>
+                      </div>
+
+                      <figcaption className="flex items-center gap-2.5 border-t border-[#F2ECE4] pt-2.5 mt-auto">
+                        <div
+                          aria-hidden="true"
+                          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E8DEC8] bg-gradient-to-br from-[#FAF2E8] to-[#F3EDE3] font-display text-[11px] font-bold tracking-wider text-burgundy shadow-xs select-none"
+                        >
+                          {item.name
+                            .replace('&', '')
+                            .split(' ')
+                            .filter(Boolean)
+                            .slice(0, 2)
+                            .map((n) => n[0])
+                            .join('')}
+                        </div>
+
+                        <div className="min-w-0 flex-1">
+                          <h3 className="truncate font-display text-[14px] font-bold text-[#221F1D]">
+                            {item.name}
+                          </h3>
+                          <p className="truncate font-sans text-[10.5px] text-[#7A6E65]">
+                            {item.date || 'Verified Customer'}
+                          </p>
+                        </div>
+                      </figcaption>
+                    </figure>
                   </div>
-
-                  <blockquote className="mb-3 font-sans text-[13px] leading-relaxed text-[#423932]">
-                    &ldquo;{displayText}&rdquo;
-                    {isLong && (
-                      <button
-                        type="button"
-                        onClick={() => toggleExpand(currentItem.id)}
-                        className="ml-1.5 inline font-semibold text-burgundy hover:underline cursor-pointer focus:outline-none"
-                      >
-                        {isExpanded ? 'Show less' : 'Read more'}
-                      </button>
-                    )}
-                  </blockquote>
-                </div>
-
-                <figcaption className="flex items-center gap-2.5 border-t border-[#F2ECE4] pt-2.5">
-                  <div
-                    aria-hidden="true"
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E8DEC8] bg-gradient-to-br from-[#FAF2E8] to-[#F3EDE3] font-display text-[11px] font-bold tracking-wider text-burgundy shadow-xs select-none"
-                  >
-                    {currentItem.name
-                      .replace('&', '')
-                      .split(' ')
-                      .filter(Boolean)
-                      .slice(0, 2)
-                      .map((n) => n[0])
-                      .join('')}
-                  </div>
-
-                  <div className="min-w-0 flex-1">
-                    <h3 className="truncate font-display text-[14px] font-bold text-[#221F1D]">
-                      {currentItem.name}
-                    </h3>
-                    <p className="truncate font-sans text-[10.5px] text-[#7A6E65]">
-                      {currentItem.date || 'Verified Customer'}
-                    </p>
-                  </div>
-                </figcaption>
-              </figure>
-            );
-          })()}
+                );
+              })}
+            </div>
+          </div>
 
           {/* Mobile Navigation Controls */}
           <div className="mt-5 flex items-center justify-between">
             <button
               type="button"
               onClick={handlePrevMobile}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8CCBD] bg-white text-[#423932] shadow-xs active:scale-95"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8CCBD] bg-white text-[#423932] shadow-xs active:scale-95 cursor-pointer"
               aria-label="Previous review"
             >
               <ChevronLeft className="h-4 w-4" />
@@ -287,7 +343,7 @@ export const TestimonialsSection: React.FC = () => {
                   key={i}
                   type="button"
                   onClick={() => setMobileIdx(i)}
-                  className={`h-2 rounded-full transition-all ${
+                  className={`h-2 rounded-full transition-all cursor-pointer ${
                     mobileIdx === i ? 'w-5 bg-burgundy' : 'w-2 bg-[#D8CCBD]'
                   }`}
                   aria-label={`Review ${i + 1}`}
@@ -298,7 +354,7 @@ export const TestimonialsSection: React.FC = () => {
             <button
               type="button"
               onClick={handleNextMobile}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8CCBD] bg-white text-[#423932] shadow-xs active:scale-95"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8CCBD] bg-white text-[#423932] shadow-xs active:scale-95 cursor-pointer"
               aria-label="Next review"
             >
               <ChevronRight className="h-4 w-4" />
