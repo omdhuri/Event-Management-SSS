@@ -616,5 +616,63 @@
       "height": 1600,
       "sizeKb": 154.3
     }
+  ],
+  "corporate": [
+    {
+      "sourceFile": "WhatsApp Image 2026-10-23 at 11.49.18 AM (1).jpeg",
+      "outputFileName": "corporate-decor-01.webp",
+      "url": "/images/corporate/corporate-decor-01.webp",
+      "width": 1524,
+      "height": 858,
+      "sizeKb": 113.3
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-23 at 11.49.18 AM (2).jpeg",
+      "outputFileName": "corporate-decor-02.webp",
+      "url": "/images/corporate/corporate-decor-02.webp",
+      "width": 1600,
+      "height": 1600,
+      "sizeKb": 125.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-23 at 11.49.18 AM.jpeg",
+      "outputFileName": "corporate-decor-03.webp",
+      "url": "/images/corporate/corporate-decor-03.webp",
+      "width": 900,
+      "height": 1600,
+      "sizeKb": 138.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-23 at 11.49.19 AM (1).jpeg",
+      "outputFileName": "corporate-decor-04.webp",
+      "url": "/images/corporate/corporate-decor-04.webp",
+      "width": 495,
+      "height": 619,
+      "sizeKb": 49.5
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-23 at 11.49.19 AM (2).jpeg",
+      "outputFileName": "corporate-decor-05.webp",
+      "url": "/images/corporate/corporate-decor-05.webp",
+      "width": 1254,
+      "height": 1254,
+      "sizeKb": 156.9
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-23 at 11.49.19 AM.jpeg",
+      "outputFileName": "corporate-decor-06.webp",
+      "url": "/images/corporate/corporate-decor-06.webp",
+      "width": 1500,
+      "height": 1500,
+      "sizeKb": 87.7
+    },
+    {
+      "sourceFile": "WhatsApp Image 2026-10-23 at 11.49.20 AM.jpeg",
+      "outputFileName": "corporate-decor-07.webp",
+      "url": "/images/corporate/corporate-decor-07.webp",
+      "width": 1254,
+      "height": 1254,
+      "sizeKb": 145.7
+    }
   ]
 }

@@ -129,21 +129,21 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
   {
     id: 'corporate-events',
-    title: 'Corporate Events & Galas',
+    title: 'Corporate Events & Celebrations',
     shortDesc: 'Professional setups for meaningful gatherings.',
-    fullDesc: 'Elevate your brand presence with sophisticated annual galas, award nights, product launches, corporate conferences, and festive office celebrations executed with flawless professionalism.',
-    image: '/images/about-centerpiece.webp',
+    fullDesc: 'Elevate your brand presence and company morale with sophisticated entrance gateways, festive workplace styling, annual celebrations, and milestone gatherings executed with flawless professionalism.',
+    image: '/images/corporate/corporate-decor-02.webp',
     iconName: 'Briefcase',
     category: 'Corporate',
     deliverables: [
-      'Stage backdrop & LED video wall branding',
-      'Banquet round table centerpieces & linens',
-      'Registration desk & red carpet photo-op wall',
-      'Audio-visual setup & ambient color uplighting',
-      'Trophy & award presentation podium styling',
-      'End-to-end event execution & guest flow management'
+      'Corporate entryway styling & welcome portals',
+      'Patriotic & festival photo-op backdrops (15th Aug, Diwali)',
+      'Office cubicle & ceiling festive lantern installations',
+      'Fresh marigold garland workstation draping',
+      'Institutional & annual day balloon arches',
+      'End-to-end corporate event styling & zero downtime execution'
     ],
-    popularThemes: ['Executive Black & Gold Gala', 'Tech Modern Minimalist', 'Annual Corporate Festival', 'Eco-Chic Conference']
+    popularThemes: ['Corporate Gateway & Office Celebrations', 'Institutional Annual Day Decor', 'Patriotic Office Celebrations', 'Festive Workplace Lantern & Bay Styling']
   }
 ];
 
@@ -578,26 +578,94 @@ export const GALLERY_DATA: GalleryItem[] = [
     ]
   },
   {
-    id: 'corporate-annual-gala',
-    title: 'Corporate Leadership Gala & Awards',
+    id: 'corporate-gateway-office',
+    title: 'Corporate Gateway & Festive Office Styling',
     category: 'Corporate',
-    date: 'Nov 2024',
-    location: 'BKC, Mumbai',
-    client: 'TechGlobal Annual Awards',
-    tagline: 'Sophisticated banquet hall staging, LED wall branding, and centerpiece styling',
-    image: '/images/about-centerpiece.webp',
+    date: 'Aug 2024',
+    location: 'Thane',
+    client: 'TSI Corporate Headquarters',
+    tagline: 'Vibrant corporate gateway entrance, paper fan rosettes & office festival decor',
+    image: '/images/corporate/corporate-decor-02.webp',
     images: [
-      '/images/about-centerpiece.webp',
-      '/images/hero/hero-slide-01.webp',
-      '/images/team-members.webp'
+      '/images/corporate/corporate-decor-02.webp',
+      '/images/corporate/corporate-decor-03.webp',
+      '/images/corporate/corporate-decor-06.webp'
     ],
-    description: 'A prestigious annual award night with sleek modern staging, ambient corporate uplighting, banquet table centerpieces, and seamless audio-visual coordination for 350 executives.',
+    description: 'A modern corporate workplace celebration featuring vibrant glass entrance decor, custom paper fan rosettes, patriotic photobooth ring installation, and ambient office styling for team celebrations.',
     highlights: [
-      'Custom stage backdrop & LED branding',
-      'Executive banquet table styling',
-      'Red carpet step-and-repeat media wall',
-      'Trophy presentation dais & lighting',
-      'Full-day event logistics management'
+      'Glass facade entrance portal styling',
+      'Custom corporate color paper fan rosettes',
+      'Employee selfie & photobooth ring setup',
+      'Reception and workstation accent decor',
+      'Zero disturbance to daily office workflow'
+    ]
+  },
+  {
+    id: 'corporate-annual-day-academy',
+    title: 'Institutional Annual Day & Entrance Arch',
+    category: 'Corporate',
+    date: 'Dec 2024',
+    location: 'Kalyan West',
+    client: 'Priti Academy Education Society',
+    tagline: 'Grand entrance balloon arch in royal blue & gold with custom institution banner',
+    image: '/images/corporate/corporate-decor-01.webp',
+    images: [
+      '/images/corporate/corporate-decor-01.webp',
+      '/images/corporate/corporate-decor-02.webp'
+    ],
+    description: 'A majestic institutional entrance installation for Priti Academy Education Society featuring towering metallic blue, gold, and white organic balloon arches welcoming VIPs, guests, and students.',
+    highlights: [
+      'Double-pillar royal blue & gold balloon arch',
+      'Institutional banner & welcoming archway',
+      'VIP entry walkway styling',
+      'Durable outdoor-rated balloon construction',
+      'Timely setup before early morning guest arrival'
+    ]
+  },
+  {
+    id: 'corporate-patriotic-photobooth',
+    title: 'Independence Day Corporate Photobooth Ring',
+    category: 'Corporate',
+    date: 'Aug 2024',
+    location: 'Navi Mumbai',
+    client: 'Corporate Office Festivities',
+    tagline: 'Tricolor circular ring balloon installation with Ashoka Chakra accents',
+    image: '/images/corporate/corporate-decor-03.webp',
+    images: [
+      '/images/corporate/corporate-decor-03.webp',
+      '/images/corporate/corporate-decor-02.webp',
+      '/images/corporate/corporate-decor-06.webp'
+    ],
+    description: 'An eye-catching circular ring photobooth backdrop in vibrant saffron, white, and green balloons, complete with custom patriotic centerpieces for corporate employee photo sessions and social sharing.',
+    highlights: [
+      'Full circular metal ring balloon framing',
+      'Saffron, white & emerald green tricolor palette',
+      'Ashoka Chakra & flag motif accents',
+      'Interactive employee selfie photo-op corner',
+      'Compact footprint tailored for corporate lobbies'
+    ]
+  },
+  {
+    id: 'corporate-workplace-festive-decor',
+    title: 'Workplace Festive Lantern & Bay Decor',
+    category: 'Corporate',
+    date: 'Oct 2024',
+    location: 'Airoli, Navi Mumbai',
+    client: 'Tech Hub Corporate Offices',
+    tagline: 'Suspended Akash Kandil lanterns, fresh marigold workstation draping & bay decor',
+    image: '/images/corporate/corporate-decor-04.webp',
+    images: [
+      '/images/corporate/corporate-decor-04.webp',
+      '/images/corporate/corporate-decor-05.webp',
+      '/images/corporate/corporate-decor-07.webp'
+    ],
+    description: 'Transforming corporate cubicles into a warm, joyous festive environment with hanging traditional Akash Kandils along the ceiling, fresh marigold garland draping across workstation partitions, and reception lobby lighting.',
+    highlights: [
+      'Ceiling suspended traditional Akash Kandils',
+      'Fresh marigold garland runners across workstation bays',
+      'Warm ambient fairy lights & ceiling streamers',
+      'Zero cable clutter & fire-safe installations',
+      'Complete overnight setup with zero downtime'
     ]
   }
 ];
