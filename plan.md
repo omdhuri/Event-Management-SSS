@@ -68,5 +68,6 @@ Seamlessly transition from placeholder assets to original client event imagery, 
 | Birthday Services Enhancement | **Done** | Added Magic Show, Panda & Mickey Mouse mascots, and Fog & Pyro entries to Birthday descriptions, deliverables & planning modal |
 | Google Reviews Integration | **Done** | Connected official Google Business listing (5.0 stars, 18 reviews), genuine reviews from Shashwat Tiwari, 314 Vishal Kolekar, Jagathesvaran Thanabal, Alisha Nikalji, Yash Shukla & Koli Shivam; top 3 default view with carousel slider; action buttons: "Review Us on Google" & "View Us on Google" |
 | Corporate Images Pipeline & Integration | **Done** | Processed 7 authentic raw corporate photos into public/images/corporate/, updated SERVICES_DATA & GALLERY_DATA corporate projects with zero errors |
+| Image Orientation Adjustments | **Done** | Rotated `baby-shower-decor-07.webp`, `baby-shower-decor-06.webp`, and `birthday-decor-06.webp` anti-clockwise by 90 degrees to make them perfectly upright; integrated rotation override into pipeline |
 
 
