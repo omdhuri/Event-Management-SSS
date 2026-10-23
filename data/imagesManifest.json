@@ -9,28 +9,36 @@
       "sizeKb": 141
     },
     {
-      "sourceFile": "WhatsApp Image 2026-10-21 at 10.13.27 PM (2).jpeg",
+      "sourceFile": "hero-02.png",
       "outputFileName": "hero-slide-02.webp",
       "url": "/images/hero/hero-slide-02.webp",
-      "width": 1280,
-      "height": 576,
-      "sizeKb": 114.2
+      "width": 1870,
+      "height": 841,
+      "sizeKb": 335.2
     },
     {
-      "sourceFile": "WhatsApp Image 2026-10-21 at 10.13.27 PM.jpeg",
+      "sourceFile": "hero-03.png",
       "outputFileName": "hero-slide-03.webp",
       "url": "/images/hero/hero-slide-03.webp",
-      "width": 1080,
-      "height": 1200,
-      "sizeKb": 111.3
+      "width": 1870,
+      "height": 841,
+      "sizeKb": 288.5
     },
     {
-      "sourceFile": "WhatsApp Image 2026-10-21 at 10.13.28 PM.jpeg",
+      "sourceFile": "hero-04.png",
       "outputFileName": "hero-slide-04.webp",
       "url": "/images/hero/hero-slide-04.webp",
-      "width": 1280,
-      "height": 718,
-      "sizeKb": 149.4
+      "width": 1674,
+      "height": 940,
+      "sizeKb": 369.1
+    },
+    {
+      "sourceFile": "baby-shower-decor-03.webp",
+      "outputFileName": "hero-slide-05.webp",
+      "url": "/images/hero/hero-slide-05.webp",
+      "width": 1336,
+      "height": 1600,
+      "sizeKb": 272.5
     }
   ],
   "birthday": [

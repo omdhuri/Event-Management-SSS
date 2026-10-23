@@ -223,9 +223,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
           </div>
 
-          {/* 3-thumbnail rail pinned to the right edge */}
+          {/* Thumbnail rail pinned to the right edge */}
           <div className="absolute right-5 top-1/2 z-20 flex -translate-y-1/2 flex-col gap-2 xl:right-7">
-            {HERO_SLIDES.slice(0, 3).map((item, i) => (
+            {HERO_SLIDES.map((item, i) => (
               <button
                 key={item.id}
                 type="button"
