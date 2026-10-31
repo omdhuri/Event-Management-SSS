@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ArrowLeft, X } from 'lucide-react';
 import { FloralCornerMotif, SectionOverline } from './FloralMotif';
 
 interface PageHeaderProps {
@@ -25,11 +25,24 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
       <FloralCornerMotif position="top-right" opacity={0.16} className="-right-8 -top-8" />
       <FloralCornerMotif position="bottom-left" opacity={0.12} className="-left-8 -bottom-8" />
 
+      {/* Top-Right Corner Cross (Exit) Button */}
+      <div className="absolute top-20 right-4 sm:top-24 sm:right-6 lg:top-24 lg:right-10 z-20">
+        <Link
+          href="/"
+          aria-label="Back to Home"
+          title="Back to Home"
+          className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#D8CCBD] bg-white/90 text-ink shadow-md backdrop-blur-sm transition-all duration-200 hover:border-burgundy hover:bg-burgundy hover:text-white hover:scale-105 active:scale-95 group cursor-pointer"
+        >
+          <X className="h-5 w-5 transition-transform duration-200 group-hover:rotate-90" />
+        </Link>
+      </div>
+
       <div className="container-luxe relative z-10 text-center">
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-4 flex items-center justify-center gap-1.5 text-xs text-ink-muted">
-          <Link href="/" className="transition-colors hover:text-burgundy">
-            Home
+          <Link href="/" className="inline-flex items-center gap-1.5 transition-colors hover:text-burgundy">
+            <ArrowLeft className="h-3 w-3 text-burgundy" />
+            <span>Home</span>
           </Link>
           <ChevronRight className="h-3 w-3 text-[#C59B27]" />
           <span className="font-medium text-ink">{breadcrumb}</span>
