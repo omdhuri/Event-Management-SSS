@@ -148,7 +148,32 @@ export const SERVICES_DATA: ServiceItem[] = [
 ];
 
 export const GALLERY_DATA: GalleryItem[] = [
-  // ───────── BIRTHDAYS (8 distinct authentic themes) ─────────
+  // ───────── BIRTHDAYS (authentic themes) ─────────
+  {
+    id: 'sarvadnya-safari-ring-birthday',
+    title: "Sarvadnya's 1st Birthday Safari & Shimmer Ring",
+    category: 'Birthdays',
+    date: 'Dec 2024',
+    location: 'Kalyan West',
+    client: "Sarvadnya's 1st Birthday Celebration",
+    tagline: 'Blue & gold balloon ring, illuminated marquee 1, silver tinsel wall & safari animal cutouts',
+    image: '/images/birthday/birthday-decor-18.webp',
+    images: [
+      '/images/birthday/birthday-decor-18.webp',
+      '/images/birthday/birthday-decor-04.webp',
+      '/images/birthday/birthday-decor-17.webp',
+      '/images/birthday/birthday-decor-16.webp',
+      '/images/birthday/birthday-decor-15.webp'
+    ],
+    description: 'A grand milestone birthday celebration featuring a sparkling silver tinsel wall, customized glowing "Happy Birthday SARVADNYA" sign, circular metallic blue and chrome gold balloon ring arch, illuminated marquee number 1, and safari animal accents.',
+    highlights: [
+      'Full circular metallic blue & gold balloon ring',
+      'Illuminated neon marquee number 1',
+      'Customized glowing acrylic name board',
+      'Sparkling silver tinsel foil photo wall',
+      'Cylinder dessert pedestal with safari animal cutouts'
+    ]
+  },
   {
     id: 'jungle-safari-birthday',
     title: 'Wild One Jungle Safari Birthday',
@@ -488,12 +513,12 @@ export const GALLERY_DATA: GalleryItem[] = [
     date: 'Dec 2024',
     location: 'Kalyan East',
     client: 'Priya & Amit Wedding',
-    tagline: 'Grand 30ft royal stage backdrop with crystal chandeliers and luxury sofa lounge',
-    image: '/images/hero/hero-slide-01.webp',
+    tagline: 'Grand royal wedding stage backdrop with luxury sofa lounge & floral artistry',
+    image: '/images/haldi-ceremony/haldi-ring-ceremony-06.webp',
     images: [
-      '/images/hero/hero-slide-01.webp',
       '/images/haldi-ceremony/haldi-ring-ceremony-06.webp',
       '/images/haldi-ceremony/haldi-ring-ceremony-05.webp',
+      '/images/haldi-ceremony/haldi-ring-ceremony-04.webp',
       '/images/about-centerpiece.webp'
     ],
     description: 'A breathtaking royal stage setup featuring handpicked fresh floral arrangements, opulent crystal chandeliers, velvet seating, and grand entryway coordination.',
