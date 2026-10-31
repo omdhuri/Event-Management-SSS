@@ -28,6 +28,8 @@ export const AboutSection = ({ onOpenOurStory }: AboutSectionProps) => (
               <img
                 src="/images/about-centerpiece.webp"
                 alt="Candlelit floral centerpiece styled for a reception table"
+                width={600}
+                height={400}
                 loading="lazy"
                 decoding="async"
                 className="h-full w-full object-cover object-center transition-transform duration-[900ms] ease-[var(--ease-luxe)] hover:scale-105"

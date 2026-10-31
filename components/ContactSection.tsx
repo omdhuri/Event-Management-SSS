@@ -61,6 +61,8 @@ export const ContactSection: React.FC<{ onOpenPlanModal?: () => void }> = () => 
             src="/images/about-centerpiece.webp"
             alt=""
             aria-hidden="true"
+            width={1200}
+            height={800}
             loading="lazy"
             decoding="async"
             className="h-full w-full object-cover object-center"

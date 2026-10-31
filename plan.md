@@ -72,5 +72,6 @@ Seamlessly transition from placeholder assets to original client event imagery, 
 | Hero Carousel Slide Expansion | **Done** | Upgraded Hero Carousel with authentic HD assets: replaced slides 2, 3, 4 from `New-Hero` and added Slide 5 from `baby-shower-decor-03` with dedicated thumbnails and full thumbnail rail navigation |
 | Hero Slides Sequence Rearrangement | **Done** | Reordered hero carousel slides to exact requested sequence: 1. Hero 3 (Birthdays) → 2. Hero 4 (Baby Showers) → 3. Hero 1 (Weddings) → 4. Hero 5 (Jhoola Setup) → 5. Hero 2 (Divine Heritage) |
 | Authentic Photography Replacement | **Done** | Eliminated AI Rolls Royce image (`wedding-car.webp`) from Our Work masonry layout & gallery; replaced with authentic client Mehendi stage celebration (`haldi-ring-ceremony-04.webp`) and genuine Ring Ceremony stage (`haldi-ring-ceremony-06.webp`) |
+| Lighthouse 95+ Mobile Optimization | **Done** | Preloaded LCP hero image in `<head>`, generated 750px mobile WebP slides (288KB -> 62KB), eliminated initial carousel multi-image network contention via idle-deferred slide mounting, added explicit dimensions across sections, and removed forced reflow on scroll |
 
 

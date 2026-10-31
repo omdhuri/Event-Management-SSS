@@ -73,7 +73,7 @@ export const OurWorkSection = ({ onSelectEvent, onOpenFullGallery }: OurWorkSect
                     aria-label={`${item.title} — view case study`}
                     className="relative block aspect-square w-full cursor-pointer overflow-hidden rounded-xl bg-midnight-soft text-left"
                   >
-                    <img src={item.image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                    <img src={item.image} alt={item.title} width={400} height={400} loading="lazy" decoding="async" className="h-full w-full object-cover" />
                   </button>
                 </li>
               ))}
@@ -126,6 +126,8 @@ export const OurWorkSection = ({ onSelectEvent, onOpenFullGallery }: OurWorkSect
                   <img
                     src={weddingItem.image}
                     alt={weddingItem.title}
+                    width={600}
+                    height={400}
                     loading="lazy"
                     decoding="async"
                     className="h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:scale-105"
@@ -153,6 +155,8 @@ export const OurWorkSection = ({ onSelectEvent, onOpenFullGallery }: OurWorkSect
                       <img
                         src={item.image}
                         alt={item.title}
+                        width={350}
+                        height={200}
                         loading="lazy"
                         decoding="async"
                         className="h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:scale-105"

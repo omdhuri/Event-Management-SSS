@@ -763,6 +763,7 @@ export const HERO_SLIDES = [
     title: 'Magical 1st Birthday Milestone Celebrations',
     category: 'Birthdays',
     image: '/images/hero/hero-slide-03.webp',
+    mobileImage: '/images/hero/hero-slide-03-mobile.webp',
     thumb: '/images/hero/hero-thumb-03.webp',
     tagline: 'Giant marquee ONE letters, shimmer sequin wall & custom theme styling'
   },
@@ -771,6 +772,7 @@ export const HERO_SLIDES = [
     title: 'Traditional Marathi Dohale Jevan & Baby Shower',
     category: 'Baby Showers',
     image: '/images/hero/hero-slide-04.webp',
+    mobileImage: '/images/hero/hero-slide-04-mobile.webp',
     thumb: '/images/hero/hero-thumb-04.webp',
     tagline: 'Floral jhoola swing, glowing "कुणीतरी येणार गं" neon & peacock plumage styling'
   },
@@ -779,6 +781,7 @@ export const HERO_SLIDES = [
     title: 'Royal Wedding & Stage Decor',
     category: 'Weddings',
     image: '/images/hero/hero-slide-01.webp',
+    mobileImage: '/images/hero/hero-slide-01-mobile.webp',
     thumb: '/images/hero/hero-thumb-01.webp',
     tagline: 'Opulent mandap and reception stages with chandeliers and floral artistry'
   },
@@ -787,6 +790,7 @@ export const HERO_SLIDES = [
     title: 'Floral Jhoola & Traditional Dohale Jevan',
     category: 'Baby Showers',
     image: '/images/hero/hero-slide-05.webp',
+    mobileImage: '/images/hero/hero-slide-05-mobile.webp',
     thumb: '/images/hero/hero-thumb-05.webp',
     tagline: 'Floral entryway arch, traditional carved swing & glowing "कुणी तरी येणार गं!" neon'
   },
@@ -795,6 +799,7 @@ export const HERO_SLIDES = [
     title: 'Divine Heritage & Royal Ceremony Decor',
     category: 'Traditional & Naming Ceremonies',
     image: '/images/hero/hero-slide-02.webp',
+    mobileImage: '/images/hero/hero-slide-02-mobile.webp',
     thumb: '/images/hero/hero-thumb-02.webp',
     tagline: 'Bespoke spiritual backdrops, royal velvet seating & brass temple samai styling'
   }

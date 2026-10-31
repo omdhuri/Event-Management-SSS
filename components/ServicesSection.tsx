@@ -67,6 +67,8 @@ export const ServicesSection = ({ onSelectService, onOpenPlanModal }: ServicesSe
                       alt={service.title}
                       loading="lazy"
                       decoding="async"
+                      width={600}
+                      height={300}
                       className="h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-luxe)] group-hover:scale-105"
                     />
                   </div>

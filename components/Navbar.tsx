@@ -34,8 +34,17 @@ export const Navbar: React.FC<NavbarProps> = ({
   const handleOpenPlanModal = onOpenPlanModal ?? modals.openPlanModal;
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 12);
-    handleScroll();
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 12);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    requestAnimationFrame(handleScroll);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

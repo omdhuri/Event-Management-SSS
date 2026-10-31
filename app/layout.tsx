@@ -136,6 +136,22 @@ export default function RootLayout({
       className={`${cormorant.variable} ${playfair.variable} ${jakarta.variable} ${alexBrush.variable}`}
     >
       <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero/hero-slide-03-mobile.webp"
+          type="image/webp"
+          media="(max-width: 768px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero/hero-slide-03.webp"
+          type="image/webp"
+          media="(min-width: 769px)"
+          fetchPriority="high"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

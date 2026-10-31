@@ -30,6 +30,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const touchStartX = useRef<number | null>(null);
   const total = HERO_SLIDES.length;
 
+  // High-performance carousel: only load slide 0 initially to eliminate network competition with LCP.
+  // Idle-preload the rest of the slides after initial paint is fully settled.
+  const [loadedIndices, setLoadedIndices] = useState<number[]>([0]);
+
+  useEffect(() => {
+    // Idle-preload the rest of the slides after initial paint is settled (2.5s)
+    const timer = setTimeout(() => {
+      setLoadedIndices(HERO_SLIDES.map((_, i) => i));
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Ensure current and next slide are loaded if user interacts before timeout
+    setLoadedIndices((prev) => {
+      const next = (index + 1) % total;
+      if (prev.includes(index) && prev.includes(next)) return prev;
+      return Array.from(new Set([...prev, index, next]));
+    });
+  }, [index, total]);
+
   const handleScrollDown = () => {
     if (onScrollToServices) {
       onScrollToServices();
@@ -54,21 +75,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return () => window.clearInterval(id);
   }, [paused, total]);
 
-  const renderPhotos = () =>
-    HERO_SLIDES.map((item, i) => (
-      <img
-        key={item.id}
-        src={item.image}
-        alt={i === index ? item.title : ''}
-        aria-hidden={i !== index}
-        loading={i === 0 ? 'eager' : 'lazy'}
-        fetchPriority={i === 0 ? 'high' : 'low'}
-        decoding="async"
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[900ms] ease-[var(--ease-luxe)] ${
-          i === index ? 'opacity-100' : 'opacity-0'
-        }`}
-      />
-    ));
+  const renderPhotos = (isMobile = false) =>
+    HERO_SLIDES.map((item, i) => {
+      if (!loadedIndices.includes(i)) return null;
+      const isCurrent = i === index;
+      const isEager = i === 0;
+      const imgSrc = isMobile && item.mobileImage ? item.mobileImage : item.image;
+
+      return (
+        <picture
+          key={item.id}
+          className={`absolute inset-0 h-full w-full transition-opacity duration-[900ms] ease-[var(--ease-luxe)] ${
+            isCurrent ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          {item.mobileImage && (
+            <source media="(max-width: 768px)" srcSet={item.mobileImage} />
+          )}
+          <img
+            src={imgSrc}
+            alt={isCurrent ? item.title : ''}
+            aria-hidden={!isCurrent}
+            loading={isEager ? 'eager' : 'lazy'}
+            fetchPriority={isEager ? 'high' : 'low'}
+            decoding="async"
+            width={isMobile ? 750 : 1870}
+            height={isMobile ? 380 : 841}
+            className="h-full w-full object-cover"
+          />
+        </picture>
+      );
+    });
+
 
   return (
     <section id="home" className="relative overflow-hidden bg-canvas pt-16 lg:p-0">
@@ -92,7 +130,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             setPaused(false);
           }}
         >
-          {renderPhotos()}
+          {renderPhotos(true)}
           <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/25 to-transparent" />
 
           <div role="tablist" aria-label="Hero slides" className="absolute inset-x-0 bottom-4 flex justify-center items-center gap-1">
@@ -188,16 +226,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       >
         {/* Right-side full-bleed stage photo with a soft S-curve cream mask on its left edge */}
         <div className="absolute inset-y-0 right-0 w-[52%] overflow-hidden bg-midnight">
-          {renderPhotos()}
-          <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/35" />
-          <span className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/30 to-transparent" />
+          {renderPhotos(false)}
+          <span className="pointer-events-none absolute inset-0 z-[5] bg-gradient-to-r from-black/10 via-transparent to-black/35" />
+          <span className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-28 bg-gradient-to-b from-black/30 to-transparent" />
 
           {/* Cream S-curve mask blending the left of the photo into the canvas */}
           <svg
             viewBox="0 0 260 640"
             preserveAspectRatio="none"
             aria-hidden="true"
-            className="pointer-events-none absolute -left-px inset-y-0 h-full w-[190px] xl:w-[220px]"
+            className="pointer-events-none absolute -left-px inset-y-0 h-full w-[190px] xl:w-[220px] z-10"
           >
             <defs>
               <linearGradient id="heroFeather" x1="0" y1="0" x2="1" y2="0">
@@ -211,7 +249,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </svg>
 
           {/* Script overlay in the upper-right of the stage photo */}
-          <div className="pointer-events-none absolute right-24 top-28 -rotate-6 text-center select-none xl:right-28 xl:top-32">
+          <div className="pointer-events-none absolute right-24 top-28 z-20 -rotate-6 text-center select-none xl:right-28 xl:top-32">
             <span className="block font-script text-[28px] leading-[1.05] text-white/95 drop-shadow-[0_2px_10px_rgb(0_0_0/0.75)] xl:text-[32px]">
               We Make
             </span>
