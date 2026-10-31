@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Sparkles, Heart, Award, Users, CheckCircle2, ArrowRight } from 'lucide-react';
 import { PageHeader } from '../../components/PageHeader';
 import { AboutSection } from '../../components/AboutSection';
+import { OwnerProfileCard } from '../../components/OwnerProfileCard';
 import { TestimonialsSection } from '../../components/TestimonialsSection';
 import { useModals } from '../../context/ModalContext';
 import { WHATSAPP_URL } from '../../data/contact';
@@ -24,6 +25,72 @@ export const AboutClient: React.FC = () => {
 
       {/* Main About Section with the Arched Centerpiece and 4 Pillars */}
       <AboutSection onOpenOurStory={openOurStoryModal} />
+
+      {/* Meet the Founder Section with Interactive Photo Swap */}
+      <section className="relative overflow-hidden bg-canvas py-16 sm:py-20 lg:py-24 border-t border-line/70">
+        <div className="container-luxe relative">
+          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+            {/* Left: Owner Profile Card */}
+            <div className="lg:col-span-5 flex justify-center">
+              <OwnerProfileCard className="w-full max-w-sm sm:max-w-md" />
+            </div>
+
+            {/* Right: Story & Vision */}
+            <div className="lg:col-span-7 space-y-6">
+              <div>
+                <div className="inline-flex items-center gap-2.5">
+                  <span className="h-px w-6 bg-gradient-to-r from-transparent to-[#C59B27]" />
+                  <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-burgundy">
+                    The Visionary Behind It All
+                  </span>
+                </div>
+                <h2 className="mt-2.5 font-display text-[2.2rem] sm:text-[2.75rem] text-ink font-medium leading-[1.12]">
+                  Meet Our Founder: <span className="italic font-normal text-burgundy">Shubham Mhatre</span>
+                </h2>
+                <p className="mt-1 text-sm font-semibold text-copper">
+                  Founder &amp; Chief Event Designer, Shree Swami Samarth Events
+                </p>
+              </div>
+
+              <p className="text-[15px] leading-relaxed text-ink-soft">
+                Starting right here in Kalyan with a deep passion for bespoke decor and cultural traditions, Shubham Mhatre established Shree Swami Samarth Events to redefine luxury event management across Kalyan, Thane, Dombivli, and Mumbai.
+              </p>
+
+              <p className="text-[15px] leading-relaxed text-ink-soft">
+                From ethereal wedding mandaps and royal reception stages to dreamy floral haldi canopies and intimate milestone anniversaries, Shubham personally leads every concept from initial 3D sketch to the final live floral installation.
+              </p>
+
+              {/* Highlights */}
+              <div className="grid grid-cols-3 gap-3 pt-2">
+                <div className="rounded-xl border border-line bg-white/80 p-3.5 text-center shadow-xs">
+                  <span className="block font-display text-xl sm:text-2xl font-bold text-burgundy">100+</span>
+                  <span className="text-[11px] font-medium text-ink-soft">Events Styled</span>
+                </div>
+                <div className="rounded-xl border border-line bg-white/80 p-3.5 text-center shadow-xs">
+                  <span className="block font-display text-xl sm:text-2xl font-bold text-burgundy">5+ Years</span>
+                  <span className="text-[11px] font-medium text-ink-soft">Design Craft</span>
+                </div>
+                <div className="rounded-xl border border-line bg-white/80 p-3.5 text-center shadow-xs">
+                  <span className="block font-display text-xl sm:text-2xl font-bold text-burgundy">100%</span>
+                  <span className="text-[11px] font-medium text-ink-soft">Client Praise</span>
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <button
+                  type="button"
+                  onClick={openPlanModal}
+                  className="inline-flex items-center gap-2 rounded-full bg-burgundy px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-burgundy-light active:scale-[0.98] cursor-pointer"
+                >
+                  <Sparkles className="h-4 w-4 text-gold-light" />
+                  <span>Discuss Your Event With Shubham</span>
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Deep Story & Values Section */}
       <section className="relative overflow-hidden bg-canvas-soft/60 py-16 sm:py-20 lg:py-24 border-t border-line/60">

@@ -3,6 +3,7 @@
 import React from 'react';
 import { ArrowLeft, X, Calendar, Award, Heart, HeartHandshake, Sparkles } from 'lucide-react';
 import { SinceSealBadge, FloralCornerMotif } from './FloralMotif';
+import { OwnerProfileCard } from './OwnerProfileCard';
 
 interface OurStoryModalProps {
   isOpen: boolean;
@@ -114,17 +115,27 @@ export const OurStoryModal: React.FC<OurStoryModalProps> = ({
             </div>
           </div>
 
-          {/* Team Photo Section */}
-          <div className="space-y-2">
-            <h3 className="font-display text-base font-bold text-[#221F1D]">
-              Our Dedicated Event Team
-            </h3>
-            <div className="rounded-2xl overflow-hidden aspect-[16/9] border border-[#EAE3D6]">
-              <img src="/images/team-members.webp" alt="Our Event Planners Team" className="w-full h-full object-cover" />
+          {/* Founder Spotlight with Interactive Photo Swap */}
+          <div className="pt-5 border-t border-[#EAE3D6]/80 space-y-4">
+            <div className="text-center space-y-1.5">
+              <div className="inline-flex items-center justify-center gap-2.5">
+                <span className="h-px w-6 sm:w-8 bg-gradient-to-r from-transparent to-[#C59B27]" />
+                <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.25em] text-[#7A1B28]">
+                  The Visionary Behind It All
+                </span>
+                <span className="h-px w-6 sm:w-8 bg-gradient-to-l from-transparent to-[#C59B27]" />
+              </div>
+              
+              <h3 className="font-display text-2xl sm:text-[1.75rem] font-medium leading-tight text-[#221F1D]">
+                Meet Our Founder: <span className="italic font-normal text-[#7A1B28]">Shubham Mhatre</span>
+              </h3>
+
+              <p className="text-xs font-medium text-[#7A6E65]">
+                Founder &amp; Lead Event Stylist &bull; Kalyan &amp; Mumbai
+              </p>
             </div>
-            <p className="text-xs text-[#7A6E65] italic text-center">
-              "We treat every client's celebration as if it were our own family's."
-            </p>
+
+            <OwnerProfileCard compact={false} />
           </div>
 
         </div>
